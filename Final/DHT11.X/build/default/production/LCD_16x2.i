@@ -5630,16 +5630,22 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 12 "./LCD_16x2_8-bit_Header_File.h" 2
-# 21 "./LCD_16x2_8-bit_Header_File.h"
+# 13 "./LCD_16x2_8-bit_Header_File.h" 2
+
+
+
+
+
+
+
+
 void LCD_Init();
 void LCD_Command(char );
 void LCD_Char(char x);
 void LCD_String(const char *);
 void MSdelay(unsigned int );
 void LCD_String_xy(char ,char ,const char*);
-# 6 "LCD_16x2.c" 2
-
+# 7 "LCD_16x2.c" 2
 
 
 void LCD_Init()

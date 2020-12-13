@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff00000000010000009b040000c3020000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000fffffffffffffffffffffffffffffffff8ffffff0b00000008040000d1020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -32,7 +32,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="108" flags="00000023" y="169" h="250" pid="0" iid="23">
+   <POPUP w="450" x="538" flags="00000022" y="445" h="250" pid="0" iid="23">
     <PROPERTIES>
      <ITEM name="ComboBox1000">S</ITEM>
      <ITEM name="ComboBox1001">Sr</ITEM>
@@ -48,13 +48,13 @@
      <ITEM name="VSplitter1Pos">238</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="605" flags="00008023" y="268" h="250" pid="0" iid="24">
+   <POPUP w="450" x="101" flags="00000022" y="439" h="250" pid="0" iid="24">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="156" x="783" flags="00000001" y="200" h="72" pid="1" iid="18">
+   <POPUP w="156" x="267" flags="00000001" y="241" h="72" pid="1" iid="18">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="168" flags="00000008" y="229" h="8" pid="2" iid="18">
@@ -90,7 +90,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="8" x="248" flags="80000002" y="309" h="16" pid="12" iid="1">
+   <POPUP w="8" x="248" flags="00000002" y="309" h="16" pid="12" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -133,7 +133,7 @@
    <POPUP w="142" x="328" flags="00000008" y="389" h="391" pid="10" iid="1">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="348" flags="80000002" y="409" h="8" pid="13" iid="1">
+   <POPUP w="8" x="348" flags="00000002" y="409" h="8" pid="13" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>

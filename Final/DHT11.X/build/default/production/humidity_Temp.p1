@@ -3,47 +3,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3427 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3427: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"2459
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2459:     struct {
-[s S102 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S102 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"2469
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2469:     struct {
-[s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S103 . INT0 INT1 INT2 . PGM PGC PGD ]
-"2478
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2478:     struct {
-[s S104 :3 `uc 1 :1 `uc 1 ]
-[n S104 . . CCP2_PA2 ]
-"2458
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2458: typedef union {
-[u S101 `S102 1 `S103 1 `S104 1 ]
-[n S101 . . . . ]
-"2483
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2483: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS101 ~T0 @X0 0 e@3969 ]
-"7986
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7986: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"21 ./LCD_16x2_8-bit_Header_File.h
-[; ;./LCD_16x2_8-bit_Header_File.h: 21: void LCD_Init();
-[v _LCD_Init `(v ~T0 @X0 0 e? ]
-"6581 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6581: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"23 humidity_Temp.c
-[; ;humidity_Temp.c: 23: void DHT11_Start();
-[v _DHT11_Start `(v ~T0 @X0 0 e? ]
-"24
-[; ;humidity_Temp.c: 24: void DHT11_CheckResponse();
-[v _DHT11_CheckResponse `(v ~T0 @X0 0 e? ]
-"25
-[; ;humidity_Temp.c: 25: char DHT11_ReadData();
-[v _DHT11_ReadData `(uc ~T0 @X0 0 e? ]
-"26
-[; ;humidity_Temp.c: 26: void onLEDS(char);
-[v _onLEDS `(v ~T0 @X0 0 ef1`uc ]
-"2320 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+"2320
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2320:     struct {
 [s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S96 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 ]
@@ -70,6 +30,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2353
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2353: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS95 ~T0 @X0 0 e@3968 ]
+"3858
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3858:     struct {
+[s S149 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S149 . TRISC0 TRISC1 TRISC2 . TRISC6 TRISC7 ]
+"3866
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3866:     struct {
+[s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S150 . RC0 RC1 RC2 . RC6 RC7 ]
+"3857
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3857: typedef union {
+[u S148 `S149 1 `S150 1 ]
+[n S148 . . . ]
+"3875
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3875: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS148 ~T0 @X0 0 e@3988 ]
 "5157
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 5157:     struct {
 [s S205 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -93,9 +68,81 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5185
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 5185: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
 [v _TXSTAbits `VS204 ~T0 @X0 0 e@4012 ]
-"5402
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 5402: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
-[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"6073
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6073:     struct {
+[s S242 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S242 . ABDEN WUE . BRG16 TXCKP RXDTP RCIDL ABDOVF ]
+"6083
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6083:     struct {
+[s S243 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S243 . . SCKP . RCMT ]
+"6089
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6089:     struct {
+[s S244 :5 `uc 1 :1 `uc 1 ]
+[n S244 . . RXCKP ]
+"6093
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6093:     struct {
+[s S245 :1 `uc 1 :1 `uc 1 ]
+[n S245 . . W4E ]
+"6072
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6072: typedef union {
+[u S241 `S242 1 `S243 1 `S244 1 `S245 1 ]
+[n S241 . . . . . ]
+"6098
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6098: extern volatile BAUDCONbits_t BAUDCONbits __attribute__((address(0xFB8)));
+[v _BAUDCONbits `VS241 ~T0 @X0 0 e@4024 ]
+"4947
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4947:     struct {
+[s S191 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S191 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"4957
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4957:     struct {
+[s S192 :3 `uc 1 :1 `uc 1 ]
+[n S192 . . ADEN ]
+"4961
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4961:     struct {
+[s S193 :5 `uc 1 :1 `uc 1 ]
+[n S193 . . SRENA ]
+"4965
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4965:     struct {
+[s S194 :6 `uc 1 :1 `uc 1 ]
+[n S194 . . RC8_9 ]
+"4969
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4969:     struct {
+[s S195 :6 `uc 1 :1 `uc 1 ]
+[n S195 . . RC9 ]
+"4973
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4973:     struct {
+[s S196 :1 `uc 1 ]
+[n S196 . RCD8 ]
+"4946
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4946: typedef union {
+[u S190 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 ]
+[n S190 . . . . . . . ]
+"4977
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4977: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
+[v _RCSTAbits `VS190 ~T0 @X0 0 e@4011 ]
+"5426
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 5426: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"7986
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7986: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
+"21 ./LCD_16x2_8-bit_Header_File.h
+[; ;./LCD_16x2_8-bit_Header_File.h: 21: void LCD_Init();
+[v _LCD_Init `(v ~T0 @X0 0 e? ]
+"6581 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6581: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"22 humidity_Temp.c
+[; ;humidity_Temp.c: 22: void DHT11_Start();
+[v _DHT11_Start `(v ~T0 @X0 0 e? ]
+"23
+[; ;humidity_Temp.c: 23: void DHT11_CheckResponse();
+[v _DHT11_CheckResponse `(v ~T0 @X0 0 e? ]
+"24
+[; ;humidity_Temp.c: 24: char DHT11_ReadData();
+[v _DHT11_ReadData `(uc ~T0 @X0 0 e? ]
 "113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "26 ./LCD_16x2_8-bit_Header_File.h
@@ -107,9 +154,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;./LCD_16x2_8-bit_Header_File.h: 23: void LCD_Char(char x);
 [v _LCD_Char `(v ~T0 @X0 0 ef1`uc ]
-"25
+"5402 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 5402: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"25 ./LCD_16x2_8-bit_Header_File.h
 [; ;./LCD_16x2_8-bit_Header_File.h: 25: void MSdelay(unsigned int );
 [v _MSdelay `(v ~T0 @X0 0 ef1`ui ]
+"25 humidity_Temp.c
+[; ;humidity_Temp.c: 25: void onLEDS(char);
+[v _onLEDS `(v ~T0 @X0 0 ef1`uc ]
+"26
+[; ;humidity_Temp.c: 26: void offBombillas();
+[v _offBombillas `(v ~T0 @X0 0 e? ]
 "2569 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2569:     struct {
 [s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -141,22 +197,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "203 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
 [v __delay `JF3152 ~T0 @X0 0 e ]
 [p i __delay ]
-"3858 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3858:     struct {
-[s S149 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S149 . TRISC0 TRISC1 TRISC2 . TRISC6 TRISC7 ]
-"3866
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3866:     struct {
-[s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S150 . RC0 RC1 RC2 . RC6 RC7 ]
-"3857
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3857: typedef union {
-[u S148 `S149 1 `S150 1 ]
-[n S148 . . . ]
-"3875
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3875: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
-[v _TRISCbits `VS148 ~T0 @X0 0 e@3988 ]
-"9978
+"9978 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 9978: extern volatile __bit LATC2 __attribute__((address(0x7C5A)));
 [v _LATC2 `Vb ~T0 @X0 0 e@31834 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
@@ -746,693 +787,1155 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [p x EBTRB  =  OFF       ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"31 humidity_Temp.c
-[; ;humidity_Temp.c: 31: void main()
+"28 humidity_Temp.c
+[; ;humidity_Temp.c: 28: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
-"32
-[; ;humidity_Temp.c: 32: {
 {
 [e :U _main ]
 [f ]
-"33
-[; ;humidity_Temp.c: 33:     int agr= 0;
+"29
+[; ;humidity_Temp.c: 29:     int agr = 0;
 [v _agr `i ~T0 @X0 1 a ]
 [e = _agr -> 0 `i ]
-"34
-[; ;humidity_Temp.c: 34:     int acum=0;
+"30
+[; ;humidity_Temp.c: 30:     int acum = 0;
 [v _acum `i ~T0 @X0 1 a ]
 [e = _acum -> 0 `i ]
-"35
-[; ;humidity_Temp.c: 35:     TRISA = 0;
+"31
+[; ;humidity_Temp.c: 31:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"36
-[; ;humidity_Temp.c: 36:     PORTBbits.RB4=0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-"37
-[; ;humidity_Temp.c: 37:     char RH_Decimal,RH_Integral,T_Decimal,T_Integral, valor2;
+"32
+[; ;humidity_Temp.c: 32:     char RH_Decimal, RH_Integral, T_Decimal, T_Integral, valor2;
 [v _RH_Decimal `uc ~T0 @X0 1 a ]
 [v _RH_Integral `uc ~T0 @X0 1 a ]
 [v _T_Decimal `uc ~T0 @X0 1 a ]
 [v _T_Integral `uc ~T0 @X0 1 a ]
 [v _valor2 `uc ~T0 @X0 1 a ]
-"38
-[; ;humidity_Temp.c: 38:     char Checksum;
+"33
+[; ;humidity_Temp.c: 33:     char Checksum;
 [v _Checksum `uc ~T0 @X0 1 a ]
-"39
-[; ;humidity_Temp.c: 39:     char value[10];
+"34
+[; ;humidity_Temp.c: 34:     char value[10];
 [v _value `uc ~T0 @X0 -> 10 `i a ]
+"37
+[; ;humidity_Temp.c: 37:     PORTAbits.RA0 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"38
+[; ;humidity_Temp.c: 38:     PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+"39
+[; ;humidity_Temp.c: 39:     PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "40
-[; ;humidity_Temp.c: 40:     OSCCON = 0x72;
-[e = _OSCCON -> -> 114 `i `uc ]
-"43
-[; ;humidity_Temp.c: 43:     LCD_Init();
-[e ( _LCD_Init ..  ]
-"44
-[; ;humidity_Temp.c: 44:     ADCON1=0x0F;
-[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;humidity_Temp.c: 40:     PORTAbits.RA3 = 0;
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+"41
+[; ;humidity_Temp.c: 41:     PORTAbits.RA4 = 0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+"45
+[; ;humidity_Temp.c: 45:     TRISCbits.RC6 = 0;
+[e = . . _TRISCbits 1 4 -> -> 0 `i `uc ]
 "46
-[; ;humidity_Temp.c: 46:     while(1)
-[e :U 371 ]
+[; ;humidity_Temp.c: 46:     TXSTAbits.TX9 = 0;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
 "47
-[; ;humidity_Temp.c: 47: {
-{
+[; ;humidity_Temp.c: 47:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
 "48
-[; ;humidity_Temp.c: 48:     DHT11_Start();
-[e ( _DHT11_Start ..  ]
+[; ;humidity_Temp.c: 48:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
 "49
-[; ;humidity_Temp.c: 49:     DHT11_CheckResponse();
-[e ( _DHT11_CheckResponse ..  ]
+[; ;humidity_Temp.c: 49:     TXSTAbits.BRGH = 0;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+"50
+[; ;humidity_Temp.c: 50:     BAUDCONbits.BRG16 = 0;
+[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
+"51
+[; ;humidity_Temp.c: 51:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "52
-[; ;humidity_Temp.c: 52:     RH_Integral = DHT11_ReadData();
-[e = _RH_Integral ( _DHT11_ReadData ..  ]
-"53
-[; ;humidity_Temp.c: 53:     RH_Decimal = DHT11_ReadData();
-[e = _RH_Decimal ( _DHT11_ReadData ..  ]
-"54
-[; ;humidity_Temp.c: 54:     T_Integral = DHT11_ReadData();
-[e = _T_Integral ( _DHT11_ReadData ..  ]
+[; ;humidity_Temp.c: 52:     SPBRG = (unsigned char) (((8000000L / 9600) / 64) - 1);
+[e = _SPBRG -> - / / -> 8000000 `l -> -> 9600 `i `l -> -> 64 `i `l -> -> 1 `i `l `uc ]
 "55
-[; ;humidity_Temp.c: 55:     T_Decimal = DHT11_ReadData();
-[e = _T_Decimal ( _DHT11_ReadData ..  ]
-"56
-[; ;humidity_Temp.c: 56:     Checksum = DHT11_ReadData();
-[e = _Checksum ( _DHT11_ReadData ..  ]
+[; ;humidity_Temp.c: 55:     OSCCON = 0x72;
+[e = _OSCCON -> -> 114 `i `uc ]
 "58
-[; ;humidity_Temp.c: 58:     while ( agr == 0){
-[e $U 373  ]
-[e :U 374 ]
-{
+[; ;humidity_Temp.c: 58:     LCD_Init();
+[e ( _LCD_Init ..  ]
 "59
-[; ;humidity_Temp.c: 59:         onLEDS(T_Integral);
-[e ( _onLEDS (1 _T_Integral ]
-"60
-[; ;humidity_Temp.c: 60:         valor2=T_Decimal;
-[e = _valor2 _T_Decimal ]
-"61
-[; ;humidity_Temp.c: 61:         if(T_Integral <30 && acum == 0 ){
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 0 `i 376  ]
-{
-"62
-[; ;humidity_Temp.c: 62:             PORTAbits.RA0 = 1;
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[v F3506 `uc ~T0 @X0 -> 16 `i s ]
-[i F3506
-:U ..
+[; ;humidity_Temp.c: 59:     ADCON1 = 0x0F;
+[e = _ADCON1 -> -> 15 `i `uc ]
 "63
-[; ;humidity_Temp.c: 63:             char buffer_TX[] = "LED 1 ENCENDIDO";
--> 76 `c
--> 69 `c
--> 68 `c
--> 32 `c
--> 49 `c
--> 32 `c
--> 69 `c
+[; ;humidity_Temp.c: 63:     while (1) {
+[e :U 371 ]
+{
+"64
+[; ;humidity_Temp.c: 64:         DHT11_Start();
+[e ( _DHT11_Start ..  ]
+"65
+[; ;humidity_Temp.c: 65:         DHT11_CheckResponse();
+[e ( _DHT11_CheckResponse ..  ]
+"68
+[; ;humidity_Temp.c: 68:         RH_Integral = DHT11_ReadData();
+[e = _RH_Integral ( _DHT11_ReadData ..  ]
+"69
+[; ;humidity_Temp.c: 69:         RH_Decimal = DHT11_ReadData();
+[e = _RH_Decimal ( _DHT11_ReadData ..  ]
+"70
+[; ;humidity_Temp.c: 70:         T_Integral = DHT11_ReadData();
+[e = _T_Integral ( _DHT11_ReadData ..  ]
+"71
+[; ;humidity_Temp.c: 71:         T_Decimal = DHT11_ReadData();
+[e = _T_Decimal ( _DHT11_ReadData ..  ]
+"72
+[; ;humidity_Temp.c: 72:         Checksum = DHT11_ReadData();
+[e = _Checksum ( _DHT11_ReadData ..  ]
+"75
+[; ;humidity_Temp.c: 75:         sprintf(value, "%d", RH_Integral);
+[e ( _sprintf (1 , (. , &U _value :s 1C -> _RH_Integral `i ]
+"76
+[; ;humidity_Temp.c: 76:         LCD_String_xy(0, 0, value);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
+"77
+[; ;humidity_Temp.c: 77:         sprintf(value, ".%d ", RH_Decimal);
+[e ( _sprintf (1 , (. , &U _value :s 2C -> _RH_Decimal `i ]
+"78
+[; ;humidity_Temp.c: 78:         LCD_String(value);
+[e ( _LCD_String (1 -> &U _value `*Cuc ]
+"79
+[; ;humidity_Temp.c: 79:         LCD_Char('%');
+[e ( _LCD_Char (1 -> -> 37 `ui `uc ]
+"82
+[; ;humidity_Temp.c: 82:         sprintf(value, "%d", T_Integral);
+[e ( _sprintf (1 , (. , &U _value :s 3C -> _T_Integral `i ]
+"83
+[; ;humidity_Temp.c: 83:         LCD_String_xy(1, 0, value);
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
+"84
+[; ;humidity_Temp.c: 84:         sprintf(value, ".%d", T_Decimal);
+[e ( _sprintf (1 , (. , &U _value :s 4C -> _T_Decimal `i ]
+"85
+[; ;humidity_Temp.c: 85:         LCD_String(value);
+[e ( _LCD_String (1 -> &U _value `*Cuc ]
+"86
+[; ;humidity_Temp.c: 86:         LCD_Char(0xdf);
+[e ( _LCD_Char (1 -> -> 223 `i `uc ]
+"87
+[; ;humidity_Temp.c: 87:         LCD_Char('C');
+[e ( _LCD_Char (1 -> -> 67 `ui `uc ]
+"89
+[; ;humidity_Temp.c: 89:         sprintf(value, "%d  ", Checksum);
+[e ( _sprintf (1 , (. , &U _value :s 5C -> _Checksum `i ]
+"90
+[; ;humidity_Temp.c: 90:         LCD_String_xy(0, 8, "Humedad");
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 8 `i `uc :s 6C ]
+"91
+[; ;humidity_Temp.c: 91:         LCD_String_xy(1, 8, "Temp");
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 8 `i `uc :s 7C ]
+[v F3507 `uc ~T0 @X0 -> 36 `i s ]
+[i F3507
+:U ..
+"93
+[; ;humidity_Temp.c: 93:         char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
 -> 78 `c
--> 67 `c
--> 69 `c
--> 78 `c
--> 68 `c
--> 73 `c
--> 68 `c
--> 79 `c
+-> 111 `c
+-> 32 `c
+-> 115 `c
+-> 101 `c
+-> 32 `c
+-> 104 `c
+-> 97 `c
+-> 32 `c
+-> 112 `c
+-> 114 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 105 `c
+-> 100 `c
+-> 111 `c
+-> 32 `c
+-> 110 `c
+-> 105 `c
+-> 110 `c
+-> 103 `c
+-> 117 `c
+-> 110 `c
+-> 97 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 13 `c
 -> 0 `c
 ..
 ]
-[v _buffer_TX `uc ~T0 @X0 -> 16 `i a ]
-[e = _buffer_TX F3506 ]
-"65
-[; ;humidity_Temp.c: 65:              for (int i = 0; i < 17; i++) {
+[v _buffer_TX `uc ~T0 @X0 -> 36 `i a ]
+[e = _buffer_TX F3507 ]
+"94
+[; ;humidity_Temp.c: 94:         for (int i = 0; i < 36; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 17 `i 377  ]
-[e $U 378  ]
+[e $ < _i -> 36 `i 373  ]
+[e $U 374  ]
+[e :U 373 ]
+{
+"96
+[; ;humidity_Temp.c: 96:         while (!TXSTAbits.TRMT) {
+[e $U 376  ]
 [e :U 377 ]
 {
-"67
-[; ;humidity_Temp.c: 67:             while (!TXSTAbits.TRMT) {
-[e $U 380  ]
-[e :U 381 ]
-{
-"68
-[; ;humidity_Temp.c: 68:             }
+"97
+[; ;humidity_Temp.c: 97:                     }
 }
-[e :U 380 ]
-"67
-[; ;humidity_Temp.c: 67:             while (!TXSTAbits.TRMT) {
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 381  ]
-[e :U 382 ]
-"70
-[; ;humidity_Temp.c: 70:             TXREG = buffer_TX[i];
+[e :U 376 ]
+"96
+[; ;humidity_Temp.c: 96:         while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 377  ]
+[e :U 378 ]
+"99
+[; ;humidity_Temp.c: 99:                     TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"71
-[; ;humidity_Temp.c: 71:         }
+"100
+[; ;humidity_Temp.c: 100:                 }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 17 `i 377  ]
-[e :U 378 ]
+[e $ < _i -> 36 `i 373  ]
+[e :U 374 ]
 }
-"72
-[; ;humidity_Temp.c: 72:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"73
-[; ;humidity_Temp.c: 73:             acum = 6;
-[e = _acum -> 6 `i ]
-"74
-[; ;humidity_Temp.c: 74:         } else if (T_Integral <30 && acum == 6){
-}
-[e $U 383  ]
-[e :U 376 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 6 `i 384  ]
+"102
+[; ;humidity_Temp.c: 102:         MSdelay(1000);
+[e ( _MSdelay (1 -> -> 1000 `i `ui ]
+"103
+[; ;humidity_Temp.c: 103:         while (agr == 0) {
+[e $U 379  ]
+[e :U 380 ]
 {
-"75
-[; ;humidity_Temp.c: 75:             PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-"76
-[; ;humidity_Temp.c: 76:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"77
-[; ;humidity_Temp.c: 77:             acum = 12;
-[e = _acum -> 12 `i ]
-"78
-[; ;humidity_Temp.c: 78:         }else if (T_Integral <30 && acum == 12){
-}
-[e $U 385  ]
-[e :U 384 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 12 `i 386  ]
+"105
+[; ;humidity_Temp.c: 105:             onLEDS(T_Integral);
+[e ( _onLEDS (1 _T_Integral ]
+"106
+[; ;humidity_Temp.c: 106:             if (T_Integral < 30 && acum == 0) {
+[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 0 `i 382  ]
 {
-"79
-[; ;humidity_Temp.c: 79:             PORTAbits.RA2 = 1;
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-"80
-[; ;humidity_Temp.c: 80:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"81
-[; ;humidity_Temp.c: 81:             acum = 18;
-[e = _acum -> 18 `i ]
-"82
-[; ;humidity_Temp.c: 82:         }else if (T_Integral <30 && acum == 18){
+"107
+[; ;humidity_Temp.c: 107:                 PORTAbits.RA0 = 1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[v F3510 `uc ~T0 @X0 -> 27 `i s ]
+[i F3510
+:U ..
+"108
+[; ;humidity_Temp.c: 108:                 char buffer_TX[] = "Se encendio la bombilla 1\r";
+-> 83 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 110 `c
+-> 99 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 105 `c
+-> 111 `c
+-> 32 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 49 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
+[e = _buffer_TX F3510 ]
+"109
+[; ;humidity_Temp.c: 109:                 for (int i = 0; i < 27; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 27 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+{
+"111
+[; ;humidity_Temp.c: 111:                     while (!TXSTAbits.TRMT) {
+[e $U 386  ]
+[e :U 387 ]
+{
+"112
+[; ;humidity_Temp.c: 112:                     }
 }
-[e $U 387  ]
 [e :U 386 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 18 `i 388  ]
-{
-"83
-[; ;humidity_Temp.c: 83:             PORTAbits.RA3 = 1;
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"84
-[; ;humidity_Temp.c: 84:             T_Integral = T_Integral + 6;
+"111
+[; ;humidity_Temp.c: 111:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 387  ]
+[e :U 388 ]
+"114
+[; ;humidity_Temp.c: 114:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"115
+[; ;humidity_Temp.c: 115:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 27 `i 383  ]
+[e :U 384 ]
+}
+"116
+[; ;humidity_Temp.c: 116:                 T_Integral = T_Integral + 6;
 [e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"85
-[; ;humidity_Temp.c: 85:             acum = 24;
-[e = _acum -> 24 `i ]
-"86
-[; ;humidity_Temp.c: 86:         }else if (T_Integral <30 && acum == 24){
+"117
+[; ;humidity_Temp.c: 117:                 acum = 6;
+[e = _acum -> 6 `i ]
+"119
+[; ;humidity_Temp.c: 119:             } else if (T_Integral < 30 && acum == 6) {
 }
 [e $U 389  ]
-[e :U 388 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 24 `i 390  ]
+[e :U 382 ]
+[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 6 `i 390  ]
 {
-"87
-[; ;humidity_Temp.c: 87:             PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-"88
-[; ;humidity_Temp.c: 88:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"89
-[; ;humidity_Temp.c: 89:         } else
-}
-[e $U 391  ]
-[e :U 390 ]
-"90
-[; ;humidity_Temp.c: 90:             agr=1;
-[e = _agr -> 1 `i ]
+"120
+[; ;humidity_Temp.c: 120:                 PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[v F3513 `uc ~T0 @X0 -> 27 `i s ]
+[i F3513
+:U ..
+"122
+[; ;humidity_Temp.c: 122:                 char buffer_TX[] = "Se encendio la bombilla 2\r";
+-> 83 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 110 `c
+-> 99 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 105 `c
+-> 111 `c
+-> 32 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 50 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
+[e = _buffer_TX F3513 ]
+"123
+[; ;humidity_Temp.c: 123:                 for (int i = 0; i < 27; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 27 `i 391  ]
+[e $U 392  ]
 [e :U 391 ]
-[e :U 389 ]
-[e :U 387 ]
-[e :U 385 ]
-[e :U 383 ]
-"92
-[; ;humidity_Temp.c: 92:         sprintf(value,"%d",RH_Integral);
-[e ( _sprintf (1 , (. , &U _value :s 1C -> _RH_Integral `i ]
-"93
-[; ;humidity_Temp.c: 93:         LCD_String_xy(0,0,value);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
-"94
-[; ;humidity_Temp.c: 94:         sprintf(value,".%d ",RH_Decimal);
-[e ( _sprintf (1 , (. , &U _value :s 2C -> _RH_Decimal `i ]
-"95
-[; ;humidity_Temp.c: 95:         LCD_String(value);
-[e ( _LCD_String (1 -> &U _value `*Cuc ]
-"96
-[; ;humidity_Temp.c: 96:         LCD_Char('%');
-[e ( _LCD_Char (1 -> -> 37 `ui `uc ]
-"99
-[; ;humidity_Temp.c: 99:         sprintf(value,"%d",T_Integral);
-[e ( _sprintf (1 , (. , &U _value :s 3C -> _T_Integral `i ]
-"100
-[; ;humidity_Temp.c: 100:         LCD_String_xy(1,0,value);
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
-"101
-[; ;humidity_Temp.c: 101:         sprintf(value,".%d",T_Decimal);
-[e ( _sprintf (1 , (. , &U _value :s 4C -> _T_Decimal `i ]
-"102
-[; ;humidity_Temp.c: 102:         LCD_String(value);
-[e ( _LCD_String (1 -> &U _value `*Cuc ]
-"103
-[; ;humidity_Temp.c: 103:         LCD_Char(0xdf);
-[e ( _LCD_Char (1 -> -> 223 `i `uc ]
-"104
-[; ;humidity_Temp.c: 104:         LCD_Char('C');
-[e ( _LCD_Char (1 -> -> 67 `ui `uc ]
-"106
-[; ;humidity_Temp.c: 106:         sprintf(value,"%d  ",Checksum);
-[e ( _sprintf (1 , (. , &U _value :s 5C -> _Checksum `i ]
-"107
-[; ;humidity_Temp.c: 107:         LCD_String_xy(0,8,"Humedad");
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 8 `i `uc :s 6C ]
-"108
-[; ;humidity_Temp.c: 108:         LCD_String_xy(1,8,"Temp");
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 8 `i `uc :s 7C ]
-"110
-[; ;humidity_Temp.c: 110:         MSdelay(2000);
-[e ( _MSdelay (1 -> -> 2000 `i `ui ]
-"111
-[; ;humidity_Temp.c: 111:     }
+{
+"125
+[; ;humidity_Temp.c: 125:                     while (!TXSTAbits.TRMT) {
+[e $U 394  ]
+[e :U 395 ]
+{
+"126
+[; ;humidity_Temp.c: 126:                     }
 }
-[e :U 373 ]
-"58
-[; ;humidity_Temp.c: 58:     while ( agr == 0){
-[e $ == _agr -> 0 `i 374  ]
-[e :U 375 ]
-"112
-[; ;humidity_Temp.c: 112:     agr=0;
+[e :U 394 ]
+"125
+[; ;humidity_Temp.c: 125:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 395  ]
+[e :U 396 ]
+"128
+[; ;humidity_Temp.c: 128:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"129
+[; ;humidity_Temp.c: 129:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 27 `i 391  ]
+[e :U 392 ]
+}
+"131
+[; ;humidity_Temp.c: 131:                 T_Integral = T_Integral + 6;
+[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
+"132
+[; ;humidity_Temp.c: 132:                 acum = 12;
+[e = _acum -> 12 `i ]
+"133
+[; ;humidity_Temp.c: 133:             } else if (T_Integral < 30 && acum == 12) {
+}
+[e $U 397  ]
+[e :U 390 ]
+[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 12 `i 398  ]
+{
+"134
+[; ;humidity_Temp.c: 134:                 PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[v F3516 `uc ~T0 @X0 -> 27 `i s ]
+[i F3516
+:U ..
+"136
+[; ;humidity_Temp.c: 136:                 char buffer_TX[] = "Se encendio la bombilla 3\r";
+-> 83 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 110 `c
+-> 99 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 105 `c
+-> 111 `c
+-> 32 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 51 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
+[e = _buffer_TX F3516 ]
+"137
+[; ;humidity_Temp.c: 137:                 for (int i = 0; i < 27; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 27 `i 399  ]
+[e $U 400  ]
+[e :U 399 ]
+{
+"139
+[; ;humidity_Temp.c: 139:                     while (!TXSTAbits.TRMT) {
+[e $U 402  ]
+[e :U 403 ]
+{
+"140
+[; ;humidity_Temp.c: 140:                     }
+}
+[e :U 402 ]
+"139
+[; ;humidity_Temp.c: 139:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 403  ]
+[e :U 404 ]
+"142
+[; ;humidity_Temp.c: 142:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"143
+[; ;humidity_Temp.c: 143:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 27 `i 399  ]
+[e :U 400 ]
+}
+"145
+[; ;humidity_Temp.c: 145:                 T_Integral = T_Integral + 6;
+[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
+"146
+[; ;humidity_Temp.c: 146:                 acum = 18;
+[e = _acum -> 18 `i ]
+"147
+[; ;humidity_Temp.c: 147:             } else if (T_Integral < 30 && acum == 18) {
+}
+[e $U 405  ]
+[e :U 398 ]
+[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 18 `i 406  ]
+{
+"148
+[; ;humidity_Temp.c: 148:                 PORTAbits.RA3 = 1;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[v F3519 `uc ~T0 @X0 -> 27 `i s ]
+[i F3519
+:U ..
+"150
+[; ;humidity_Temp.c: 150:                 char buffer_TX[] = "Se encendio la bombilla 4\r";
+-> 83 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 110 `c
+-> 99 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 105 `c
+-> 111 `c
+-> 32 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 52 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
+[e = _buffer_TX F3519 ]
+"151
+[; ;humidity_Temp.c: 151:                 for (int i = 0; i < 27; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 27 `i 407  ]
+[e $U 408  ]
+[e :U 407 ]
+{
+"153
+[; ;humidity_Temp.c: 153:                     while (!TXSTAbits.TRMT) {
+[e $U 410  ]
+[e :U 411 ]
+{
+"154
+[; ;humidity_Temp.c: 154:                     }
+}
+[e :U 410 ]
+"153
+[; ;humidity_Temp.c: 153:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 411  ]
+[e :U 412 ]
+"156
+[; ;humidity_Temp.c: 156:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"157
+[; ;humidity_Temp.c: 157:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 27 `i 407  ]
+[e :U 408 ]
+}
+"159
+[; ;humidity_Temp.c: 159:                 T_Integral = T_Integral + 6;
+[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
+"160
+[; ;humidity_Temp.c: 160:                 acum = 24;
+[e = _acum -> 24 `i ]
+"161
+[; ;humidity_Temp.c: 161:             } else if (T_Integral < 30 && acum == 24) {
+}
+[e $U 413  ]
+[e :U 406 ]
+[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 24 `i 414  ]
+{
+"162
+[; ;humidity_Temp.c: 162:                 PORTAbits.RA4 = 1;
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[v F3522 `uc ~T0 @X0 -> 27 `i s ]
+[i F3522
+:U ..
+"164
+[; ;humidity_Temp.c: 164:                 char buffer_TX[] = "Se encendio la bombilla 5\r";
+-> 83 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 110 `c
+-> 99 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 105 `c
+-> 111 `c
+-> 32 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 53 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
+[e = _buffer_TX F3522 ]
+"165
+[; ;humidity_Temp.c: 165:                 for (int i = 0; i < 27; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 27 `i 415  ]
+[e $U 416  ]
+[e :U 415 ]
+{
+"167
+[; ;humidity_Temp.c: 167:                     while (!TXSTAbits.TRMT) {
+[e $U 418  ]
+[e :U 419 ]
+{
+"168
+[; ;humidity_Temp.c: 168:                     }
+}
+[e :U 418 ]
+"167
+[; ;humidity_Temp.c: 167:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 419  ]
+[e :U 420 ]
+"170
+[; ;humidity_Temp.c: 170:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"171
+[; ;humidity_Temp.c: 171:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 27 `i 415  ]
+[e :U 416 ]
+}
+"173
+[; ;humidity_Temp.c: 173:                 T_Integral = T_Integral + 6;
+[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
+"174
+[; ;humidity_Temp.c: 174:             }
+}
+[e $U 421  ]
+"175
+[; ;humidity_Temp.c: 175:             else if( T_Integral >35)
+[e :U 414 ]
+[e $ ! > -> _T_Integral `i -> 35 `i 422  ]
+"176
+[; ;humidity_Temp.c: 176:             {
+{
+"177
+[; ;humidity_Temp.c: 177:                 agr = 1;
+[e = _agr -> 1 `i ]
+[v F3525 `uc ~T0 @X0 -> 19 `i s ]
+[i F3525
+:U ..
+"178
+[; ;humidity_Temp.c: 178:                 char buffer_TX[] = "Temperatura Alta \r";
+-> 84 `c
+-> 101 `c
+-> 109 `c
+-> 112 `c
+-> 101 `c
+-> 114 `c
+-> 97 `c
+-> 116 `c
+-> 117 `c
+-> 114 `c
+-> 97 `c
+-> 32 `c
+-> 65 `c
+-> 108 `c
+-> 116 `c
+-> 97 `c
+-> 32 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 19 `i a ]
+[e = _buffer_TX F3525 ]
+"179
+[; ;humidity_Temp.c: 179:                 for (int i = 0; i < 19; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 19 `i 423  ]
+[e $U 424  ]
+[e :U 423 ]
+{
+"181
+[; ;humidity_Temp.c: 181:                     while (!TXSTAbits.TRMT) {
+[e $U 426  ]
+[e :U 427 ]
+{
+"182
+[; ;humidity_Temp.c: 182:                     }
+}
+[e :U 426 ]
+"181
+[; ;humidity_Temp.c: 181:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 427  ]
+[e :U 428 ]
+"184
+[; ;humidity_Temp.c: 184:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"185
+[; ;humidity_Temp.c: 185:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 19 `i 423  ]
+[e :U 424 ]
+}
+"186
+[; ;humidity_Temp.c: 186:                  MSdelay(100);
+[e ( _MSdelay (1 -> -> 100 `i `ui ]
+"187
+[; ;humidity_Temp.c: 187:             } else
+}
+[e $U 429  ]
+[e :U 422 ]
+"188
+[; ;humidity_Temp.c: 188:                 agr = 1;
+[e = _agr -> 1 `i ]
+[e :U 429 ]
+[e :U 421 ]
+[e :U 413 ]
+[e :U 405 ]
+[e :U 397 ]
+[e :U 389 ]
+"191
+[; ;humidity_Temp.c: 191:             sprintf(value, "%d", RH_Integral);
+[e ( _sprintf (1 , (. , &U _value :s 8C -> _RH_Integral `i ]
+"192
+[; ;humidity_Temp.c: 192:             LCD_String_xy(0, 0, value);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
+"193
+[; ;humidity_Temp.c: 193:             sprintf(value, ".%d ", RH_Decimal);
+[e ( _sprintf (1 , (. , &U _value :s 9C -> _RH_Decimal `i ]
+"194
+[; ;humidity_Temp.c: 194:             LCD_String(value);
+[e ( _LCD_String (1 -> &U _value `*Cuc ]
+"195
+[; ;humidity_Temp.c: 195:             LCD_Char('%');
+[e ( _LCD_Char (1 -> -> 37 `ui `uc ]
+"198
+[; ;humidity_Temp.c: 198:             sprintf(value, "%d", T_Integral);
+[e ( _sprintf (1 , (. , &U _value :s 10C -> _T_Integral `i ]
+"199
+[; ;humidity_Temp.c: 199:             LCD_String_xy(1, 0, value);
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
+"200
+[; ;humidity_Temp.c: 200:             sprintf(value, ".%d", T_Decimal);
+[e ( _sprintf (1 , (. , &U _value :s 11C -> _T_Decimal `i ]
+"201
+[; ;humidity_Temp.c: 201:             LCD_String(value);
+[e ( _LCD_String (1 -> &U _value `*Cuc ]
+"202
+[; ;humidity_Temp.c: 202:             LCD_Char(0xdf);
+[e ( _LCD_Char (1 -> -> 223 `i `uc ]
+"203
+[; ;humidity_Temp.c: 203:             LCD_Char('C');
+[e ( _LCD_Char (1 -> -> 67 `ui `uc ]
+"205
+[; ;humidity_Temp.c: 205:             sprintf(value, "%d  ", Checksum);
+[e ( _sprintf (1 , (. , &U _value :s 12C -> _Checksum `i ]
+"206
+[; ;humidity_Temp.c: 206:             LCD_String_xy(0, 8, "Humedad");
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 8 `i `uc :s 13C ]
+"207
+[; ;humidity_Temp.c: 207:             LCD_String_xy(1, 8, "Temp");
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 8 `i `uc :s 14C ]
+"209
+[; ;humidity_Temp.c: 209:             MSdelay(1000);
+[e ( _MSdelay (1 -> -> 1000 `i `ui ]
+"210
+[; ;humidity_Temp.c: 210:         }
+}
+[e :U 379 ]
+"103
+[; ;humidity_Temp.c: 103:         while (agr == 0) {
+[e $ == _agr -> 0 `i 380  ]
+[e :U 381 ]
+"211
+[; ;humidity_Temp.c: 211:         agr = 0;
 [e = _agr -> 0 `i ]
-"113
-[; ;humidity_Temp.c: 113:     MSdelay(500);
-[e ( _MSdelay (1 -> -> 500 `i `ui ]
-"114
-[; ;humidity_Temp.c: 114:     }
+"212
+[; ;humidity_Temp.c: 212:         acum=0;
+[e = _acum -> 0 `i ]
+"213
+[; ;humidity_Temp.c: 213:         offBombillas();
+[e ( _offBombillas ..  ]
+"214
+[; ;humidity_Temp.c: 214:         MSdelay(4000);
+[e ( _MSdelay (1 -> -> 4000 `i `ui ]
+"215
+[; ;humidity_Temp.c: 215:     }
 }
 [e :U 370 ]
 [e $U 371  ]
 [e :U 372 ]
-"116
-[; ;humidity_Temp.c: 116:      if (PORTBbits.RB4 == 1)
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 392  ]
-"117
-[; ;humidity_Temp.c: 117:     {
-{
-"118
-[; ;humidity_Temp.c: 118:         DHT11_Start();
-[e ( _DHT11_Start ..  ]
-"119
-[; ;humidity_Temp.c: 119:     DHT11_CheckResponse();
-[e ( _DHT11_CheckResponse ..  ]
-"122
-[; ;humidity_Temp.c: 122:     RH_Integral = DHT11_ReadData();
-[e = _RH_Integral ( _DHT11_ReadData ..  ]
-"123
-[; ;humidity_Temp.c: 123:     RH_Decimal = DHT11_ReadData();
-[e = _RH_Decimal ( _DHT11_ReadData ..  ]
-"124
-[; ;humidity_Temp.c: 124:     T_Integral = DHT11_ReadData();
-[e = _T_Integral ( _DHT11_ReadData ..  ]
-"125
-[; ;humidity_Temp.c: 125:     T_Decimal = DHT11_ReadData();
-[e = _T_Decimal ( _DHT11_ReadData ..  ]
-"126
-[; ;humidity_Temp.c: 126:     Checksum = DHT11_ReadData();
-[e = _Checksum ( _DHT11_ReadData ..  ]
-"128
-[; ;humidity_Temp.c: 128:     while ( agr == 0){
-[e $U 393  ]
-[e :U 394 ]
-{
-"129
-[; ;humidity_Temp.c: 129:         onLEDS(T_Integral);
-[e ( _onLEDS (1 _T_Integral ]
-"130
-[; ;humidity_Temp.c: 130:         valor2=T_Decimal;
-[e = _valor2 _T_Decimal ]
-"131
-[; ;humidity_Temp.c: 131:         if(T_Integral <30 && acum == 0 ){
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 0 `i 396  ]
-{
-"132
-[; ;humidity_Temp.c: 132:             PORTAbits.RA0 = 1;
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-"133
-[; ;humidity_Temp.c: 133:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"134
-[; ;humidity_Temp.c: 134:             acum = 6;
-[e = _acum -> 6 `i ]
-"135
-[; ;humidity_Temp.c: 135:         } else if (T_Integral <30 && acum == 6){
-}
-[e $U 397  ]
-[e :U 396 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 6 `i 398  ]
-{
-"136
-[; ;humidity_Temp.c: 136:             PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-"137
-[; ;humidity_Temp.c: 137:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"138
-[; ;humidity_Temp.c: 138:             acum = 12;
-[e = _acum -> 12 `i ]
-"139
-[; ;humidity_Temp.c: 139:         }else if (T_Integral <30 && acum == 12){
-}
-[e $U 399  ]
-[e :U 398 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 12 `i 400  ]
-{
-"140
-[; ;humidity_Temp.c: 140:             PORTAbits.RA2 = 1;
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-"141
-[; ;humidity_Temp.c: 141:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"142
-[; ;humidity_Temp.c: 142:             acum = 18;
-[e = _acum -> 18 `i ]
-"143
-[; ;humidity_Temp.c: 143:         }else if (T_Integral <30 && acum == 18){
-}
-[e $U 401  ]
-[e :U 400 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 18 `i 402  ]
-{
-"144
-[; ;humidity_Temp.c: 144:             PORTAbits.RA3 = 1;
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"145
-[; ;humidity_Temp.c: 145:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"146
-[; ;humidity_Temp.c: 146:             acum = 24;
-[e = _acum -> 24 `i ]
-"147
-[; ;humidity_Temp.c: 147:         }else if (T_Integral <30 && acum == 24){
-}
-[e $U 403  ]
-[e :U 402 ]
-[e $ ! && < -> _T_Integral `i -> 30 `i == _acum -> 24 `i 404  ]
-{
-"148
-[; ;humidity_Temp.c: 148:             PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-"149
-[; ;humidity_Temp.c: 149:             T_Integral = T_Integral + 6;
-[e = _T_Integral -> + -> _T_Integral `i -> 6 `i `uc ]
-"150
-[; ;humidity_Temp.c: 150:         } else
-}
-[e $U 405  ]
-[e :U 404 ]
-"151
-[; ;humidity_Temp.c: 151:             agr=1;
-[e = _agr -> 1 `i ]
-[e :U 405 ]
-[e :U 403 ]
-[e :U 401 ]
-[e :U 399 ]
-[e :U 397 ]
-"153
-[; ;humidity_Temp.c: 153:         sprintf(value,"%d",RH_Integral);
-[e ( _sprintf (1 , (. , &U _value :s 8C -> _RH_Integral `i ]
-"154
-[; ;humidity_Temp.c: 154:         LCD_String_xy(0,0,value);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
-"155
-[; ;humidity_Temp.c: 155:         sprintf(value,".%d ",RH_Decimal);
-[e ( _sprintf (1 , (. , &U _value :s 9C -> _RH_Decimal `i ]
-"156
-[; ;humidity_Temp.c: 156:         LCD_String(value);
-[e ( _LCD_String (1 -> &U _value `*Cuc ]
-"157
-[; ;humidity_Temp.c: 157:         LCD_Char('%');
-[e ( _LCD_Char (1 -> -> 37 `ui `uc ]
-"160
-[; ;humidity_Temp.c: 160:         sprintf(value,"%d",T_Integral);
-[e ( _sprintf (1 , (. , &U _value :s 10C -> _T_Integral `i ]
-"161
-[; ;humidity_Temp.c: 161:         LCD_String_xy(1,0,value);
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> &U _value `*Cuc ]
-"162
-[; ;humidity_Temp.c: 162:         sprintf(value,".%d",T_Decimal);
-[e ( _sprintf (1 , (. , &U _value :s 11C -> _T_Decimal `i ]
-"163
-[; ;humidity_Temp.c: 163:         LCD_String(value);
-[e ( _LCD_String (1 -> &U _value `*Cuc ]
-"164
-[; ;humidity_Temp.c: 164:         LCD_Char(0xdf);
-[e ( _LCD_Char (1 -> -> 223 `i `uc ]
-"165
-[; ;humidity_Temp.c: 165:         LCD_Char('C');
-[e ( _LCD_Char (1 -> -> 67 `ui `uc ]
-"167
-[; ;humidity_Temp.c: 167:         sprintf(value,"%d  ",Checksum);
-[e ( _sprintf (1 , (. , &U _value :s 12C -> _Checksum `i ]
-"168
-[; ;humidity_Temp.c: 168:         LCD_String_xy(0,8,"Humedad");
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 8 `i `uc :s 13C ]
-"169
-[; ;humidity_Temp.c: 169:         LCD_String_xy(1,8,"Temp");
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 8 `i `uc :s 14C ]
-"171
-[; ;humidity_Temp.c: 171:         MSdelay(500);
-[e ( _MSdelay (1 -> -> 500 `i `ui ]
-"172
-[; ;humidity_Temp.c: 172:     }
-}
-[e :U 393 ]
-"128
-[; ;humidity_Temp.c: 128:     while ( agr == 0){
-[e $ == _agr -> 0 `i 394  ]
-[e :U 395 ]
-"173
-[; ;humidity_Temp.c: 173:     MSdelay(500);
-[e ( _MSdelay (1 -> -> 500 `i `ui ]
-"174
-[; ;humidity_Temp.c: 174:     }
-}
-[e :U 392 ]
-"178
-[; ;humidity_Temp.c: 178: }
+"217
+[; ;humidity_Temp.c: 217: }
 [e :UE 369 ]
 }
-"187
-[; ;humidity_Temp.c: 187: char DHT11_ReadData()
+"219
+[; ;humidity_Temp.c: 219: char DHT11_ReadData() {
 [v _DHT11_ReadData `(uc ~T0 @X0 1 ef ]
-"188
-[; ;humidity_Temp.c: 188: {
 {
 [e :U _DHT11_ReadData ]
 [f ]
-"189
-[; ;humidity_Temp.c: 189:   char i,data = 0;
+"220
+[; ;humidity_Temp.c: 220:     char i, data = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [v _data `uc ~T0 @X0 1 a ]
 [e = _data -> -> 0 `i `uc ]
-"190
-[; ;humidity_Temp.c: 190:     for(i=0;i<8;i++)
+"221
+[; ;humidity_Temp.c: 221:     for (i = 0; i < 8; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 407  ]
-[e $U 408  ]
-[e :U 407 ]
-"191
-[; ;humidity_Temp.c: 191:     {
+[e $ < -> _i `i -> 8 `i 431  ]
+[e $U 432  ]
+[e :U 431 ]
 {
-"192
-[; ;humidity_Temp.c: 192:         while(!(PORTCbits.RC2 & 1));
-[e $U 410  ]
-[e :U 411 ]
-[e :U 410 ]
-[e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 411  ]
-[e :U 412 ]
-"193
-[; ;humidity_Temp.c: 193:         _delay((unsigned long)((30)*(8000000/4000000.0)));
+"222
+[; ;humidity_Temp.c: 222:         while (!(PORTCbits.RC2 & 1));
+[e $U 434  ]
+[e :U 435 ]
+[e :U 434 ]
+[e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 435  ]
+[e :U 436 ]
+"223
+[; ;humidity_Temp.c: 223:         _delay((unsigned long)((30)*(8000000L/4000000.0)));
 [e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"194
-[; ;humidity_Temp.c: 194:         if(PORTCbits.RC2 & 1)
-[e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 413  ]
-"195
-[; ;humidity_Temp.c: 195:           data = ((data<<1) | 1);
-[e = _data -> | << -> _data `i -> 1 `i -> 1 `i `uc ]
-[e $U 414  ]
-"196
-[; ;humidity_Temp.c: 196:         else
-[e :U 413 ]
-"197
-[; ;humidity_Temp.c: 197:           data = (data<<1);
-[e = _data -> << -> _data `i -> 1 `i `uc ]
-[e :U 414 ]
-"198
-[; ;humidity_Temp.c: 198:         while(PORTCbits.RC2 & 1);
-[e $U 415  ]
-[e :U 416 ]
-[e :U 415 ]
-[e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 416  ]
-[e :U 417 ]
-"200
-[; ;humidity_Temp.c: 200:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 407  ]
-[e :U 408 ]
-}
-"201
-[; ;humidity_Temp.c: 201:   return data;
-[e ) _data ]
-[e $UE 406  ]
-"202
-[; ;humidity_Temp.c: 202: }
-[e :UE 406 ]
-}
-"204
-[; ;humidity_Temp.c: 204: void DHT11_Start()
-[v _DHT11_Start `(v ~T0 @X0 1 ef ]
-"205
-[; ;humidity_Temp.c: 205: {
-{
-[e :U _DHT11_Start ]
-[f ]
-"206
-[; ;humidity_Temp.c: 206:     TRISCbits.RC2 = 0;
-[e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-"207
-[; ;humidity_Temp.c: 207:     LATC2 = 0;
-[e = _LATC2 -> -> 0 `i `b ]
-"208
-[; ;humidity_Temp.c: 208:     _delay((unsigned long)((18)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"209
-[; ;humidity_Temp.c: 209:     LATC2 = 1;
-[e = _LATC2 -> -> 1 `i `b ]
-"210
-[; ;humidity_Temp.c: 210:     _delay((unsigned long)((20)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"211
-[; ;humidity_Temp.c: 211:     TRISCbits.RC2 = 1;
-[e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
-"213
-[; ;humidity_Temp.c: 213: }
-[e :UE 418 ]
-}
-"215
-[; ;humidity_Temp.c: 215: void DHT11_CheckResponse()
-[v _DHT11_CheckResponse `(v ~T0 @X0 1 ef ]
-"216
-[; ;humidity_Temp.c: 216: {
-{
-[e :U _DHT11_CheckResponse ]
-[f ]
-"217
-[; ;humidity_Temp.c: 217:     while(PORTCbits.RC2 & 1);
-[e $U 420  ]
-[e :U 421 ]
-[e :U 420 ]
-[e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 421  ]
-[e :U 422 ]
-"218
-[; ;humidity_Temp.c: 218:     while(!(PORTCbits.RC2 & 1));
-[e $U 423  ]
-[e :U 424 ]
-[e :U 423 ]
-[e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 424  ]
-[e :U 425 ]
-"219
-[; ;humidity_Temp.c: 219:     while(PORTCbits.RC2 & 1);
-[e $U 426  ]
-[e :U 427 ]
-[e :U 426 ]
-[e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 427  ]
-[e :U 428 ]
-"220
-[; ;humidity_Temp.c: 220: }
-[e :UE 419 ]
-}
-"222
-[; ;humidity_Temp.c: 222: void onLEDS( char T_Integral)
-[v _onLEDS `(v ~T0 @X0 1 ef1`uc ]
-"223
-[; ;humidity_Temp.c: 223: {
-{
-[e :U _onLEDS ]
-"222
-[; ;humidity_Temp.c: 222: void onLEDS( char T_Integral)
-[v _T_Integral `uc ~T0 @X0 1 r1 ]
-"223
-[; ;humidity_Temp.c: 223: {
-[f ]
 "224
-[; ;humidity_Temp.c: 224:     int valor =T_Integral ;
-[v _valor `i ~T0 @X0 1 a ]
-[e = _valor -> _T_Integral `i ]
+[; ;humidity_Temp.c: 224:         if (PORTCbits.RC2 & 1)
+[e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 437  ]
 "225
-[; ;humidity_Temp.c: 225:     if(valor < 30)
-[e $ ! < _valor -> 30 `i 430  ]
+[; ;humidity_Temp.c: 225:             data = ((data << 1) | 1);
+[e = _data -> | << -> _data `i -> 1 `i -> 1 `i `uc ]
+[e $U 438  ]
 "226
-[; ;humidity_Temp.c: 226:     {
-{
+[; ;humidity_Temp.c: 226:         else
+[e :U 437 ]
 "227
-[; ;humidity_Temp.c: 227:         PORTCbits.RC5 = 1;
-[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+[; ;humidity_Temp.c: 227:             data = (data << 1);
+[e = _data -> << -> _data `i -> 1 `i `uc ]
+[e :U 438 ]
 "228
-[; ;humidity_Temp.c: 228:         PORTCbits.RC4 = 0;
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"229
-[; ;humidity_Temp.c: 229:         PORTCbits.RC6 = 0;
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;humidity_Temp.c: 228:         while (PORTCbits.RC2 & 1);
+[e $U 439  ]
+[e :U 440 ]
+[e :U 439 ]
+[e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 440  ]
+[e :U 441 ]
 "230
 [; ;humidity_Temp.c: 230:     }
 }
-[e $U 431  ]
-"231
-[; ;humidity_Temp.c: 231:     else if( valor >=30 && valor<=35) {
-[e :U 430 ]
-[e $ ! && >= _valor -> 30 `i <= _valor -> 35 `i 432  ]
-{
-"232
-[; ;humidity_Temp.c: 232:         PORTCbits.RC5 = 0;
-[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"233
-[; ;humidity_Temp.c: 233:         PORTCbits.RC4 = 1;
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"234
-[; ;humidity_Temp.c: 234:         PORTCbits.RC6 = 0;
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-"235
-[; ;humidity_Temp.c: 235:     }
-}
-[e $U 433  ]
-"236
-[; ;humidity_Temp.c: 236:     else {
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 431  ]
 [e :U 432 ]
-{
-"237
-[; ;humidity_Temp.c: 237:         PORTCbits.RC5 = 0;
-[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"238
-[; ;humidity_Temp.c: 238:         PORTCbits.RC4 = 0;
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"239
-[; ;humidity_Temp.c: 239:         PORTCbits.RC6 = 1;
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"240
-[; ;humidity_Temp.c: 240:     }
 }
-[e :U 433 ]
-[e :U 431 ]
+"231
+[; ;humidity_Temp.c: 231:     return data;
+[e ) _data ]
+[e $UE 430  ]
+"232
+[; ;humidity_Temp.c: 232: }
+[e :UE 430 ]
+}
+"234
+[; ;humidity_Temp.c: 234: void DHT11_Start() {
+[v _DHT11_Start `(v ~T0 @X0 1 ef ]
+{
+[e :U _DHT11_Start ]
+[f ]
+"235
+[; ;humidity_Temp.c: 235:     TRISCbits.RC2 = 0;
+[e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
+"236
+[; ;humidity_Temp.c: 236:     LATC2 = 0;
+[e = _LATC2 -> -> 0 `i `b ]
+"237
+[; ;humidity_Temp.c: 237:     _delay((unsigned long)((18)*(8000000L/4000.0)));
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"238
+[; ;humidity_Temp.c: 238:     LATC2 = 1;
+[e = _LATC2 -> -> 1 `i `b ]
+"239
+[; ;humidity_Temp.c: 239:     _delay((unsigned long)((20)*(8000000L/4000000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"240
+[; ;humidity_Temp.c: 240:     TRISCbits.RC2 = 1;
+[e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
 "242
 [; ;humidity_Temp.c: 242: }
-[e :UE 429 ]
+[e :UE 442 ]
+}
+"244
+[; ;humidity_Temp.c: 244: void DHT11_CheckResponse() {
+[v _DHT11_CheckResponse `(v ~T0 @X0 1 ef ]
+{
+[e :U _DHT11_CheckResponse ]
+[f ]
+"245
+[; ;humidity_Temp.c: 245:     while (PORTCbits.RC2 & 1);
+[e $U 444  ]
+[e :U 445 ]
+[e :U 444 ]
+[e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 445  ]
+[e :U 446 ]
+"246
+[; ;humidity_Temp.c: 246:     while (!(PORTCbits.RC2 & 1));
+[e $U 447  ]
+[e :U 448 ]
+[e :U 447 ]
+[e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 448  ]
+[e :U 449 ]
+"247
+[; ;humidity_Temp.c: 247:     while (PORTCbits.RC2 & 1);
+[e $U 450  ]
+[e :U 451 ]
+[e :U 450 ]
+[e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 451  ]
+[e :U 452 ]
+"248
+[; ;humidity_Temp.c: 248: }
+[e :UE 443 ]
+}
+"250
+[; ;humidity_Temp.c: 250: void onLEDS(char T_Integral) {
+[v _onLEDS `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _onLEDS ]
+[v _T_Integral `uc ~T0 @X0 1 r1 ]
+[f ]
+"251
+[; ;humidity_Temp.c: 251:     int valor = T_Integral;
+[v _valor `i ~T0 @X0 1 a ]
+[e = _valor -> _T_Integral `i ]
+"252
+[; ;humidity_Temp.c: 252:     if (valor < 30)
+[e $ ! < _valor -> 30 `i 454  ]
+"253
+[; ;humidity_Temp.c: 253:     {
+{
+"254
+[; ;humidity_Temp.c: 254:         PORTCbits.RC5 = 1;
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"255
+[; ;humidity_Temp.c: 255:         PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"256
+[; ;humidity_Temp.c: 256:         PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"257
+[; ;humidity_Temp.c: 257:     } else if (valor >= 30 && valor <= 35) {
+}
+[e $U 455  ]
+[e :U 454 ]
+[e $ ! && >= _valor -> 30 `i <= _valor -> 35 `i 456  ]
+{
+"258
+[; ;humidity_Temp.c: 258:         PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"259
+[; ;humidity_Temp.c: 259:         PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"260
+[; ;humidity_Temp.c: 260:         PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+[v F3536 `uc ~T0 @X0 -> 19 `i s ]
+[i F3536
+:U ..
+"261
+[; ;humidity_Temp.c: 261:         char buffer_TX[] = "Temperatura Ideal\r";
+-> 84 `c
+-> 101 `c
+-> 109 `c
+-> 112 `c
+-> 101 `c
+-> 114 `c
+-> 97 `c
+-> 116 `c
+-> 117 `c
+-> 114 `c
+-> 97 `c
+-> 32 `c
+-> 73 `c
+-> 100 `c
+-> 101 `c
+-> 97 `c
+-> 108 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 19 `i a ]
+[e = _buffer_TX F3536 ]
+"262
+[; ;humidity_Temp.c: 262:                 for (int i = 0; i < 19;i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 19 `i 457  ]
+[e $U 458  ]
+[e :U 457 ]
+{
+"264
+[; ;humidity_Temp.c: 264:                     while (!TXSTAbits.TRMT) {
+[e $U 460  ]
+[e :U 461 ]
+{
+"265
+[; ;humidity_Temp.c: 265:                     }
+}
+[e :U 460 ]
+"264
+[; ;humidity_Temp.c: 264:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 461  ]
+[e :U 462 ]
+"267
+[; ;humidity_Temp.c: 267:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"268
+[; ;humidity_Temp.c: 268:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 19 `i 457  ]
+[e :U 458 ]
+}
+"269
+[; ;humidity_Temp.c: 269:     } else {
+}
+[e $U 463  ]
+[e :U 456 ]
+{
+"270
+[; ;humidity_Temp.c: 270:         PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"271
+[; ;humidity_Temp.c: 271:         PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"272
+[; ;humidity_Temp.c: 272:         PORTAbits.RA5 = 1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"274
+[; ;humidity_Temp.c: 274:     }
+}
+[e :U 463 ]
+[e :U 455 ]
+"276
+[; ;humidity_Temp.c: 276: }
+[e :UE 453 ]
+}
+"278
+[; ;humidity_Temp.c: 278: void offBombillas(){
+[v _offBombillas `(v ~T0 @X0 1 ef ]
+{
+[e :U _offBombillas ]
+[f ]
+"279
+[; ;humidity_Temp.c: 279:         PORTAbits.RA0 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"280
+[; ;humidity_Temp.c: 280:         PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+"281
+[; ;humidity_Temp.c: 281:         PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+"282
+[; ;humidity_Temp.c: 282:         PORTAbits.RA3 = 0;
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+"283
+[; ;humidity_Temp.c: 283:         PORTAbits.RA4 = 0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[v F3540 `uc ~T0 @X0 -> 21 `i s ]
+[i F3540
+:U ..
+"284
+[; ;humidity_Temp.c: 284:         char buffer_TX[] = "Bombillas Apagadas \r";
+-> 66 `c
+-> 111 `c
+-> 109 `c
+-> 98 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 115 `c
+-> 32 `c
+-> 65 `c
+-> 112 `c
+-> 97 `c
+-> 103 `c
+-> 97 `c
+-> 100 `c
+-> 97 `c
+-> 115 `c
+-> 32 `c
+-> 13 `c
+-> 0 `c
+..
+]
+[v _buffer_TX `uc ~T0 @X0 -> 21 `i a ]
+[e = _buffer_TX F3540 ]
+"285
+[; ;humidity_Temp.c: 285:                 for (int i = 0; i < 19;i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 19 `i 465  ]
+[e $U 466  ]
+[e :U 465 ]
+{
+"287
+[; ;humidity_Temp.c: 287:                     while (!TXSTAbits.TRMT) {
+[e $U 468  ]
+[e :U 469 ]
+{
+"288
+[; ;humidity_Temp.c: 288:                     }
+}
+[e :U 468 ]
+"287
+[; ;humidity_Temp.c: 287:                     while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 469  ]
+[e :U 470 ]
+"290
+[; ;humidity_Temp.c: 290:                     TXREG = buffer_TX[i];
+[e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
+"291
+[; ;humidity_Temp.c: 291:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 19 `i 465  ]
+[e :U 466 ]
+}
+"292
+[; ;humidity_Temp.c: 292: }
+[e :UE 464 ]
 }
 [p f _sprintf 8388736 ]
 [a 7C 84 101 109 112 0 ]

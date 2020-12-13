@@ -51,16 +51,18 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"31 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
+"28 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
 [v _main main `(v  1 e 1 0 ]
-"187
+"219
 [v _DHT11_ReadData DHT11_ReadData `(uc  1 e 1 0 ]
-"204
+"234
 [v _DHT11_Start DHT11_Start `(v  1 e 1 0 ]
-"215
+"244
 [v _DHT11_CheckResponse DHT11_CheckResponse `(v  1 e 1 0 ]
-"222
+"250
 [v _onLEDS onLEDS `(v  1 e 1 0 ]
+"278
+[v _offBombillas offBombillas `(v  1 e 1 0 ]
 "9 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\LCD_16x2.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 "26
@@ -73,7 +75,7 @@
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
 "77
 [v _MSdelay MSdelay `(v  1 e 1 0 ]
-[s S93 . 1 `uc 1 RA0 1 0 :1:0 
+[s S25 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -82,7 +84,7 @@
 `uc 1 RA6 1 0 :1:6 
 ]
 "2353 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[s S101 . 1 `uc 1 AN0 1 0 :1:0 
+[s S33 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
@@ -90,43 +92,20 @@
 `uc 1 AN4 1 0 :1:5 
 `uc 1 OSC2 1 0 :1:6 
 ]
-[s S109 . 1 `uc 1 . 1 0 :2:0 
+[s S41 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S115 . 1 `uc 1 . 1 0 :5:0 
+[s S47 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S118 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S50 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S120 . 1 `S93 1 . 1 0 `S101 1 . 1 0 `S109 1 . 1 0 `S115 1 . 1 0 `S118 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES120  1 e 1 @3968 ]
-[s S25 . 1 `uc 1 RB0 1 0 :1:0 
-`uc 1 RB1 1 0 :1:1 
-`uc 1 RB2 1 0 :1:2 
-`uc 1 RB3 1 0 :1:3 
-`uc 1 RB4 1 0 :1:4 
-`uc 1 RB5 1 0 :1:5 
-`uc 1 RB6 1 0 :1:6 
-`uc 1 RB7 1 0 :1:7 
-]
-"2483
-[s S34 . 1 `uc 1 INT0 1 0 :1:0 
-`uc 1 INT1 1 0 :1:1 
-`uc 1 INT2 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 PGM 1 0 :1:5 
-`uc 1 PGC 1 0 :1:6 
-`uc 1 PGD 1 0 :1:7 
-]
-[s S42 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 CCP2_PA2 1 0 :1:3 
-]
-[u S45 . 1 `S25 1 . 1 0 `S34 1 . 1 0 `S42 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES45  1 e 1 @3969 ]
-[s S235 . 1 `uc 1 RC0 1 0 :1:0 
+[u S52 . 1 `S25 1 . 1 0 `S33 1 . 1 0 `S41 1 . 1 0 `S47 1 . 1 0 `S50 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES52  1 e 1 @3968 ]
+[s S327 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -136,36 +115,36 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "2605
-[s S244 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S336 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S251 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S343 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S258 . 1 `uc 1 . 1 0 :1:0 
+[s S350 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S262 . 1 `uc 1 . 1 0 :1:0 
+[s S354 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S265 . 1 `S235 1 . 1 0 `S244 1 . 1 0 `S251 1 . 1 0 `S258 1 . 1 0 `S262 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES265  1 e 1 @3970 ]
+[u S357 . 1 `S327 1 . 1 0 `S336 1 . 1 0 `S343 1 . 1 0 `S350 1 . 1 0 `S354 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES357  1 e 1 @3970 ]
 "3263
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "3427
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "3847
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S308 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S86 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -173,18 +152,44 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "3875
-[s S315 . 1 `uc 1 RC0 1 0 :1:0 
+[s S93 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S322 . 1 `S308 1 . 1 0 `S315 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES322  1 e 1 @3988 ]
+[u S100 . 1 `S86 1 . 1 0 `S93 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES100  1 e 1 @3988 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S154 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S216 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4977
+[s S225 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S228 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S231 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S234 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S237 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S239 . 1 `S216 1 . 1 0 `S225 1 . 1 0 `S228 1 . 1 0 `S231 1 . 1 0 `S234 1 . 1 0 `S237 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES239  1 e 1 @4011 ]
+[s S118 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -194,7 +199,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "5185
-[s S163 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S127 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -203,15 +208,40 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S172 . 1 `uc 1 . 1 0 :6:0 
+[s S136 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S175 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S139 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S177 . 1 `S154 1 . 1 0 `S163 1 . 1 0 `S172 1 . 1 0 `S175 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES177  1 e 1 @4012 ]
+[u S141 . 1 `S118 1 . 1 0 `S127 1 . 1 0 `S136 1 . 1 0 `S139 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES141  1 e 1 @4012 ]
 "5402
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"5426
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+[s S170 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 TXCKP 1 0 :1:4 
+`uc 1 RXDTP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"6098
+[s S179 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCMT 1 0 :1:6 
+]
+[s S184 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXCKP 1 0 :1:5 
+]
+[s S187 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S190 . 1 `S170 1 . 1 0 `S179 1 . 1 0 `S184 1 . 1 0 `S187 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES190  1 e 1 @4024 ]
 "6581
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "7986
@@ -230,37 +260,73 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"31 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
+"28 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
 [v _main main `(v  1 e 1 0 ]
 {
-"65
-[v main@i i `i  1 a 2 42 ]
-"63
-[v main@buffer_TX buffer_TX `[16]uc  1 a 16 10 ]
-"39
-[v main@value value `[10]uc  1 a 10 27 ]
-"34
-[v main@acum acum `i  1 a 2 45 ]
-"33
-[v main@agr agr `i  1 a 2 40 ]
-"37
-[v main@T_Integral T_Integral `uc  1 a 1 47 ]
-[v main@T_Decimal T_Decimal `uc  1 a 1 44 ]
-"38
-[v main@Checksum Checksum `uc  1 a 1 39 ]
-"37
-[v main@RH_Integral RH_Integral `uc  1 a 1 38 ]
-[v main@RH_Decimal RH_Decimal `uc  1 a 1 37 ]
-"62
-[v main@F3506 F3506 `[16]uc  1 s 16 F3506 ]
+"179
+[v main@i_479 i `i  1 a 2 218 ]
+"165
+[v main@i_476 i `i  1 a 2 216 ]
+"151
+[v main@i_473 i `i  1 a 2 214 ]
+"137
+[v main@i_470 i `i  1 a 2 212 ]
+"123
+[v main@i_467 i `i  1 a 2 210 ]
+"109
+[v main@i_464 i `i  1 a 2 208 ]
 "178
+[v main@buffer_TX_478 buffer_TX `[19]uc  1 a 19 171 ]
+"164
+[v main@buffer_TX_475 buffer_TX `[27]uc  1 a 27 144 ]
+"150
+[v main@buffer_TX_472 buffer_TX `[27]uc  1 a 27 117 ]
+"136
+[v main@buffer_TX_469 buffer_TX `[27]uc  1 a 27 90 ]
+"122
+[v main@buffer_TX_466 buffer_TX `[27]uc  1 a 27 63 ]
+"108
+[v main@buffer_TX_463 buffer_TX `[27]uc  1 a 27 36 ]
+"94
+[v main@i i `i  1 a 2 206 ]
+"93
+[v main@buffer_TX buffer_TX `[36]uc  1 a 36 0 ]
+"34
+[v main@value value `[10]uc  1 a 10 190 ]
+"30
+[v main@acum acum `i  1 a 2 220 ]
+"29
+[v main@agr agr `i  1 a 2 200 ]
+"32
+[v main@T_Integral T_Integral `uc  1 a 1 222 ]
+"33
+[v main@Checksum Checksum `uc  1 a 1 205 ]
+"32
+[v main@T_Decimal T_Decimal `uc  1 a 1 204 ]
+[v main@RH_Integral RH_Integral `uc  1 a 1 203 ]
+[v main@RH_Decimal RH_Decimal `uc  1 a 1 202 ]
+"91
+[v main@F3507 F3507 `[36]uc  1 s 36 F3507 ]
+"107
+[v main@F3510 F3510 `[27]uc  1 s 27 F3510 ]
+"120
+[v main@F3513 F3513 `[27]uc  1 s 27 F3513 ]
+"134
+[v main@F3516 F3516 `[27]uc  1 s 27 F3516 ]
+"148
+[v main@F3519 F3519 `[27]uc  1 s 27 F3519 ]
+"162
+[v main@F3522 F3522 `[27]uc  1 s 27 F3522 ]
+"177
+[v main@F3525 F3525 `[19]uc  1 s 19 F3525 ]
+"217
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S886 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S979 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S886  1 a 6 4 ]
+[v sprintf@f f `S979  1 a 6 4 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 2 ]
 "9
@@ -273,9 +339,9 @@
 {
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 85 ]
-[s S912 _IO_FILE 0 ]
+[s S1005 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S912  1 p 2 79 ]
+[v vfprintf@fp fp `*.39S1005  1 p 2 79 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 81 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 83 ]
 "1404
@@ -285,9 +351,9 @@
 {
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 71 ]
-[s S912 _IO_FILE 0 ]
+[s S1005 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S912  1 p 2 63 ]
+[v vfpfcnvrt@fp fp `*.39S1005  1 p 2 63 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
@@ -302,9 +368,9 @@
 [v dtoa@s s `i  1 a 2 51 ]
 [v dtoa@w w `i  1 a 2 49 ]
 [v dtoa@p p `i  1 a 2 47 ]
-[s S912 _IO_FILE 0 ]
+[s S1005 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S912  1 p 2 27 ]
+[v dtoa@fp fp `*.39S1005  1 p 2 27 ]
 [v dtoa@d d `o  1 p 8 29 ]
 "328
 } 0
@@ -314,9 +380,9 @@
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S912 _IO_FILE 0 ]
+[s S1005 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S912  1 p 2 16 ]
+[v pad@fp fp `*.39S1005  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -339,16 +405,16 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S886 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S886  1 p 2 11 ]
+[s S979 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S979  1 p 2 11 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S886 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S886  1 p 2 2 ]
+[s S979 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S979  1 p 2 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\putch.c
@@ -386,17 +452,34 @@
 [v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"222 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
+"250 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
 [v _onLEDS onLEDS `(v  1 e 1 0 ]
 {
 [v onLEDS@T_Integral T_Integral `uc  1 a 1 wreg ]
-"224
-[v onLEDS@valor valor `i  1 a 2 1 ]
-"222
+"262
+[v onLEDS@i i `i  1 a 2 22 ]
+"261
+[v onLEDS@buffer_TX buffer_TX `[19]uc  1 a 19 0 ]
+"251
+[v onLEDS@valor valor `i  1 a 2 20 ]
+"250
 [v onLEDS@T_Integral T_Integral `uc  1 a 1 wreg ]
-"224
-[v onLEDS@T_Integral T_Integral `uc  1 a 1 0 ]
-"242
+"260
+[v onLEDS@F3536 F3536 `[19]uc  1 s 19 F3536 ]
+"251
+[v onLEDS@T_Integral T_Integral `uc  1 a 1 19 ]
+"276
+} 0
+"278
+[v _offBombillas offBombillas `(v  1 e 1 0 ]
+{
+"285
+[v offBombillas@i i `i  1 a 2 21 ]
+"284
+[v offBombillas@buffer_TX buffer_TX `[21]uc  1 a 21 0 ]
+"283
+[v offBombillas@F3540 F3540 `[21]uc  1 s 21 F3540 ]
+"292
 } 0
 "58 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\LCD_16x2.c
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
@@ -450,21 +533,21 @@
 [v MSdelay@val val `ui  1 p 2 0 ]
 "82
 } 0
-"204 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
+"234 C:\Users\Mari\Documents\GitHub\arqu\Final\DHT11.X\humidity_Temp.c
 [v _DHT11_Start DHT11_Start `(v  1 e 1 0 ]
 {
-"213
+"242
 } 0
-"187
+"219
 [v _DHT11_ReadData DHT11_ReadData `(uc  1 e 1 0 ]
 {
-"189
+"220
 [v DHT11_ReadData@data data `uc  1 a 1 1 ]
 [v DHT11_ReadData@i i `uc  1 a 1 0 ]
-"202
+"232
 } 0
-"215
+"244
 [v _DHT11_CheckResponse DHT11_CheckResponse `(v  1 e 1 0 ]
 {
-"220
+"248
 } 0

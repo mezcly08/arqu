@@ -5467,8 +5467,7 @@ extern volatile __bit nW __attribute__((address(0x7E3A)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 7 "humidity_Temp.c" 2
-
+# 8 "humidity_Temp.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5629,8 +5628,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 8 "humidity_Temp.c" 2
-
+# 9 "humidity_Temp.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5769,8 +5767,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 9 "humidity_Temp.c" 2
-
+# 10 "humidity_Temp.c" 2
 # 1 "./Configuration_Header_File.h" 1
 # 15 "./Configuration_Header_File.h"
 #pragma config PLLDIV = 1
@@ -5833,8 +5830,7 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config EBTRB = OFF
-# 10 "humidity_Temp.c" 2
-
+# 11 "humidity_Temp.c" 2
 # 1 "./LCD_16x2_8-bit_Header_File.h" 1
 # 21 "./LCD_16x2_8-bit_Header_File.h"
 void LCD_Init();
@@ -5843,218 +5839,276 @@ void LCD_Char(char x);
 void LCD_String(const char *);
 void MSdelay(unsigned int );
 void LCD_String_xy(char ,char ,const char*);
-# 11 "humidity_Temp.c" 2
-# 23 "humidity_Temp.c"
+# 12 "humidity_Temp.c" 2
+# 22 "humidity_Temp.c"
 void DHT11_Start();
 void DHT11_CheckResponse();
 char DHT11_ReadData();
 void onLEDS(char);
+void offBombillas();
 
-
-
-
-void main()
-{
-    int agr= 0;
-    int acum=0;
+void main() {
+    int agr = 0;
+    int acum = 0;
     TRISA = 0;
-    PORTBbits.RB4=0;
-    char RH_Decimal,RH_Integral,T_Decimal,T_Integral, valor2;
+    char RH_Decimal, RH_Integral, T_Decimal, T_Integral, valor2;
     char Checksum;
     char value[10];
+
+
+    PORTAbits.RA0 = 0;
+    PORTAbits.RA1 = 0;
+    PORTAbits.RA2 = 0;
+    PORTAbits.RA3 = 0;
+    PORTAbits.RA4 = 0;
+
+
+
+    TRISCbits.RC6 = 0;
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 0;
+    BAUDCONbits.BRG16 = 0;
+    RCSTAbits.SPEN = 1;
+    SPBRG = (unsigned char) (((8000000L / 9600) / 64) - 1);
+
+
     OSCCON = 0x72;
 
 
     LCD_Init();
-    ADCON1=0x0F;
-
-    while(1)
-{
-    DHT11_Start();
-    DHT11_CheckResponse();
+    ADCON1 = 0x0F;
 
 
-    RH_Integral = DHT11_ReadData();
-    RH_Decimal = DHT11_ReadData();
-    T_Integral = DHT11_ReadData();
-    T_Decimal = DHT11_ReadData();
-    Checksum = DHT11_ReadData();
 
-    while ( agr == 0){
-        onLEDS(T_Integral);
-        valor2=T_Decimal;
-        if(T_Integral <30 && acum == 0 ){
-            PORTAbits.RA0 = 1;
-            char buffer_TX[] = "LED 1 ENCENDIDO";
-
-             for (int i = 0; i < 17; i++) {
-
-            while (!TXSTAbits.TRMT) {
-            }
-
-            TXREG = buffer_TX[i];
-        }
-            T_Integral = T_Integral + 6;
-            acum = 6;
-        } else if (T_Integral <30 && acum == 6){
-            PORTAbits.RA1 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 12;
-        }else if (T_Integral <30 && acum == 12){
-            PORTAbits.RA2 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 18;
-        }else if (T_Integral <30 && acum == 18){
-            PORTAbits.RA3 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 24;
-        }else if (T_Integral <30 && acum == 24){
-            PORTAbits.RA4 = 1;
-            T_Integral = T_Integral + 6;
-        } else
-            agr=1;
-
-        sprintf(value,"%d",RH_Integral);
-        LCD_String_xy(0,0,value);
-        sprintf(value,".%d ",RH_Decimal);
-        LCD_String(value);
-        LCD_Char('%');
-
-
-        sprintf(value,"%d",T_Integral);
-        LCD_String_xy(1,0,value);
-        sprintf(value,".%d",T_Decimal);
-        LCD_String(value);
-        LCD_Char(0xdf);
-        LCD_Char('C');
-
-        sprintf(value,"%d  ",Checksum);
-        LCD_String_xy(0,8,"Humedad");
-        LCD_String_xy(1,8,"Temp");
-
-        MSdelay(2000);
-    }
-    agr=0;
-    MSdelay(500);
-    }
-
-     if (PORTBbits.RB4 == 1)
-    {
+    while (1) {
         DHT11_Start();
-    DHT11_CheckResponse();
+        DHT11_CheckResponse();
 
 
-    RH_Integral = DHT11_ReadData();
-    RH_Decimal = DHT11_ReadData();
-    T_Integral = DHT11_ReadData();
-    T_Decimal = DHT11_ReadData();
-    Checksum = DHT11_ReadData();
+        RH_Integral = DHT11_ReadData();
+        RH_Decimal = DHT11_ReadData();
+        T_Integral = DHT11_ReadData();
+        T_Decimal = DHT11_ReadData();
+        Checksum = DHT11_ReadData();
 
-    while ( agr == 0){
-        onLEDS(T_Integral);
-        valor2=T_Decimal;
-        if(T_Integral <30 && acum == 0 ){
-            PORTAbits.RA0 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 6;
-        } else if (T_Integral <30 && acum == 6){
-            PORTAbits.RA1 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 12;
-        }else if (T_Integral <30 && acum == 12){
-            PORTAbits.RA2 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 18;
-        }else if (T_Integral <30 && acum == 18){
-            PORTAbits.RA3 = 1;
-            T_Integral = T_Integral + 6;
-            acum = 24;
-        }else if (T_Integral <30 && acum == 24){
-            PORTAbits.RA4 = 1;
-            T_Integral = T_Integral + 6;
-        } else
-            agr=1;
 
-        sprintf(value,"%d",RH_Integral);
-        LCD_String_xy(0,0,value);
-        sprintf(value,".%d ",RH_Decimal);
+        sprintf(value, "%d", RH_Integral);
+        LCD_String_xy(0, 0, value);
+        sprintf(value, ".%d ", RH_Decimal);
         LCD_String(value);
         LCD_Char('%');
 
 
-        sprintf(value,"%d",T_Integral);
-        LCD_String_xy(1,0,value);
-        sprintf(value,".%d",T_Decimal);
+        sprintf(value, "%d", T_Integral);
+        LCD_String_xy(1, 0, value);
+        sprintf(value, ".%d", T_Decimal);
         LCD_String(value);
         LCD_Char(0xdf);
         LCD_Char('C');
 
-        sprintf(value,"%d  ",Checksum);
-        LCD_String_xy(0,8,"Humedad");
-        LCD_String_xy(1,8,"Temp");
+        sprintf(value, "%d  ", Checksum);
+        LCD_String_xy(0, 8, "Humedad");
+        LCD_String_xy(1, 8, "Temp");
 
-        MSdelay(500);
+        char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
+        for (int i = 0; i < 36; i++) {
+
+        while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+
+        MSdelay(1000);
+        while (agr == 0) {
+
+            onLEDS(T_Integral);
+            if (T_Integral < 30 && acum == 0) {
+                PORTAbits.RA0 = 1;
+                char buffer_TX[] = "Se encendio la bombilla 1\r";
+                for (int i = 0; i < 27; i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+                T_Integral = T_Integral + 6;
+                acum = 6;
+
+            } else if (T_Integral < 30 && acum == 6) {
+                PORTAbits.RA1 = 1;
+
+                char buffer_TX[] = "Se encendio la bombilla 2\r";
+                for (int i = 0; i < 27; i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+
+                T_Integral = T_Integral + 6;
+                acum = 12;
+            } else if (T_Integral < 30 && acum == 12) {
+                PORTAbits.RA2 = 1;
+
+                char buffer_TX[] = "Se encendio la bombilla 3\r";
+                for (int i = 0; i < 27; i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+
+                T_Integral = T_Integral + 6;
+                acum = 18;
+            } else if (T_Integral < 30 && acum == 18) {
+                PORTAbits.RA3 = 1;
+
+                char buffer_TX[] = "Se encendio la bombilla 4\r";
+                for (int i = 0; i < 27; i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+
+                T_Integral = T_Integral + 6;
+                acum = 24;
+            } else if (T_Integral < 30 && acum == 24) {
+                PORTAbits.RA4 = 1;
+
+                char buffer_TX[] = "Se encendio la bombilla 5\r";
+                for (int i = 0; i < 27; i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+
+                T_Integral = T_Integral + 6;
+            }
+            else if( T_Integral >35)
+            {
+                agr = 1;
+                char buffer_TX[] = "Temperatura Alta \r";
+                for (int i = 0; i < 19; i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+                 MSdelay(100);
+            } else
+                agr = 1;
+
+
+            sprintf(value, "%d", RH_Integral);
+            LCD_String_xy(0, 0, value);
+            sprintf(value, ".%d ", RH_Decimal);
+            LCD_String(value);
+            LCD_Char('%');
+
+
+            sprintf(value, "%d", T_Integral);
+            LCD_String_xy(1, 0, value);
+            sprintf(value, ".%d", T_Decimal);
+            LCD_String(value);
+            LCD_Char(0xdf);
+            LCD_Char('C');
+
+            sprintf(value, "%d  ", Checksum);
+            LCD_String_xy(0, 8, "Humedad");
+            LCD_String_xy(1, 8, "Temp");
+
+            MSdelay(1000);
+        }
+        agr = 0;
+        acum=0;
+        offBombillas();
+        MSdelay(4000);
     }
-    MSdelay(500);
-    }
-
-
 
 }
-# 187 "humidity_Temp.c"
-char DHT11_ReadData()
-{
-  char i,data = 0;
-    for(i=0;i<8;i++)
-    {
-        while(!(PORTCbits.RC2 & 1));
-        _delay((unsigned long)((30)*(8000000/4000000.0)));
-        if(PORTCbits.RC2 & 1)
-          data = ((data<<1) | 1);
+
+char DHT11_ReadData() {
+    char i, data = 0;
+    for (i = 0; i < 8; i++) {
+        while (!(PORTCbits.RC2 & 1));
+        _delay((unsigned long)((30)*(8000000L/4000000.0)));
+        if (PORTCbits.RC2 & 1)
+            data = ((data << 1) | 1);
         else
-          data = (data<<1);
-        while(PORTCbits.RC2 & 1);
+            data = (data << 1);
+        while (PORTCbits.RC2 & 1);
 
     }
-  return data;
+    return data;
 }
 
-void DHT11_Start()
-{
+void DHT11_Start() {
     TRISCbits.RC2 = 0;
     LATC2 = 0;
-    _delay((unsigned long)((18)*(8000000/4000.0)));
+    _delay((unsigned long)((18)*(8000000L/4000.0)));
     LATC2 = 1;
-    _delay((unsigned long)((20)*(8000000/4000000.0)));
+    _delay((unsigned long)((20)*(8000000L/4000000.0)));
     TRISCbits.RC2 = 1;
 
 }
 
-void DHT11_CheckResponse()
-{
-    while(PORTCbits.RC2 & 1);
-    while(!(PORTCbits.RC2 & 1));
-    while(PORTCbits.RC2 & 1);
+void DHT11_CheckResponse() {
+    while (PORTCbits.RC2 & 1);
+    while (!(PORTCbits.RC2 & 1));
+    while (PORTCbits.RC2 & 1);
 }
 
-void onLEDS( char T_Integral)
-{
-    int valor =T_Integral ;
-    if(valor < 30)
+void onLEDS(char T_Integral) {
+    int valor = T_Integral;
+    if (valor < 30)
     {
         PORTCbits.RC5 = 1;
         PORTCbits.RC4 = 0;
-        PORTCbits.RC6 = 0;
-    }
-    else if( valor >=30 && valor<=35) {
+        PORTAbits.RA5 = 0;
+    } else if (valor >= 30 && valor <= 35) {
         PORTCbits.RC5 = 0;
         PORTCbits.RC4 = 1;
-        PORTCbits.RC6 = 0;
-    }
-    else {
+        PORTAbits.RA5 = 0;
+        char buffer_TX[] = "Temperatura Ideal\r";
+                for (int i = 0; i < 19;i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
+    } else {
         PORTCbits.RC5 = 0;
         PORTCbits.RC4 = 0;
-        PORTCbits.RC6 = 1;
+        PORTAbits.RA5 = 1;
+
     }
 
+}
+
+void offBombillas(){
+        PORTAbits.RA0 = 0;
+        PORTAbits.RA1 = 0;
+        PORTAbits.RA2 = 0;
+        PORTAbits.RA3 = 0;
+        PORTAbits.RA4 = 0;
+        char buffer_TX[] = "Bombillas Apagadas \r";
+                for (int i = 0; i < 19;i++) {
+
+                    while (!TXSTAbits.TRMT) {
+                    }
+
+                    TXREG = buffer_TX[i];
+                }
 }
