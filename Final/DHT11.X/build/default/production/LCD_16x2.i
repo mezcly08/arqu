@@ -7,13 +7,9 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "LCD_16x2.c" 2
-
-
-
-
-
+# 34 "LCD_16x2.c"
 # 1 "./LCD_16x2_8-bit_Header_File.h" 1
-# 12 "./LCD_16x2_8-bit_Header_File.h"
+# 39 "./LCD_16x2_8-bit_Header_File.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5630,7 +5626,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 13 "./LCD_16x2_8-bit_Header_File.h" 2
+# 40 "./LCD_16x2_8-bit_Header_File.h" 2
 
 
 
@@ -5645,7 +5641,7 @@ void LCD_Char(char x);
 void LCD_String(const char *);
 void MSdelay(unsigned int );
 void LCD_String_xy(char ,char ,const char*);
-# 7 "LCD_16x2.c" 2
+# 35 "LCD_16x2.c" 2
 
 
 void LCD_Init()

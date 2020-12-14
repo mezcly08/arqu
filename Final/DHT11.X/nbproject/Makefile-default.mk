@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=humidity_Temp.c LCD_16x2.c
+SOURCEFILES_QUOTED_IF_SPACED=LCD_16x2.c Controlador.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/humidity_Temp.p1 ${OBJECTDIR}/LCD_16x2.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/humidity_Temp.p1.d ${OBJECTDIR}/LCD_16x2.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LCD_16x2.p1 ${OBJECTDIR}/Controlador.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/LCD_16x2.p1.d ${OBJECTDIR}/Controlador.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/humidity_Temp.p1 ${OBJECTDIR}/LCD_16x2.p1
+OBJECTFILES=${OBJECTDIR}/LCD_16x2.p1 ${OBJECTDIR}/Controlador.p1
 
 # Source Files
-SOURCEFILES=humidity_Temp.c LCD_16x2.c
+SOURCEFILES=LCD_16x2.c Controlador.c
 
 
 
@@ -94,14 +94,6 @@ MP_PROCESSOR_OPTION=18F4550
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/humidity_Temp.p1: humidity_Temp.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/humidity_Temp.p1.d 
-	@${RM} ${OBJECTDIR}/humidity_Temp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/humidity_Temp.p1 humidity_Temp.c 
-	@-${MV} ${OBJECTDIR}/humidity_Temp.d ${OBJECTDIR}/humidity_Temp.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/humidity_Temp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/LCD_16x2.p1: LCD_16x2.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/LCD_16x2.p1.d 
@@ -110,15 +102,15 @@ ${OBJECTDIR}/LCD_16x2.p1: LCD_16x2.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/LCD_16x2.d ${OBJECTDIR}/LCD_16x2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/LCD_16x2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-else
-${OBJECTDIR}/humidity_Temp.p1: humidity_Temp.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/Controlador.p1: Controlador.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/humidity_Temp.p1.d 
-	@${RM} ${OBJECTDIR}/humidity_Temp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/humidity_Temp.p1 humidity_Temp.c 
-	@-${MV} ${OBJECTDIR}/humidity_Temp.d ${OBJECTDIR}/humidity_Temp.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/humidity_Temp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/Controlador.p1.d 
+	@${RM} ${OBJECTDIR}/Controlador.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Controlador.p1 Controlador.c 
+	@-${MV} ${OBJECTDIR}/Controlador.d ${OBJECTDIR}/Controlador.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Controlador.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+else
 ${OBJECTDIR}/LCD_16x2.p1: LCD_16x2.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/LCD_16x2.p1.d 
@@ -126,6 +118,14 @@ ${OBJECTDIR}/LCD_16x2.p1: LCD_16x2.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/LCD_16x2.p1 LCD_16x2.c 
 	@-${MV} ${OBJECTDIR}/LCD_16x2.d ${OBJECTDIR}/LCD_16x2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/LCD_16x2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Controlador.p1: Controlador.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Controlador.p1.d 
+	@${RM} ${OBJECTDIR}/Controlador.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Controlador.p1 Controlador.c 
+	@-${MV} ${OBJECTDIR}/Controlador.d ${OBJECTDIR}/Controlador.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Controlador.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

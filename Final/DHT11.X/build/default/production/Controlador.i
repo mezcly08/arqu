@@ -1,4 +1,4 @@
-# 1 "humidity_Temp.c"
+# 1 "Controlador.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "humidity_Temp.c" 2
-
-
-
-
-
-
+# 1 "Controlador.c" 2
+# 35 "Controlador.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4550.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4550.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\__at.h" 1 3
@@ -5467,7 +5462,7 @@ extern volatile __bit nW __attribute__((address(0x7E3A)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 8 "humidity_Temp.c" 2
+# 36 "Controlador.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5628,7 +5623,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 9 "humidity_Temp.c" 2
+# 37 "Controlador.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5767,9 +5762,9 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 10 "humidity_Temp.c" 2
+# 38 "Controlador.c" 2
 # 1 "./Configuration_Header_File.h" 1
-# 15 "./Configuration_Header_File.h"
+# 43 "./Configuration_Header_File.h"
 #pragma config PLLDIV = 1
 #pragma config CPUDIV = OSC1_PLL2
 #pragma config USBDIV = 1
@@ -5830,30 +5825,198 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config EBTRB = OFF
-# 11 "humidity_Temp.c" 2
+# 39 "Controlador.c" 2
 # 1 "./LCD_16x2_8-bit_Header_File.h" 1
-# 21 "./LCD_16x2_8-bit_Header_File.h"
+# 48 "./LCD_16x2_8-bit_Header_File.h"
 void LCD_Init();
 void LCD_Command(char );
 void LCD_Char(char x);
 void LCD_String(const char *);
 void MSdelay(unsigned int );
 void LCD_String_xy(char ,char ,const char*);
-# 12 "humidity_Temp.c" 2
-# 22 "humidity_Temp.c"
+# 40 "Controlador.c" 2
+# 1 "./I2C_Master_File.h" 1
+# 46 "./I2C_Master_File.h"
+void I2C_Ready();
+void I2C_Init();
+char I2C_Start(char);
+void I2C_Start_Wait(char);
+
+char I2C_Repeated_Start(char);
+char I2C_Stop();
+char I2C_Write(unsigned char);
+void I2C_Ack();
+void I2C_Nack();
+char I2C_Read(char flag);
+
+
+char I2C_Read(char flag)
+
+{
+        char buffer;
+        RCEN = 1;
+        while(!SSPSTATbits.BF);
+
+        buffer = SSPBUF;
+
+        if(flag==0)
+            I2C_Ack();
+        else
+            I2C_Nack();
+        I2C_Ready();
+        return(buffer);
+}
+
+void I2C_Init()
+{
+    TRISB0=1;
+ TRISB1=1;
+ SSPSTAT=80;
+    SSPCON1=0x28;
+
+ SSPCON2=0;
+    SSPADD=((8000000/(4*100000))-1);
+    SSPIE=1;
+    SSPIF=0;
+}
+
+
+void I2C_Ready()
+{
+    while(!SSPIF);
+    SSPIF=0;
+}
+
+void I2C_Start_Wait(char slave_write_address)
+{
+  while(1)
+  {
+    SSPCON2bits.SEN=1;
+    while(SSPCON2bits.SEN);
+    SSPIF=0;
+ if(!SSPSTATbits.S)
+        continue;
+    I2C_Write(slave_write_address);
+    if(ACKSTAT)
+    {
+        I2C_Stop();
+        continue;
+    }
+    break;
+  }
+}
+
+char I2C_Start(char slave_write_address)
+{
+    SSPCON2bits.SEN=1;
+    while(SSPCON2bits.SEN);
+ SSPIF=0;
+    if(!SSPSTATbits.S)
+    return 0;
+    return (I2C_Write(slave_write_address));
+
+}
+
+char I2C_Repeated_Start(char slave_read_address)
+{
+    RSEN = 1;
+    while(RSEN);
+    SSPIF = 0;
+ if(!SSPSTATbits.S)
+    return 0;
+    I2C_Write(slave_read_address);
+    if (ACKSTAT)
+     return 1;
+    else
+     return 2;
+}
+
+char I2C_Stop()
+{
+    PEN = 1;
+    while(PEN);
+    if(!SSPSTATbits.P);
+    return 0;
+}
+
+char I2C_Write(unsigned char data)
+{
+      SSPBUF = data;
+      I2C_Ready();
+      if (ACKSTAT)
+        return 1;
+      else
+        return 2;
+}
+
+void I2C_Ack()
+{
+    ACKDT=0;
+ ACKEN=1;
+    while(ACKEN);
+}
+
+void I2C_Nack()
+{
+    ACKDT=1;
+ ACKEN=1;
+    while(ACKEN);
+}
+# 41 "Controlador.c" 2
+# 55 "Controlador.c"
 void DHT11_Start();
 void DHT11_CheckResponse();
 char DHT11_ReadData();
+
+
 void onLEDS(char);
 void offBombillas();
+void imprimirTemHum();
+void encenderBombillas();
+void mostrarFechaHora();
+void verificarHora();
+void offLEDS();
+
+
+char RH_Decimal, RH_Integral, T_Decimal, T_Integral, valor2;
+char value[10];
+int agr = 0;
+int acum = 0;
+
+int sec, min, hour;
+int Day, Date, Month, Year;
+char secs[10], mins[10], hours[10];
+char date[10], month[10], year[10];
+char Clock_type = 0x06;
+char AM_PM = 0x05;
+char days[7] = {'S', 'M', 'T', 'W', 't', 'F', 's'};
+
+
+
+void RTC_Read_Clock(char read_clock_address) {
+    I2C_Start(0xD0);
+    I2C_Write(read_clock_address);
+    I2C_Repeated_Start(0xD1);
+    sec = I2C_Read(0);
+    min = I2C_Read(0);
+    hour = I2C_Read(1);
+
+}
+
+void RTC_Read_Calendar(char read_calendar_address) {
+    I2C_Start(0xD0);
+    I2C_Write(read_calendar_address);
+    I2C_Repeated_Start(0xD1);
+    Day = I2C_Read(0);
+    Date = I2C_Read(0);
+    Month = I2C_Read(0);
+    Year = I2C_Read(1);
+    I2C_Stop();
+}
+
 
 void main() {
-    int agr = 0;
-    int acum = 0;
     TRISA = 0;
-    char RH_Decimal, RH_Integral, T_Decimal, T_Integral, valor2;
-    char Checksum;
-    char value[10];
 
 
     PORTAbits.RA0 = 0;
@@ -5861,7 +6024,6 @@ void main() {
     PORTAbits.RA2 = 0;
     PORTAbits.RA3 = 0;
     PORTAbits.RA4 = 0;
-
 
 
     TRISCbits.RC6 = 0;
@@ -5873,169 +6035,71 @@ void main() {
     RCSTAbits.SPEN = 1;
     SPBRG = (unsigned char) (((8000000L / 9600) / 64) - 1);
 
-
     OSCCON = 0x72;
 
 
-    LCD_Init();
+
     ADCON1 = 0x0F;
 
 
-
     while (1) {
-        DHT11_Start();
-        DHT11_CheckResponse();
+        LCD_Init();
+        I2C_Init();
+        MSdelay(10);
+
+        verificarHora();
+        if (hour >= 18 || hour <= 6) {
+            DHT11_Start();
+            DHT11_CheckResponse();
 
 
-        RH_Integral = DHT11_ReadData();
-        RH_Decimal = DHT11_ReadData();
-        T_Integral = DHT11_ReadData();
-        T_Decimal = DHT11_ReadData();
-        Checksum = DHT11_ReadData();
+            RH_Integral = DHT11_ReadData();
+            RH_Decimal = DHT11_ReadData();
+            T_Integral = DHT11_ReadData();
+            T_Decimal = DHT11_ReadData();
 
+            imprimirTemHum();
 
-        sprintf(value, "%d", RH_Integral);
-        LCD_String_xy(0, 0, value);
-        sprintf(value, ".%d ", RH_Decimal);
-        LCD_String(value);
-        LCD_Char('%');
+            char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
+            for (int i = 0; i < 35; i++) {
 
-
-        sprintf(value, "%d", T_Integral);
-        LCD_String_xy(1, 0, value);
-        sprintf(value, ".%d", T_Decimal);
-        LCD_String(value);
-        LCD_Char(0xdf);
-        LCD_Char('C');
-
-        sprintf(value, "%d  ", Checksum);
-        LCD_String_xy(0, 8, "Humedad");
-        LCD_String_xy(1, 8, "Temp");
-
-        char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
-        for (int i = 0; i < 36; i++) {
-
-        while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
+                while (!TXSTAbits.TRMT) {
                 }
 
-        MSdelay(1000);
-        while (agr == 0) {
-
-            onLEDS(T_Integral);
-            if (T_Integral < 30 && acum == 0) {
-                PORTAbits.RA0 = 1;
-                char buffer_TX[] = "Se encendio la bombilla 1\r";
-                for (int i = 0; i < 27; i++) {
-
-                    while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
-                }
-                T_Integral = T_Integral + 6;
-                acum = 6;
-
-            } else if (T_Integral < 30 && acum == 6) {
-                PORTAbits.RA1 = 1;
-
-                char buffer_TX[] = "Se encendio la bombilla 2\r";
-                for (int i = 0; i < 27; i++) {
-
-                    while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
-                }
-
-                T_Integral = T_Integral + 6;
-                acum = 12;
-            } else if (T_Integral < 30 && acum == 12) {
-                PORTAbits.RA2 = 1;
-
-                char buffer_TX[] = "Se encendio la bombilla 3\r";
-                for (int i = 0; i < 27; i++) {
-
-                    while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
-                }
-
-                T_Integral = T_Integral + 6;
-                acum = 18;
-            } else if (T_Integral < 30 && acum == 18) {
-                PORTAbits.RA3 = 1;
-
-                char buffer_TX[] = "Se encendio la bombilla 4\r";
-                for (int i = 0; i < 27; i++) {
-
-                    while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
-                }
-
-                T_Integral = T_Integral + 6;
-                acum = 24;
-            } else if (T_Integral < 30 && acum == 24) {
-                PORTAbits.RA4 = 1;
-
-                char buffer_TX[] = "Se encendio la bombilla 5\r";
-                for (int i = 0; i < 27; i++) {
-
-                    while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
-                }
-
-                T_Integral = T_Integral + 6;
+                TXREG = buffer_TX[i];
             }
-            else if( T_Integral >35)
-            {
-                agr = 1;
-                char buffer_TX[] = "Temperatura Alta \r";
-                for (int i = 0; i < 19; i++) {
-
-                    while (!TXSTAbits.TRMT) {
-                    }
-
-                    TXREG = buffer_TX[i];
-                }
-                 MSdelay(100);
-            } else
-                agr = 1;
-
-
-            sprintf(value, "%d", RH_Integral);
-            LCD_String_xy(0, 0, value);
-            sprintf(value, ".%d ", RH_Decimal);
-            LCD_String(value);
-            LCD_Char('%');
-
-
-            sprintf(value, "%d", T_Integral);
-            LCD_String_xy(1, 0, value);
-            sprintf(value, ".%d", T_Decimal);
-            LCD_String(value);
-            LCD_Char(0xdf);
-            LCD_Char('C');
-
-            sprintf(value, "%d  ", Checksum);
-            LCD_String_xy(0, 8, "Humedad");
-            LCD_String_xy(1, 8, "Temp");
-
             MSdelay(1000);
-        }
-        agr = 0;
-        acum=0;
-        offBombillas();
-        MSdelay(4000);
-    }
 
+            while (agr == 0) {
+
+                encenderBombillas();
+                imprimirTemHum();
+
+                MSdelay(1000);
+            }
+            mostrarFechaHora();
+            MSdelay(1000);
+            agr = 0;
+            acum = 0;
+            offBombillas();
+            offLEDS();
+            MSdelay(2000);
+
+        } else {
+            LCD_String_xy(0, 0, "ERROR HORA ");
+            LCD_String_xy(1, 0, "NO NOCTURNA");
+            char buffer_TX[] = "La hora nocturna empieza a las 18:00\r";
+            for (int i = 0; i < 37; i++) {
+
+                while (!TXSTAbits.TRMT) {
+                }
+
+                TXREG = buffer_TX[i];
+            }
+        }
+        MSdelay(2000);
+
+    }
 }
 
 char DHT11_ReadData() {
@@ -6069,6 +6133,21 @@ void DHT11_CheckResponse() {
     while (PORTCbits.RC2 & 1);
 }
 
+void offLEDS() {
+    PORTCbits.RC5 = 0;
+    PORTCbits.RC4 = 0;
+    PORTAbits.RA5 = 0;
+
+    char buffer_TX[] = "Apagando LEDS\r";
+    for (int i = 0; i < 15; i++) {
+
+        while (!TXSTAbits.TRMT) {
+        }
+
+        TXREG = buffer_TX[i];
+    }
+}
+
 void onLEDS(char T_Integral) {
     int valor = T_Integral;
     if (valor < 30)
@@ -6081,13 +6160,13 @@ void onLEDS(char T_Integral) {
         PORTCbits.RC4 = 1;
         PORTAbits.RA5 = 0;
         char buffer_TX[] = "Temperatura Ideal\r";
-                for (int i = 0; i < 19;i++) {
+        for (int i = 0; i < 19; i++) {
 
-                    while (!TXSTAbits.TRMT) {
-                    }
+            while (!TXSTAbits.TRMT) {
+            }
 
-                    TXREG = buffer_TX[i];
-                }
+            TXREG = buffer_TX[i];
+        }
     } else {
         PORTCbits.RC5 = 0;
         PORTCbits.RC4 = 0;
@@ -6097,18 +6176,218 @@ void onLEDS(char T_Integral) {
 
 }
 
-void offBombillas(){
-        PORTAbits.RA0 = 0;
-        PORTAbits.RA1 = 0;
-        PORTAbits.RA2 = 0;
-        PORTAbits.RA3 = 0;
-        PORTAbits.RA4 = 0;
-        char buffer_TX[] = "Bombillas Apagadas \r";
-                for (int i = 0; i < 19;i++) {
+void offBombillas() {
+    PORTAbits.RA0 = 0;
+    PORTAbits.RA1 = 0;
+    PORTAbits.RA2 = 0;
+    PORTAbits.RA3 = 0;
+    PORTAbits.RA4 = 0;
+    char buffer_TX[] = "Bombillas Apagadas \r";
+    for (int i = 0; i < 20; i++) {
 
-                    while (!TXSTAbits.TRMT) {
-                    }
+        while (!TXSTAbits.TRMT) {
+        }
 
-                    TXREG = buffer_TX[i];
-                }
+        TXREG = buffer_TX[i];
+    }
+}
+
+void imprimirTemHum() {
+
+    sprintf(value, "%d", RH_Integral);
+    LCD_String_xy(0, 0, value);
+    sprintf(value, ".%d ", RH_Decimal);
+    LCD_String(value);
+    LCD_Char('%');
+
+
+    sprintf(value, "%d", T_Integral);
+    LCD_String_xy(1, 0, value);
+    sprintf(value, ".%d", T_Decimal);
+    LCD_String(value);
+    LCD_Char(0xdf);
+    LCD_Char('C');
+
+    LCD_String_xy(0, 8, "Hum");
+    LCD_String_xy(1, 8, "Temp");
+}
+
+void encenderBombillas() {
+    onLEDS(T_Integral);
+    if (T_Integral < 30 && acum == 0) {
+        PORTAbits.RA0 = 1;
+        char buffer_TX[] = "Se encendio la bombilla 1\r";
+        for (int i = 0; i < 27; i++) {
+
+            while (!TXSTAbits.TRMT) {
+            }
+
+            TXREG = buffer_TX[i];
+        }
+        T_Integral = T_Integral + 6;
+        acum = 6;
+
+    } else if (T_Integral < 30 && acum == 6) {
+        PORTAbits.RA1 = 1;
+
+        char buffer_TX[] = "Se encendio la bombilla 2\r";
+        for (int i = 0; i < 27; i++) {
+
+            while (!TXSTAbits.TRMT) {
+            }
+
+            TXREG = buffer_TX[i];
+        }
+
+        T_Integral = T_Integral + 6;
+        acum = 12;
+    } else if (T_Integral < 30 && acum == 12) {
+        PORTAbits.RA2 = 1;
+
+        char buffer_TX[] = "Se encendio la bombilla 3\r";
+        for (int i = 0; i < 27; i++) {
+
+            while (!TXSTAbits.TRMT) {
+            }
+
+            TXREG = buffer_TX[i];
+        }
+
+        T_Integral = T_Integral + 6;
+        acum = 18;
+    } else if (T_Integral < 30 && acum == 18) {
+        PORTAbits.RA3 = 1;
+
+        char buffer_TX[] = "Se encendio la bombilla 4\r";
+        for (int i = 0; i < 27; i++) {
+
+            while (!TXSTAbits.TRMT) {
+            }
+
+            TXREG = buffer_TX[i];
+        }
+
+        T_Integral = T_Integral + 6;
+        acum = 24;
+    } else if (T_Integral < 30 && acum == 24) {
+        PORTAbits.RA4 = 1;
+
+        char buffer_TX[] = "Se encendio la bombilla 5\r";
+        for (int i = 0; i < 27; i++) {
+
+            while (!TXSTAbits.TRMT) {
+            }
+
+            TXREG = buffer_TX[i];
+        }
+
+        T_Integral = T_Integral + 6;
+    }
+    else if (T_Integral > 35) {
+        agr = 1;
+        char buffer_TX[] = "Temperatura Alta \r";
+        for (int i = 0; i < 19; i++) {
+
+            while (!TXSTAbits.TRMT) {
+            }
+
+            TXREG = buffer_TX[i];
+        }
+        MSdelay(100);
+    } else
+        agr = 1;
+    MSdelay(1000);
+
+}
+
+void mostrarFechaHora() {
+    LCD_Init();
+    RTC_Read_Clock(0);
+    I2C_Stop();
+    MSdelay(1000);
+    if (hour & (1 << Clock_type)) {
+
+        if (hour & (1 << AM_PM)) {
+            LCD_String_xy(1, 14, "PM");
+        } else {
+            LCD_String_xy(1, 14, "AM");
+        }
+
+        hour = hour & (0x1f);
+        sprintf(secs, "%x ", sec);
+        sprintf(mins, "%x:", min);
+        sprintf(hours, "Tim:%x:", hour);
+        LCD_String_xy(0, 0, hours);
+        LCD_String(mins);
+        LCD_String(secs);
+    } else {
+
+        hour = hour & (0x3f);
+        sprintf(secs, "%x ", sec);
+        sprintf(mins, "%x:", min);
+        sprintf(hours, "Tim:%x:", hour);
+        LCD_String_xy(0, 0, hours);
+        LCD_String(mins);
+        LCD_String(secs);
+    }
+
+    RTC_Read_Calendar(3);
+    I2C_Stop();
+    sprintf(date, "Cal %x-", Date);
+    sprintf(month, "%x-", Month);
+    sprintf(year, "%x ", Year);
+    LCD_String_xy(2, 0, date);
+    LCD_String(month);
+    LCD_String(year);
+
+
+    switch (days[Day]) {
+        case 'S':
+            LCD_String("Sun");
+            break;
+        case 'M':
+            LCD_String("Mon");
+            break;
+        case 'T':
+            LCD_String("Tue");
+            break;
+        case 'W':
+            LCD_String("Wed");
+            break;
+        case 't':
+            LCD_String("Thu");
+            break;
+        case 'F':
+            LCD_String("Fri");
+            break;
+        case 's':
+            LCD_String("Sat");
+            break;
+        default:
+            break;
+
+    }
+    char buffer_TX[] = "Registrando Hora y Fecha\r";
+    for (int i = 0; i < 25; i++) {
+
+        while (!TXSTAbits.TRMT) {
+        }
+
+        TXREG = buffer_TX[i];
+    }
+
+}
+
+void verificarHora() {
+    RTC_Read_Clock(0);
+    I2C_Stop();
+    MSdelay(1000);
+    if (hour & (1 << Clock_type)) {
+        if (hour & (1 << AM_PM)) {
+            LCD_String_xy(1, 14, "PM");
+        } else {
+            LCD_String_xy(1, 14, "AM");
+        }
+    }
+
 }

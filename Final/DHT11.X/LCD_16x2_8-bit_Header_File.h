@@ -1,7 +1,34 @@
-
 /*
- * Header File For 16x2 LCD 
- * www.electronicwings.com  
+ Controlador para los dispositivos:
+ *      Sensor de Temperatura y Humedad
+ *      Reloj tiempo real
+ *      Leds de Advertencia
+ *		Bombillas
+ *		LCD 16x2
+ *		I2C
+ *		Virtual terminal
+ Se utiliza el Microcontrolador PIC 18F4550
+ */
+
+/*!
+\file   Controlador.c
+\date   2020-12-14
+\author Carlos Hoyos <joiroce@unicauca.edu.co> 104617020768
+		Eliana Camayo <eacamayo@unicauca.edu.co> 104616021725
+\brief  Example Controler .
+
+\par Copyright
+Information contained herein is proprietary to and constitutes valuable
+confidential trade secrets of unicauca, and
+is subject to restrictions on use and disclosure.
+
+\par
+Copyright (c) unicauca 2020. All rights reserved.
+
+\par
+The copyright notices above do not evidence any actual or
+intended publication of this material.
+ ******************************************************************************
  */
 
 // This is a guard condition so that contents of this file are not included

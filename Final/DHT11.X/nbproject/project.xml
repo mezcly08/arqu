@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>DHT11</name>
+            <name>PollosBig</name>
             <creation-uuid>ad1fabbd-803e-4a63-b58f-16df0db7425a</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
