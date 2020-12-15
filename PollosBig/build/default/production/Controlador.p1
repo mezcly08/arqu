@@ -279,23 +279,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;Controlador.c: 57: char DHT11_ReadData();
 [v _DHT11_ReadData `(uc ~T0 @X0 0 e? ]
-"62
-[; ;Controlador.c: 62: void imprimirTemHum();
+"58
+[; ;Controlador.c: 58: void imprimirTemHum();
 [v _imprimirTemHum `(v ~T0 @X0 0 e? ]
 "5402 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 5402: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
 [v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
-"63 Controlador.c
-[; ;Controlador.c: 63: void encenderBombillas();
-[v _encenderBombillas `(v ~T0 @X0 0 e? ]
+"64 Controlador.c
+[; ;Controlador.c: 64: void onBombillas();
+[v _onBombillas `(v ~T0 @X0 0 e? ]
 "68
 [; ;Controlador.c: 68: void mostrarFechaHora();
 [v _mostrarFechaHora `(v ~T0 @X0 0 e? ]
-"61
-[; ;Controlador.c: 61: void offBombillas();
+"63
+[; ;Controlador.c: 63: void offBombillas();
 [v _offBombillas `(v ~T0 @X0 0 e? ]
-"64
-[; ;Controlador.c: 64: void offLEDS();
+"65
+[; ;Controlador.c: 65: void offLEDS();
 [v _offLEDS `(v ~T0 @X0 0 e? ]
 "53 ./LCD_16x2_8-bit_Header_File.h
 [; ;./LCD_16x2_8-bit_Header_File.h: 53: void LCD_String_xy(char ,char ,const char*);
@@ -334,20 +334,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9978 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 9978: extern volatile __bit LATC2 __attribute__((address(0x7C5A)));
 [v _LATC2 `Vb ~T0 @X0 0 e@31834 ]
-"113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"51 ./LCD_16x2_8-bit_Header_File.h
-[; ;./LCD_16x2_8-bit_Header_File.h: 51: void LCD_String(const char *);
-[v _LCD_String `(v ~T0 @X0 0 ef1`*Cuc ]
-"50
-[; ;./LCD_16x2_8-bit_Header_File.h: 50: void LCD_Char(char x);
-[v _LCD_Char `(v ~T0 @X0 0 ef1`uc ]
-"54
+"54 ./LCD_16x2_8-bit_Header_File.h
 [; ;./LCD_16x2_8-bit_Header_File.h: 54: void LCD_Custom_Char(unsigned char loc,unsigned char *msg);
 [v _LCD_Custom_Char `(v ~T0 @X0 0 ef2`uc`*uc ]
 "49
 [; ;./LCD_16x2_8-bit_Header_File.h: 49: void LCD_Command(char );
 [v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
+"50
+[; ;./LCD_16x2_8-bit_Header_File.h: 50: void LCD_Char(char x);
+[v _LCD_Char `(v ~T0 @X0 0 ef1`uc ]
+"113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"51 ./LCD_16x2_8-bit_Header_File.h
+[; ;./LCD_16x2_8-bit_Header_File.h: 51: void LCD_String(const char *);
+[v _LCD_String `(v ~T0 @X0 0 ef1`*Cuc ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -1336,7 +1336,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 413 ]
 }
 "72 Controlador.c
-[; ;Controlador.c: 72: unsigned char bombillaCar0[8] = { 0x0E, 0x11, 0x11, 0x11, 0x0E, 0x0E, 0x00, 0x00};
+[; ;Controlador.c: 72: unsigned char bombillaCar0[8] = {0x0E, 0x11, 0x11, 0x11, 0x0E, 0x0E, 0x00, 0x00};
 [v _bombillaCar0 `uc ~T0 @X0 -> 8 `i e ]
 [i _bombillaCar0
 :U ..
@@ -1350,63 +1350,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"75
-[; ;Controlador.c: 75: char var_RH_Decimal, var_RH_Integral, var_T_Decimal, var_T_Integral, valor2;
+"73
+[; ;Controlador.c: 73: unsigned char good[8] = {0x00, 0x1B, 0x1B, 0x00, 0x11, 0x11, 0x0E, 0x00};
+[v _good `uc ~T0 @X0 -> 8 `i e ]
+[i _good
+:U ..
+-> -> 0 `i `uc
+-> -> 27 `i `uc
+-> -> 27 `i `uc
+-> -> 0 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 14 `i `uc
+-> -> 0 `i `uc
+..
+]
+"74
+[; ;Controlador.c: 74: unsigned char alert[8] = {0x00, 0x1B, 0x1B, 0x00, 0x0E, 0x11, 0x11, 0x00};
+[v _alert `uc ~T0 @X0 -> 8 `i e ]
+[i _alert
+:U ..
+-> -> 0 `i `uc
+-> -> 27 `i `uc
+-> -> 27 `i `uc
+-> -> 0 `i `uc
+-> -> 14 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 0 `i `uc
+..
+]
+"77
+[; ;Controlador.c: 77: char var_RH_Decimal, var_RH_Integral, var_T_Decimal, var_T_Integral;
 [v _var_RH_Decimal `uc ~T0 @X0 1 e ]
 [v _var_RH_Integral `uc ~T0 @X0 1 e ]
 [v _var_T_Decimal `uc ~T0 @X0 1 e ]
 [v _var_T_Integral `uc ~T0 @X0 1 e ]
-[v _valor2 `uc ~T0 @X0 1 e ]
-"76
-[; ;Controlador.c: 76: char vec_value[10];
+"78
+[; ;Controlador.c: 78: char vec_value[10];
 [v _vec_value `uc ~T0 @X0 -> 10 `i e ]
-"77
-[; ;Controlador.c: 77: int banAgregar = 0;
+"79
+[; ;Controlador.c: 79: int banAgregar = 0;
 [v _banAgregar `i ~T0 @X0 1 e ]
 [i _banAgregar
 -> 0 `i
 ]
-"78
-[; ;Controlador.c: 78: int acumBom = 0;
+"80
+[; ;Controlador.c: 80: int acumBom = 0;
 [v _acumBom `i ~T0 @X0 1 e ]
 [i _acumBom
 -> 0 `i
 ]
-"81
-[; ;Controlador.c: 81: int sec, min, hour;
+"83
+[; ;Controlador.c: 83: int sec, min, hour;
 [v _sec `i ~T0 @X0 1 e ]
 [v _min `i ~T0 @X0 1 e ]
 [v _hour `i ~T0 @X0 1 e ]
-"82
-[; ;Controlador.c: 82: int Day, Date, Month, Year;
+"84
+[; ;Controlador.c: 84: int Day, Date, Month, Year;
 [v _Day `i ~T0 @X0 1 e ]
 [v _Date `i ~T0 @X0 1 e ]
 [v _Month `i ~T0 @X0 1 e ]
 [v _Year `i ~T0 @X0 1 e ]
-"83
-[; ;Controlador.c: 83: char secs[10], mins[10], hours[10];
+"85
+[; ;Controlador.c: 85: char secs[10], mins[10], hours[10];
 [v _secs `uc ~T0 @X0 -> 10 `i e ]
 [v _mins `uc ~T0 @X0 -> 10 `i e ]
 [v _hours `uc ~T0 @X0 -> 10 `i e ]
-"84
-[; ;Controlador.c: 84: char date[10], month[10], year[10];
+"86
+[; ;Controlador.c: 86: char date[10], month[10], year[10];
 [v _date `uc ~T0 @X0 -> 10 `i e ]
 [v _month `uc ~T0 @X0 -> 10 `i e ]
 [v _year `uc ~T0 @X0 -> 10 `i e ]
-"85
-[; ;Controlador.c: 85: char Clock_type = 0x06;
+"87
+[; ;Controlador.c: 87: char Clock_type = 0x06;
 [v _Clock_type `uc ~T0 @X0 1 e ]
 [i _Clock_type
 -> -> 6 `i `uc
 ]
-"86
-[; ;Controlador.c: 86: char AM_PM = 0x05;
+"88
+[; ;Controlador.c: 88: char AM_PM = 0x05;
 [v _AM_PM `uc ~T0 @X0 1 e ]
 [i _AM_PM
 -> -> 5 `i `uc
 ]
-"87
-[; ;Controlador.c: 87: char days[7] = {'S', 'M', 'T', 'W', 't', 'F', 's'};
+"89
+[; ;Controlador.c: 89: char days[7] = {'S', 'M', 'T', 'W', 't', 'F', 's'};
 [v _days `uc ~T0 @X0 -> 7 `i e ]
 [i _days
 :U ..
@@ -1419,110 +1448,107 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 115 `ui `uc
 ..
 ]
-"90
-[; ;Controlador.c: 90: char j;
-[v _j `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"96
-[; ;Controlador.c: 96: void main() {
+"92
+[; ;Controlador.c: 92: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"97
-[; ;Controlador.c: 97:     TRISA = 0;
+"93
+[; ;Controlador.c: 93:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"100
-[; ;Controlador.c: 100:     PORTAbits.RA0 = 0;
+"96
+[; ;Controlador.c: 96:     PORTAbits.RA0 = 0;
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"101
-[; ;Controlador.c: 101:     PORTAbits.RA1 = 0;
+"97
+[; ;Controlador.c: 97:     PORTAbits.RA1 = 0;
 [e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
-"102
-[; ;Controlador.c: 102:     PORTAbits.RA2 = 0;
+"98
+[; ;Controlador.c: 98:     PORTAbits.RA2 = 0;
 [e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-"103
-[; ;Controlador.c: 103:     PORTAbits.RA3 = 0;
+"99
+[; ;Controlador.c: 99:     PORTAbits.RA3 = 0;
 [e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-"104
-[; ;Controlador.c: 104:     PORTAbits.RA4 = 0;
+"100
+[; ;Controlador.c: 100:     PORTAbits.RA4 = 0;
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"107
-[; ;Controlador.c: 107:     TRISCbits.RC6 = 0;
+"103
+[; ;Controlador.c: 103:     TRISCbits.RC6 = 0;
 [e = . . _TRISCbits 1 4 -> -> 0 `i `uc ]
-"108
-[; ;Controlador.c: 108:     TXSTAbits.TX9 = 0;
+"104
+[; ;Controlador.c: 104:     TXSTAbits.TX9 = 0;
 [e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-"109
-[; ;Controlador.c: 109:     TXSTAbits.TXEN = 1;
+"105
+[; ;Controlador.c: 105:     TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"110
-[; ;Controlador.c: 110:     TXSTAbits.SYNC = 0;
+"106
+[; ;Controlador.c: 106:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"111
-[; ;Controlador.c: 111:     TXSTAbits.BRGH = 0;
+"107
+[; ;Controlador.c: 107:     TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-"112
-[; ;Controlador.c: 112:     BAUDCONbits.BRG16 = 0;
+"108
+[; ;Controlador.c: 108:     BAUDCONbits.BRG16 = 0;
 [e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
-"113
-[; ;Controlador.c: 113:     RCSTAbits.SPEN = 1;
+"109
+[; ;Controlador.c: 109:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"114
-[; ;Controlador.c: 114:     SPBRG = (unsigned char) (((8000000L / 9600) / 64) - 1);
+"110
+[; ;Controlador.c: 110:     SPBRG = (unsigned char) (((8000000L / 9600) / 64) - 1);
 [e = _SPBRG -> - / / -> 8000000 `l -> -> 9600 `i `l -> -> 64 `i `l -> -> 1 `i `l `uc ]
-"116
-[; ;Controlador.c: 116:     OSCCON = 0x72;
+"112
+[; ;Controlador.c: 112:     OSCCON = 0x72;
 [e = _OSCCON -> -> 114 `i `uc ]
-"120
-[; ;Controlador.c: 120:     ADCON1 = 0x0F;
+"116
+[; ;Controlador.c: 116:     ADCON1 = 0x0F;
 [e = _ADCON1 -> -> 15 `i `uc ]
-"123
-[; ;Controlador.c: 123:     while (1) {
+"119
+[; ;Controlador.c: 119:     while (1) {
 [e :U 419 ]
 {
-"124
-[; ;Controlador.c: 124:         LCD_Init();
+"120
+[; ;Controlador.c: 120:         LCD_Init();
 [e ( _LCD_Init ..  ]
-"125
-[; ;Controlador.c: 125:         I2C_Init();
+"121
+[; ;Controlador.c: 121:         I2C_Init();
 [e ( _I2C_Init ..  ]
-"126
-[; ;Controlador.c: 126:         MSdelay(10);
+"122
+[; ;Controlador.c: 122:         MSdelay(10);
 [e ( _MSdelay (1 -> -> 10 `i `ui ]
-"129
-[; ;Controlador.c: 129:         verificarHora();
+"125
+[; ;Controlador.c: 125:         verificarHora();
 [e ( _verificarHora ..  ]
-"131
-[; ;Controlador.c: 131:         if ( hour >= 0x18 || hour <=6 ) {
+"127
+[; ;Controlador.c: 127:         if (hour >= 0x18 || hour <= 6) {
 [e $ ! || >= _hour -> 24 `i <= _hour -> 6 `i 421  ]
 {
-"132
-[; ;Controlador.c: 132:             DHT11_Start();
+"128
+[; ;Controlador.c: 128:             DHT11_Start();
 [e ( _DHT11_Start ..  ]
-"133
-[; ;Controlador.c: 133:             DHT11_CheckResponse();
+"129
+[; ;Controlador.c: 129:             DHT11_CheckResponse();
 [e ( _DHT11_CheckResponse ..  ]
-"136
-[; ;Controlador.c: 136:             var_RH_Integral = DHT11_ReadData();
+"132
+[; ;Controlador.c: 132:             var_RH_Integral = DHT11_ReadData();
 [e = _var_RH_Integral ( _DHT11_ReadData ..  ]
-"137
-[; ;Controlador.c: 137:             var_RH_Decimal = DHT11_ReadData();
+"133
+[; ;Controlador.c: 133:             var_RH_Decimal = DHT11_ReadData();
 [e = _var_RH_Decimal ( _DHT11_ReadData ..  ]
-"138
-[; ;Controlador.c: 138:             var_T_Integral = DHT11_ReadData();
+"134
+[; ;Controlador.c: 134:             var_T_Integral = DHT11_ReadData();
 [e = _var_T_Integral ( _DHT11_ReadData ..  ]
-"139
-[; ;Controlador.c: 139:             var_T_Decimal = DHT11_ReadData();
+"135
+[; ;Controlador.c: 135:             var_T_Decimal = DHT11_ReadData();
 [e = _var_T_Decimal ( _DHT11_ReadData ..  ]
-"141
-[; ;Controlador.c: 141:             imprimirTemHum();
+"137
+[; ;Controlador.c: 137:             imprimirTemHum();
 [e ( _imprimirTemHum ..  ]
-[v F3564 `uc ~T0 @X0 -> 36 `i s ]
-[i F3564
+[v F3563 `uc ~T0 @X0 -> 36 `i s ]
+[i F3563
 :U ..
-"143
-[; ;Controlador.c: 143:             char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
+"139
+[; ;Controlador.c: 139:             char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
 -> 78 `c
 -> 111 `c
 -> 32 `c
@@ -1562,9 +1588,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 36 `i a ]
-[e = _buffer_TX F3564 ]
-"144
-[; ;Controlador.c: 144:             for (int i = 0; i < 35; i++) {
+[e = _buffer_TX F3563 ]
+"140
+[; ;Controlador.c: 140:             for (int i = 0; i < 35; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1572,92 +1598,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 423  ]
 [e :U 422 ]
 {
-"146
-[; ;Controlador.c: 146:                 while (!TXSTAbits.TRMT) {
+"142
+[; ;Controlador.c: 142:                 while (!TXSTAbits.TRMT) {
 [e $U 425  ]
 [e :U 426 ]
 {
-"147
-[; ;Controlador.c: 147:                 }
+"143
+[; ;Controlador.c: 143:                 }
 }
 [e :U 425 ]
-"146
-[; ;Controlador.c: 146:                 while (!TXSTAbits.TRMT) {
+"142
+[; ;Controlador.c: 142:                 while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 426  ]
 [e :U 427 ]
-"149
-[; ;Controlador.c: 149:                 TXREG = buffer_TX[i];
+"145
+[; ;Controlador.c: 145:                 TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"150
-[; ;Controlador.c: 150:             }
+"146
+[; ;Controlador.c: 146:             }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 35 `i 422  ]
 [e :U 423 ]
 }
-"151
-[; ;Controlador.c: 151:             MSdelay(1000);
+"147
+[; ;Controlador.c: 147:             MSdelay(1000);
 [e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"153
-[; ;Controlador.c: 153:             while (banAgregar == 0) {
+"149
+[; ;Controlador.c: 149:             while (banAgregar == 0) {
 [e $U 428  ]
 [e :U 429 ]
 {
-"155
-[; ;Controlador.c: 155:                 encenderBombillas();
-[e ( _encenderBombillas ..  ]
-"156
-[; ;Controlador.c: 156:                 imprimirTemHum();
+"151
+[; ;Controlador.c: 151:                 onBombillas();
+[e ( _onBombillas ..  ]
+"152
+[; ;Controlador.c: 152:                 imprimirTemHum();
 [e ( _imprimirTemHum ..  ]
-"158
-[; ;Controlador.c: 158:                 MSdelay(1000);
+"154
+[; ;Controlador.c: 154:                 MSdelay(1000);
 [e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"159
-[; ;Controlador.c: 159:             }
+"155
+[; ;Controlador.c: 155:             }
 }
 [e :U 428 ]
-"153
-[; ;Controlador.c: 153:             while (banAgregar == 0) {
+"149
+[; ;Controlador.c: 149:             while (banAgregar == 0) {
 [e $ == _banAgregar -> 0 `i 429  ]
 [e :U 430 ]
-"160
-[; ;Controlador.c: 160:             mostrarFechaHora();
+"156
+[; ;Controlador.c: 156:             mostrarFechaHora();
 [e ( _mostrarFechaHora ..  ]
-"161
-[; ;Controlador.c: 161:             MSdelay(1000);
+"157
+[; ;Controlador.c: 157:             MSdelay(1000);
 [e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"162
-[; ;Controlador.c: 162:             banAgregar = 0;
+"158
+[; ;Controlador.c: 158:             banAgregar = 0;
 [e = _banAgregar -> 0 `i ]
-"163
-[; ;Controlador.c: 163:             acumBom = 0;
+"159
+[; ;Controlador.c: 159:             acumBom = 0;
 [e = _acumBom -> 0 `i ]
-"164
-[; ;Controlador.c: 164:             offBombillas();
+"160
+[; ;Controlador.c: 160:             offBombillas();
 [e ( _offBombillas ..  ]
-"165
-[; ;Controlador.c: 165:             offLEDS();
+"161
+[; ;Controlador.c: 161:             offLEDS();
 [e ( _offLEDS ..  ]
-"166
-[; ;Controlador.c: 166:             MSdelay(2000);
+"162
+[; ;Controlador.c: 162:             MSdelay(2000);
 [e ( _MSdelay (1 -> -> 2000 `i `ui ]
-"168
-[; ;Controlador.c: 168:         } else {
+"164
+[; ;Controlador.c: 164:         } else {
 }
 [e $U 431  ]
 [e :U 421 ]
 {
-"169
-[; ;Controlador.c: 169:             LCD_String_xy(0, 0, "ERROR HORA ");
+"165
+[; ;Controlador.c: 165:             LCD_String_xy(0, 0, "ERROR HORA ");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 1C ]
-"170
-[; ;Controlador.c: 170:             LCD_String_xy(1, 0, "DIURNA");
+"166
+[; ;Controlador.c: 166:             LCD_String_xy(1, 0, "DIURNA");
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 2C ]
-[v F3567 `uc ~T0 @X0 -> 38 `i s ]
-[i F3567
+[v F3566 `uc ~T0 @X0 -> 38 `i s ]
+[i F3566
 :U ..
-"171
-[; ;Controlador.c: 171:             char buffer_TX[] = "La hora nocturna empieza a las 18:00\r";
+"167
+[; ;Controlador.c: 167:             char buffer_TX[] = "La hora nocturna empieza a las 18:00\r";
 -> 76 `c
 -> 97 `c
 -> 32 `c
@@ -1699,9 +1725,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 38 `i a ]
-[e = _buffer_TX F3567 ]
-"172
-[; ;Controlador.c: 172:             for (int i = 0; i < 37; i++) {
+[e = _buffer_TX F3566 ]
+"168
+[; ;Controlador.c: 168:             for (int i = 0; i < 37; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1709,190 +1735,190 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 433  ]
 [e :U 432 ]
 {
-"174
-[; ;Controlador.c: 174:                 while (!TXSTAbits.TRMT) {
+"170
+[; ;Controlador.c: 170:                 while (!TXSTAbits.TRMT) {
 [e $U 435  ]
 [e :U 436 ]
 {
-"175
-[; ;Controlador.c: 175:                 }
+"171
+[; ;Controlador.c: 171:                 }
 }
 [e :U 435 ]
-"174
-[; ;Controlador.c: 174:                 while (!TXSTAbits.TRMT) {
+"170
+[; ;Controlador.c: 170:                 while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 436  ]
 [e :U 437 ]
-"177
-[; ;Controlador.c: 177:                 TXREG = buffer_TX[i];
+"173
+[; ;Controlador.c: 173:                 TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"178
-[; ;Controlador.c: 178:             }
+"174
+[; ;Controlador.c: 174:             }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 37 `i 432  ]
 [e :U 433 ]
 }
-"179
-[; ;Controlador.c: 179:         }
+"175
+[; ;Controlador.c: 175:         }
 }
 [e :U 431 ]
-"180
-[; ;Controlador.c: 180:         MSdelay(2000);
+"176
+[; ;Controlador.c: 176:         MSdelay(2000);
 [e ( _MSdelay (1 -> -> 2000 `i `ui ]
-"182
-[; ;Controlador.c: 182:     }
+"178
+[; ;Controlador.c: 178:     }
 }
 [e :U 418 ]
 [e $U 419  ]
 [e :U 420 ]
-"183
-[; ;Controlador.c: 183: }
+"179
+[; ;Controlador.c: 179: }
 [e :UE 417 ]
 }
-"187
-[; ;Controlador.c: 187: char DHT11_ReadData() {
+"183
+[; ;Controlador.c: 183: char DHT11_ReadData() {
 [v _DHT11_ReadData `(uc ~T0 @X0 1 ef ]
 {
 [e :U _DHT11_ReadData ]
 [f ]
-"188
-[; ;Controlador.c: 188:     char i, data = 0;
+"184
+[; ;Controlador.c: 184:     char i, data = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [v _data `uc ~T0 @X0 1 a ]
 [e = _data -> -> 0 `i `uc ]
-"189
-[; ;Controlador.c: 189:     for (i = 0; i < 8; i++) {
+"185
+[; ;Controlador.c: 185:     for (i = 0; i < 8; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 439  ]
 [e $U 440  ]
 [e :U 439 ]
 {
-"190
-[; ;Controlador.c: 190:         while (!(PORTCbits.RC2 & 1));
+"186
+[; ;Controlador.c: 186:         while (!(PORTCbits.RC2 & 1));
 [e $U 442  ]
 [e :U 443 ]
 [e :U 442 ]
 [e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 443  ]
 [e :U 444 ]
-"191
-[; ;Controlador.c: 191:         _delay((unsigned long)((30)*(8000000L/4000000.0)));
+"187
+[; ;Controlador.c: 187:         _delay((unsigned long)((30)*(8000000L/4000000.0)));
 [e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"192
-[; ;Controlador.c: 192:         if (PORTCbits.RC2 & 1)
+"188
+[; ;Controlador.c: 188:         if (PORTCbits.RC2 & 1)
 [e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 445  ]
-"193
-[; ;Controlador.c: 193:             data = ((data << 1) | 1);
+"189
+[; ;Controlador.c: 189:             data = ((data << 1) | 1);
 [e = _data -> | << -> _data `i -> 1 `i -> 1 `i `uc ]
 [e $U 446  ]
-"194
-[; ;Controlador.c: 194:         else
+"190
+[; ;Controlador.c: 190:         else
 [e :U 445 ]
-"195
-[; ;Controlador.c: 195:             data = (data << 1);
+"191
+[; ;Controlador.c: 191:             data = (data << 1);
 [e = _data -> << -> _data `i -> 1 `i `uc ]
 [e :U 446 ]
-"196
-[; ;Controlador.c: 196:         while (PORTCbits.RC2 & 1);
+"192
+[; ;Controlador.c: 192:         while (PORTCbits.RC2 & 1);
 [e $U 447  ]
 [e :U 448 ]
 [e :U 447 ]
 [e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 448  ]
 [e :U 449 ]
-"198
-[; ;Controlador.c: 198:     }
+"194
+[; ;Controlador.c: 194:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 439  ]
 [e :U 440 ]
 }
-"199
-[; ;Controlador.c: 199:     return data;
+"195
+[; ;Controlador.c: 195:     return data;
 [e ) _data ]
 [e $UE 438  ]
-"200
-[; ;Controlador.c: 200: }
+"196
+[; ;Controlador.c: 196: }
 [e :UE 438 ]
 }
-"202
-[; ;Controlador.c: 202: void DHT11_Start() {
+"198
+[; ;Controlador.c: 198: void DHT11_Start() {
 [v _DHT11_Start `(v ~T0 @X0 1 ef ]
 {
 [e :U _DHT11_Start ]
 [f ]
-"203
-[; ;Controlador.c: 203:     TRISCbits.RC2 = 0;
+"199
+[; ;Controlador.c: 199:     TRISCbits.RC2 = 0;
 [e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-"204
-[; ;Controlador.c: 204:     LATC2 = 0;
+"200
+[; ;Controlador.c: 200:     LATC2 = 0;
 [e = _LATC2 -> -> 0 `i `b ]
-"205
-[; ;Controlador.c: 205:     _delay((unsigned long)((18)*(8000000L/4000.0)));
+"201
+[; ;Controlador.c: 201:     _delay((unsigned long)((18)*(8000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 18 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"206
-[; ;Controlador.c: 206:     LATC2 = 1;
+"202
+[; ;Controlador.c: 202:     LATC2 = 1;
 [e = _LATC2 -> -> 1 `i `b ]
-"207
-[; ;Controlador.c: 207:     _delay((unsigned long)((20)*(8000000L/4000000.0)));
+"203
+[; ;Controlador.c: 203:     _delay((unsigned long)((20)*(8000000L/4000000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"208
-[; ;Controlador.c: 208:     TRISCbits.RC2 = 1;
+"204
+[; ;Controlador.c: 204:     TRISCbits.RC2 = 1;
 [e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
-"210
-[; ;Controlador.c: 210: }
+"206
+[; ;Controlador.c: 206: }
 [e :UE 450 ]
 }
-"212
-[; ;Controlador.c: 212: void DHT11_CheckResponse() {
+"208
+[; ;Controlador.c: 208: void DHT11_CheckResponse() {
 [v _DHT11_CheckResponse `(v ~T0 @X0 1 ef ]
 {
 [e :U _DHT11_CheckResponse ]
 [f ]
-"213
-[; ;Controlador.c: 213:     while (PORTCbits.RC2 & 1);
+"209
+[; ;Controlador.c: 209:     while (PORTCbits.RC2 & 1);
 [e $U 452  ]
 [e :U 453 ]
 [e :U 452 ]
 [e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 453  ]
 [e :U 454 ]
-"214
-[; ;Controlador.c: 214:     while (!(PORTCbits.RC2 & 1));
+"210
+[; ;Controlador.c: 210:     while (!(PORTCbits.RC2 & 1));
 [e $U 455  ]
 [e :U 456 ]
 [e :U 455 ]
 [e $ ! != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 456  ]
 [e :U 457 ]
-"215
-[; ;Controlador.c: 215:     while (PORTCbits.RC2 & 1);
+"211
+[; ;Controlador.c: 211:     while (PORTCbits.RC2 & 1);
 [e $U 458  ]
 [e :U 459 ]
 [e :U 458 ]
 [e $ != & -> . . _PORTCbits 0 2 `i -> 1 `i -> 0 `i 459  ]
 [e :U 460 ]
-"216
-[; ;Controlador.c: 216: }
+"212
+[; ;Controlador.c: 212: }
 [e :UE 451 ]
 }
-"220
-[; ;Controlador.c: 220: void offLEDS() {
+"216
+[; ;Controlador.c: 216: void offLEDS() {
 [v _offLEDS `(v ~T0 @X0 1 ef ]
 {
 [e :U _offLEDS ]
 [f ]
-"221
-[; ;Controlador.c: 221:     PORTCbits.RC5 = 0;
+"217
+[; ;Controlador.c: 217:     PORTCbits.RC5 = 0;
 [e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"222
-[; ;Controlador.c: 222:     PORTCbits.RC4 = 0;
+"218
+[; ;Controlador.c: 218:     PORTCbits.RC4 = 0;
 [e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"223
-[; ;Controlador.c: 223:     PORTAbits.RA5 = 0;
+"219
+[; ;Controlador.c: 219:     PORTAbits.RA5 = 0;
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-[v F3576 `uc ~T0 @X0 -> 15 `i s ]
-[i F3576
+[v F3575 `uc ~T0 @X0 -> 15 `i s ]
+[i F3575
 :U ..
-"225
-[; ;Controlador.c: 225:     char buffer_TX[] = "Apagando LEDS\r";
+"221
+[; ;Controlador.c: 221:     char buffer_TX[] = "Apagando LEDS\r";
 -> 65 `c
 -> 112 `c
 -> 97 `c
@@ -1911,9 +1937,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 15 `i a ]
-[e = _buffer_TX F3576 ]
-"226
-[; ;Controlador.c: 226:     for (int i = 0; i < 15; i++) {
+[e = _buffer_TX F3575 ]
+"222
+[; ;Controlador.c: 222:     for (int i = 0; i < 15; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1921,78 +1947,87 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 463  ]
 [e :U 462 ]
 {
-"228
-[; ;Controlador.c: 228:         while (!TXSTAbits.TRMT) {
+"224
+[; ;Controlador.c: 224:         while (!TXSTAbits.TRMT) {
 [e $U 465  ]
 [e :U 466 ]
 {
-"229
-[; ;Controlador.c: 229:         }
+"225
+[; ;Controlador.c: 225:         }
 }
 [e :U 465 ]
-"228
-[; ;Controlador.c: 228:         while (!TXSTAbits.TRMT) {
+"224
+[; ;Controlador.c: 224:         while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 466  ]
 [e :U 467 ]
-"231
-[; ;Controlador.c: 231:         TXREG = buffer_TX[i];
+"227
+[; ;Controlador.c: 227:         TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"232
-[; ;Controlador.c: 232:     }
+"228
+[; ;Controlador.c: 228:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 15 `i 462  ]
 [e :U 463 ]
 }
-"233
-[; ;Controlador.c: 233: }
+"229
+[; ;Controlador.c: 229: }
 [e :UE 461 ]
 }
-"236
-[; ;Controlador.c: 236: void onLEDS(char T_Integral) {
+"232
+[; ;Controlador.c: 232: void onLEDS(char T_Integral) {
 [v _onLEDS `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _onLEDS ]
 [v _T_Integral `uc ~T0 @X0 1 r1 ]
 [f ]
-"237
-[; ;Controlador.c: 237:     int valor = T_Integral;
+"233
+[; ;Controlador.c: 233:     LCD_Custom_Char(5, good);
+[e ( _LCD_Custom_Char (2 , -> -> 5 `i `uc &U _good ]
+"235
+[; ;Controlador.c: 235:     int valor = T_Integral;
 [v _valor `i ~T0 @X0 1 a ]
 [e = _valor -> _T_Integral `i ]
-"238
-[; ;Controlador.c: 238:     if (valor < 30) {
+"236
+[; ;Controlador.c: 236:     if (valor < 30) {
 [e $ ! < _valor -> 30 `i 469  ]
 {
-"239
-[; ;Controlador.c: 239:         PORTCbits.RC5 = 1;
+"237
+[; ;Controlador.c: 237:         PORTCbits.RC5 = 1;
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"240
-[; ;Controlador.c: 240:         PORTCbits.RC4 = 0;
+"238
+[; ;Controlador.c: 238:         PORTCbits.RC4 = 0;
 [e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"241
-[; ;Controlador.c: 241:         PORTAbits.RA5 = 0;
+"239
+[; ;Controlador.c: 239:         PORTAbits.RA5 = 0;
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-"242
-[; ;Controlador.c: 242:     } else if (valor >= 30 && valor <= 35) {
+"240
+[; ;Controlador.c: 240:     } else if (valor >= 30 && valor <= 35) {
 }
 [e $U 470  ]
 [e :U 469 ]
 [e $ ! && >= _valor -> 30 `i <= _valor -> 35 `i 471  ]
 {
-"243
-[; ;Controlador.c: 243:         PORTCbits.RC5 = 0;
+"241
+[; ;Controlador.c: 241:         PORTCbits.RC5 = 0;
 [e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"244
-[; ;Controlador.c: 244:         PORTCbits.RC4 = 1;
+"242
+[; ;Controlador.c: 242:         PORTCbits.RC4 = 1;
 [e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"245
-[; ;Controlador.c: 245:         PORTAbits.RA5 = 0;
+"243
+[; ;Controlador.c: 243:         PORTAbits.RA5 = 0;
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-[v F3582 `uc ~T0 @X0 -> 19 `i s ]
-[i F3582
-:U ..
+"245
+[; ;Controlador.c: 245:         LCD_Command(0xc0 | (15));
+[e ( _LCD_Command (1 -> | -> 192 `i -> 15 `i `uc ]
 "246
-[; ;Controlador.c: 246:         char buffer_TX[] = "Temperatura Ideal\r";
+[; ;Controlador.c: 246:         LCD_Char(5);
+[e ( _LCD_Char (1 -> -> 5 `i `uc ]
+[v F3581 `uc ~T0 @X0 -> 19 `i s ]
+[i F3581
+:U ..
+"248
+[; ;Controlador.c: 248:         char buffer_TX[] = "Temperatura Ideal\r";
 -> 84 `c
 -> 101 `c
 -> 109 `c
@@ -2015,9 +2050,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 19 `i a ]
-[e = _buffer_TX F3582 ]
-"247
-[; ;Controlador.c: 247:         for (int i = 0; i < 19; i++) {
+[e = _buffer_TX F3581 ]
+"249
+[; ;Controlador.c: 249:         for (int i = 0; i < 19; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2025,79 +2060,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 473  ]
 [e :U 472 ]
 {
-"249
-[; ;Controlador.c: 249:             while (!TXSTAbits.TRMT) {
+"251
+[; ;Controlador.c: 251:             while (!TXSTAbits.TRMT) {
 [e $U 475  ]
 [e :U 476 ]
 {
-"250
-[; ;Controlador.c: 250:             }
+"252
+[; ;Controlador.c: 252:             }
 }
 [e :U 475 ]
-"249
-[; ;Controlador.c: 249:             while (!TXSTAbits.TRMT) {
+"251
+[; ;Controlador.c: 251:             while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 476  ]
 [e :U 477 ]
-"252
-[; ;Controlador.c: 252:             TXREG = buffer_TX[i];
+"254
+[; ;Controlador.c: 254:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"253
-[; ;Controlador.c: 253:         }
+"255
+[; ;Controlador.c: 255:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 19 `i 472  ]
 [e :U 473 ]
 }
-"254
-[; ;Controlador.c: 254:     } else {
+"256
+[; ;Controlador.c: 256:     } else {
 }
 [e $U 478  ]
 [e :U 471 ]
 {
-"255
-[; ;Controlador.c: 255:         PORTCbits.RC5 = 0;
-[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"256
-[; ;Controlador.c: 256:         PORTCbits.RC4 = 0;
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
 "257
-[; ;Controlador.c: 257:         PORTAbits.RA5 = 1;
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Controlador.c: 257:         PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"258
+[; ;Controlador.c: 258:         PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
 "259
-[; ;Controlador.c: 259:     }
+[; ;Controlador.c: 259:         PORTAbits.RA5 = 1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"261
+[; ;Controlador.c: 261:     }
 }
 [e :U 478 ]
 [e :U 470 ]
-"261
-[; ;Controlador.c: 261: }
+"263
+[; ;Controlador.c: 263: }
 [e :UE 468 ]
 }
-"263
-[; ;Controlador.c: 263: void offBombillas() {
+"265
+[; ;Controlador.c: 265: void offBombillas() {
 [v _offBombillas `(v ~T0 @X0 1 ef ]
 {
 [e :U _offBombillas ]
 [f ]
-"264
-[; ;Controlador.c: 264:     PORTAbits.RA0 = 0;
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"265
-[; ;Controlador.c: 265:     PORTAbits.RA1 = 0;
-[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
 "266
-[; ;Controlador.c: 266:     PORTAbits.RA2 = 0;
-[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;Controlador.c: 266:     PORTAbits.RA0 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 "267
-[; ;Controlador.c: 267:     PORTAbits.RA3 = 0;
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+[; ;Controlador.c: 267:     PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
 "268
-[; ;Controlador.c: 268:     PORTAbits.RA4 = 0;
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-[v F3586 `uc ~T0 @X0 -> 21 `i s ]
-[i F3586
-:U ..
+[; ;Controlador.c: 268:     PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "269
-[; ;Controlador.c: 269:     char buffer_TX[] = "Bombillas Apagadas \r";
+[; ;Controlador.c: 269:     PORTAbits.RA3 = 0;
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+"270
+[; ;Controlador.c: 270:     PORTAbits.RA4 = 0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[v F3585 `uc ~T0 @X0 -> 21 `i s ]
+[i F3585
+:U ..
+"271
+[; ;Controlador.c: 271:     char buffer_TX[] = "Bombillas Apagadas \r";
 -> 66 `c
 -> 111 `c
 -> 109 `c
@@ -2122,9 +2157,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 21 `i a ]
-[e = _buffer_TX F3586 ]
-"270
-[; ;Controlador.c: 270:     for (int i = 0; i < 20; i++) {
+[e = _buffer_TX F3585 ]
+"272
+[; ;Controlador.c: 272:     for (int i = 0; i < 20; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2132,118 +2167,121 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 481  ]
 [e :U 480 ]
 {
-"272
-[; ;Controlador.c: 272:         while (!TXSTAbits.TRMT) {
+"274
+[; ;Controlador.c: 274:         while (!TXSTAbits.TRMT) {
 [e $U 483  ]
 [e :U 484 ]
 {
-"273
-[; ;Controlador.c: 273:         }
+"275
+[; ;Controlador.c: 275:         }
 }
 [e :U 483 ]
-"272
-[; ;Controlador.c: 272:         while (!TXSTAbits.TRMT) {
+"274
+[; ;Controlador.c: 274:         while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 484  ]
 [e :U 485 ]
-"275
-[; ;Controlador.c: 275:         TXREG = buffer_TX[i];
+"277
+[; ;Controlador.c: 277:         TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"276
-[; ;Controlador.c: 276:     }
+"278
+[; ;Controlador.c: 278:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 480  ]
 [e :U 481 ]
 }
-"277
-[; ;Controlador.c: 277: }
+"279
+[; ;Controlador.c: 279: }
 [e :UE 479 ]
 }
-"280
-[; ;Controlador.c: 280: void imprimirTemHum() {
+"283
+[; ;Controlador.c: 283: void imprimirTemHum() {
 [v _imprimirTemHum `(v ~T0 @X0 1 ef ]
 {
 [e :U _imprimirTemHum ]
 [f ]
-"282
-[; ;Controlador.c: 282:     sprintf(vec_value, "%d", var_RH_Integral);
-[e ( _sprintf (1 , (. , &U _vec_value :s 3C -> _var_RH_Integral `i ]
-"283
-[; ;Controlador.c: 283:     LCD_String_xy(0, 9, vec_value);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 9 `i `uc -> &U _vec_value `*Cuc ]
-"284
-[; ;Controlador.c: 284:     sprintf(vec_value, ".%d ", var_RH_Decimal);
-[e ( _sprintf (1 , (. , &U _vec_value :s 4C -> _var_RH_Decimal `i ]
 "285
-[; ;Controlador.c: 285:     LCD_String(vec_value);
-[e ( _LCD_String (1 -> &U _vec_value `*Cuc ]
+[; ;Controlador.c: 285:     sprintf(vec_value, "%d", var_RH_Integral);
+[e ( _sprintf (1 , (. , &U _vec_value :s 3C -> _var_RH_Integral `i ]
 "286
-[; ;Controlador.c: 286:     LCD_Char('%');
-[e ( _LCD_Char (1 -> -> 37 `ui `uc ]
-"289
-[; ;Controlador.c: 289:     sprintf(vec_value, "%d", var_T_Integral);
-[e ( _sprintf (1 , (. , &U _vec_value :s 5C -> _var_T_Integral `i ]
-"290
-[; ;Controlador.c: 290:     LCD_String_xy(0, 0, vec_value);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _vec_value `*Cuc ]
-"291
-[; ;Controlador.c: 291:     sprintf(vec_value, ".%d", var_T_Decimal);
-[e ( _sprintf (1 , (. , &U _vec_value :s 6C -> _var_T_Decimal `i ]
-"292
-[; ;Controlador.c: 292:     LCD_String(vec_value);
+[; ;Controlador.c: 286:     LCD_String_xy(0, 9, vec_value);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 9 `i `uc -> &U _vec_value `*Cuc ]
+"287
+[; ;Controlador.c: 287:     sprintf(vec_value, ".%d ", var_RH_Decimal);
+[e ( _sprintf (1 , (. , &U _vec_value :s 4C -> _var_RH_Decimal `i ]
+"288
+[; ;Controlador.c: 288:     LCD_String(vec_value);
 [e ( _LCD_String (1 -> &U _vec_value `*Cuc ]
+"289
+[; ;Controlador.c: 289:     LCD_Char('%');
+[e ( _LCD_Char (1 -> -> 37 `ui `uc ]
+"292
+[; ;Controlador.c: 292:     sprintf(vec_value, "%d", var_T_Integral);
+[e ( _sprintf (1 , (. , &U _vec_value :s 5C -> _var_T_Integral `i ]
 "293
-[; ;Controlador.c: 293:     LCD_Char(0xdf);
-[e ( _LCD_Char (1 -> -> 223 `i `uc ]
+[; ;Controlador.c: 293:     LCD_String_xy(0, 0, vec_value);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _vec_value `*Cuc ]
 "294
-[; ;Controlador.c: 294:     LCD_Char('C');
-[e ( _LCD_Char (1 -> -> 67 `ui `uc ]
+[; ;Controlador.c: 294:     sprintf(vec_value, ".%d", var_T_Decimal);
+[e ( _sprintf (1 , (. , &U _vec_value :s 6C -> _var_T_Decimal `i ]
+"295
+[; ;Controlador.c: 295:     LCD_String(vec_value);
+[e ( _LCD_String (1 -> &U _vec_value `*Cuc ]
 "296
-[; ;Controlador.c: 296:     LCD_String_xy(0, 15, "H");
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 15 `i `uc :s 7C ]
+[; ;Controlador.c: 296:     LCD_Char(0xdf);
+[e ( _LCD_Char (1 -> -> 223 `i `uc ]
 "297
-[; ;Controlador.c: 297:     LCD_String_xy(0, 6, "T");
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 6 `i `uc :s 8C ]
-"298
-[; ;Controlador.c: 298: }
+[; ;Controlador.c: 297:     LCD_Char('C');
+[e ( _LCD_Char (1 -> -> 67 `ui `uc ]
+"299
+[; ;Controlador.c: 299:     LCD_String_xy(0, 6, "T");
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 6 `i `uc :s 7C ]
+"300
+[; ;Controlador.c: 300:     LCD_String_xy(0, 15, "H");
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 15 `i `uc :s 8C ]
+"301
+[; ;Controlador.c: 301: }
 [e :UE 486 ]
 }
-"301
-[; ;Controlador.c: 301: void encenderBombillas() {
-[v _encenderBombillas `(v ~T0 @X0 1 ef ]
-{
-[e :U _encenderBombillas ]
-[f ]
-"302
-[; ;Controlador.c: 302:     LCD_Custom_Char(0,bombillaCar0);
-[e ( _LCD_Custom_Char (2 , -> -> 0 `i `uc &U _bombillaCar0 ]
-"303
-[; ;Controlador.c: 303:     LCD_Custom_Char(1,bombillaCar0);
-[e ( _LCD_Custom_Char (2 , -> -> 1 `i `uc &U _bombillaCar0 ]
-"304
-[; ;Controlador.c: 304:     LCD_Custom_Char(2,bombillaCar0);
-[e ( _LCD_Custom_Char (2 , -> -> 2 `i `uc &U _bombillaCar0 ]
 "305
-[; ;Controlador.c: 305:     LCD_Custom_Char(3,bombillaCar0);
-[e ( _LCD_Custom_Char (2 , -> -> 3 `i `uc &U _bombillaCar0 ]
+[; ;Controlador.c: 305: void onBombillas() {
+[v _onBombillas `(v ~T0 @X0 1 ef ]
+{
+[e :U _onBombillas ]
+[f ]
 "306
-[; ;Controlador.c: 306:     LCD_Custom_Char(4,bombillaCar0);
-[e ( _LCD_Custom_Char (2 , -> -> 4 `i `uc &U _bombillaCar0 ]
+[; ;Controlador.c: 306:     LCD_Custom_Char(0, bombillaCar0);
+[e ( _LCD_Custom_Char (2 , -> -> 0 `i `uc &U _bombillaCar0 ]
+"307
+[; ;Controlador.c: 307:     LCD_Custom_Char(1, bombillaCar0);
+[e ( _LCD_Custom_Char (2 , -> -> 1 `i `uc &U _bombillaCar0 ]
 "308
-[; ;Controlador.c: 308:     onLEDS(var_T_Integral);
-[e ( _onLEDS (1 _var_T_Integral ]
+[; ;Controlador.c: 308:     LCD_Custom_Char(2, bombillaCar0);
+[e ( _LCD_Custom_Char (2 , -> -> 2 `i `uc &U _bombillaCar0 ]
 "309
-[; ;Controlador.c: 309:     if (var_T_Integral < 30 && acumBom == 0) {
+[; ;Controlador.c: 309:     LCD_Custom_Char(3, bombillaCar0);
+[e ( _LCD_Custom_Char (2 , -> -> 3 `i `uc &U _bombillaCar0 ]
+"310
+[; ;Controlador.c: 310:     LCD_Custom_Char(4, bombillaCar0);
+[e ( _LCD_Custom_Char (2 , -> -> 4 `i `uc &U _bombillaCar0 ]
+"311
+[; ;Controlador.c: 311:     LCD_Custom_Char(6, alert);
+[e ( _LCD_Custom_Char (2 , -> -> 6 `i `uc &U _alert ]
+"313
+[; ;Controlador.c: 313:     onLEDS(var_T_Integral);
+[e ( _onLEDS (1 _var_T_Integral ]
+"314
+[; ;Controlador.c: 314:     if (var_T_Integral < 30 && acumBom == 0) {
 [e $ ! && < -> _var_T_Integral `i -> 30 `i == _acumBom -> 0 `i 488  ]
 {
-"310
-[; ;Controlador.c: 310:         PORTAbits.RA0 = 1;
+"315
+[; ;Controlador.c: 315:         PORTAbits.RA0 = 1;
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[v F3591 `uc ~T0 @X0 -> 27 `i s ]
-[i F3591
+[v F3590 `uc ~T0 @X0 -> 27 `i s ]
+[i F3590
 :U ..
-"311
-[; ;Controlador.c: 311:         char buffer_TX[] = "Se encendio la bombilla 1\r";
+"316
+[; ;Controlador.c: 316:         char buffer_TX[] = "Se encendio la bombilla 1\r";
 -> 83 `c
 -> 101 `c
 -> 32 `c
@@ -2274,9 +2312,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
-[e = _buffer_TX F3591 ]
-"312
-[; ;Controlador.c: 312:         for (int i = 0; i < 27; i++) {
+[e = _buffer_TX F3590 ]
+"317
+[; ;Controlador.c: 317:         for (int i = 0; i < 27; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2284,56 +2322,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 490  ]
 [e :U 489 ]
 {
-"314
-[; ;Controlador.c: 314:             while (!TXSTAbits.TRMT) {
+"319
+[; ;Controlador.c: 319:             while (!TXSTAbits.TRMT) {
 [e $U 492  ]
 [e :U 493 ]
 {
-"315
-[; ;Controlador.c: 315:             }
+"320
+[; ;Controlador.c: 320:             }
 }
 [e :U 492 ]
-"314
-[; ;Controlador.c: 314:             while (!TXSTAbits.TRMT) {
+"319
+[; ;Controlador.c: 319:             while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 493  ]
 [e :U 494 ]
-"317
-[; ;Controlador.c: 317:             TXREG = buffer_TX[i];
+"322
+[; ;Controlador.c: 322:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"318
-[; ;Controlador.c: 318:         }
+"323
+[; ;Controlador.c: 323:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 27 `i 489  ]
 [e :U 490 ]
 }
-"323
-[; ;Controlador.c: 323:         LCD_Command(0xc0|(0));
+"328
+[; ;Controlador.c: 328:         LCD_Command(0xc0 | (0));
 [e ( _LCD_Command (1 -> | -> 192 `i -> 0 `i `uc ]
-"324
-[; ;Controlador.c: 324:         LCD_Char(0);
+"329
+[; ;Controlador.c: 329:         LCD_Char(0);
 [e ( _LCD_Char (1 -> -> 0 `i `uc ]
-"331
-[; ;Controlador.c: 331:         var_T_Integral = var_T_Integral + 6;
+"333
+[; ;Controlador.c: 333:         var_T_Integral = var_T_Integral + 6;
 [e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
-"332
-[; ;Controlador.c: 332:        acumBom = 6;
-[e = _acumBom -> 6 `i ]
 "334
-[; ;Controlador.c: 334:     } else if (var_T_Integral < 30 && acumBom == 6) {
+[; ;Controlador.c: 334:         acumBom = 6;
+[e = _acumBom -> 6 `i ]
+"336
+[; ;Controlador.c: 336:     } else if (var_T_Integral < 30 && acumBom == 6) {
 }
 [e $U 495  ]
 [e :U 488 ]
 [e $ ! && < -> _var_T_Integral `i -> 30 `i == _acumBom -> 6 `i 496  ]
 {
-"335
-[; ;Controlador.c: 335:         PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-[v F3594 `uc ~T0 @X0 -> 27 `i s ]
-[i F3594
-:U ..
 "337
-[; ;Controlador.c: 337:         char buffer_TX[] = "Se encendio la bombilla 2\r";
+[; ;Controlador.c: 337:         PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[v F3593 `uc ~T0 @X0 -> 27 `i s ]
+[i F3593
+:U ..
+"339
+[; ;Controlador.c: 339:         char buffer_TX[] = "Se encendio la bombilla 2\r";
 -> 83 `c
 -> 101 `c
 -> 32 `c
@@ -2364,9 +2402,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
-[e = _buffer_TX F3594 ]
-"338
-[; ;Controlador.c: 338:         for (int i = 0; i < 27; i++) {
+[e = _buffer_TX F3593 ]
+"340
+[; ;Controlador.c: 340:         for (int i = 0; i < 27; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2374,56 +2412,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 498  ]
 [e :U 497 ]
 {
-"340
-[; ;Controlador.c: 340:             while (!TXSTAbits.TRMT) {
+"342
+[; ;Controlador.c: 342:             while (!TXSTAbits.TRMT) {
 [e $U 500  ]
 [e :U 501 ]
 {
-"341
-[; ;Controlador.c: 341:             }
+"343
+[; ;Controlador.c: 343:             }
 }
 [e :U 500 ]
-"340
-[; ;Controlador.c: 340:             while (!TXSTAbits.TRMT) {
+"342
+[; ;Controlador.c: 342:             while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 501  ]
 [e :U 502 ]
-"343
-[; ;Controlador.c: 343:             TXREG = buffer_TX[i];
+"345
+[; ;Controlador.c: 345:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"344
-[; ;Controlador.c: 344:         }
+"346
+[; ;Controlador.c: 346:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 27 `i 497  ]
 [e :U 498 ]
 }
-"346
-[; ;Controlador.c: 346:         LCD_Command(0xc0|(3));
+"348
+[; ;Controlador.c: 348:         LCD_Command(0xc0 | (3));
 [e ( _LCD_Command (1 -> | -> 192 `i -> 3 `i `uc ]
-"347
-[; ;Controlador.c: 347:         LCD_Char(1);
-[e ( _LCD_Char (1 -> -> 1 `i `uc ]
 "349
-[; ;Controlador.c: 349:         var_T_Integral = var_T_Integral + 6;
-[e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
-"350
-[; ;Controlador.c: 350:         acumBom = 12;
-[e = _acumBom -> 12 `i ]
+[; ;Controlador.c: 349:         LCD_Char(1);
+[e ( _LCD_Char (1 -> -> 1 `i `uc ]
 "351
-[; ;Controlador.c: 351:     } else if (var_T_Integral < 30 && acumBom == 12) {
+[; ;Controlador.c: 351:         var_T_Integral = var_T_Integral + 6;
+[e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
+"352
+[; ;Controlador.c: 352:         acumBom = 12;
+[e = _acumBom -> 12 `i ]
+"353
+[; ;Controlador.c: 353:     } else if (var_T_Integral < 30 && acumBom == 12) {
 }
 [e $U 503  ]
 [e :U 496 ]
 [e $ ! && < -> _var_T_Integral `i -> 30 `i == _acumBom -> 12 `i 504  ]
 {
-"352
-[; ;Controlador.c: 352:         PORTAbits.RA2 = 1;
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[v F3597 `uc ~T0 @X0 -> 27 `i s ]
-[i F3597
-:U ..
 "354
-[; ;Controlador.c: 354:         char buffer_TX[] = "Se encendio la bombilla 3\r";
+[; ;Controlador.c: 354:         PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[v F3596 `uc ~T0 @X0 -> 27 `i s ]
+[i F3596
+:U ..
+"356
+[; ;Controlador.c: 356:         char buffer_TX[] = "Se encendio la bombilla 3\r";
 -> 83 `c
 -> 101 `c
 -> 32 `c
@@ -2454,9 +2492,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
-[e = _buffer_TX F3597 ]
-"355
-[; ;Controlador.c: 355:         for (int i = 0; i < 27; i++) {
+[e = _buffer_TX F3596 ]
+"357
+[; ;Controlador.c: 357:         for (int i = 0; i < 27; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2464,56 +2502,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 506  ]
 [e :U 505 ]
 {
-"357
-[; ;Controlador.c: 357:             while (!TXSTAbits.TRMT) {
+"359
+[; ;Controlador.c: 359:             while (!TXSTAbits.TRMT) {
 [e $U 508  ]
 [e :U 509 ]
 {
-"358
-[; ;Controlador.c: 358:             }
+"360
+[; ;Controlador.c: 360:             }
 }
 [e :U 508 ]
-"357
-[; ;Controlador.c: 357:             while (!TXSTAbits.TRMT) {
+"359
+[; ;Controlador.c: 359:             while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 509  ]
 [e :U 510 ]
-"360
-[; ;Controlador.c: 360:             TXREG = buffer_TX[i];
+"362
+[; ;Controlador.c: 362:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"361
-[; ;Controlador.c: 361:         }
+"363
+[; ;Controlador.c: 363:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 27 `i 505  ]
 [e :U 506 ]
 }
-"364
-[; ;Controlador.c: 364:         LCD_Command(0xc0|(6));
+"366
+[; ;Controlador.c: 366:         LCD_Command(0xc0 | (6));
 [e ( _LCD_Command (1 -> | -> 192 `i -> 6 `i `uc ]
-"365
-[; ;Controlador.c: 365:         LCD_Char(2);
-[e ( _LCD_Char (1 -> -> 2 `i `uc ]
 "367
-[; ;Controlador.c: 367:         var_T_Integral = var_T_Integral + 6;
-[e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
-"368
-[; ;Controlador.c: 368:         acumBom = 18;
-[e = _acumBom -> 18 `i ]
+[; ;Controlador.c: 367:         LCD_Char(2);
+[e ( _LCD_Char (1 -> -> 2 `i `uc ]
 "369
-[; ;Controlador.c: 369:     } else if (var_T_Integral < 30 && acumBom == 18) {
+[; ;Controlador.c: 369:         var_T_Integral = var_T_Integral + 6;
+[e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
+"370
+[; ;Controlador.c: 370:         acumBom = 18;
+[e = _acumBom -> 18 `i ]
+"371
+[; ;Controlador.c: 371:     } else if (var_T_Integral < 30 && acumBom == 18) {
 }
 [e $U 511  ]
 [e :U 504 ]
 [e $ ! && < -> _var_T_Integral `i -> 30 `i == _acumBom -> 18 `i 512  ]
 {
-"370
-[; ;Controlador.c: 370:         PORTAbits.RA3 = 1;
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-[v F3600 `uc ~T0 @X0 -> 27 `i s ]
-[i F3600
-:U ..
 "372
-[; ;Controlador.c: 372:         char buffer_TX[] = "Se encendio la bombilla 4\r";
+[; ;Controlador.c: 372:         PORTAbits.RA3 = 1;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[v F3599 `uc ~T0 @X0 -> 27 `i s ]
+[i F3599
+:U ..
+"374
+[; ;Controlador.c: 374:         char buffer_TX[] = "Se encendio la bombilla 4\r";
 -> 83 `c
 -> 101 `c
 -> 32 `c
@@ -2544,9 +2582,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
-[e = _buffer_TX F3600 ]
-"373
-[; ;Controlador.c: 373:         for (int i = 0; i < 27; i++) {
+[e = _buffer_TX F3599 ]
+"375
+[; ;Controlador.c: 375:         for (int i = 0; i < 27; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2554,83 +2592,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 514  ]
 [e :U 513 ]
 {
-"375
-[; ;Controlador.c: 375:             while (!TXSTAbits.TRMT) {
+"377
+[; ;Controlador.c: 377:             while (!TXSTAbits.TRMT) {
 [e $U 516  ]
 [e :U 517 ]
 {
-"376
-[; ;Controlador.c: 376:             }
+"378
+[; ;Controlador.c: 378:             }
 }
 [e :U 516 ]
-"375
-[; ;Controlador.c: 375:             while (!TXSTAbits.TRMT) {
+"377
+[; ;Controlador.c: 377:             while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 517  ]
 [e :U 518 ]
-"378
-[; ;Controlador.c: 378:             TXREG = buffer_TX[i];
+"380
+[; ;Controlador.c: 380:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"379
-[; ;Controlador.c: 379:         }
+"381
+[; ;Controlador.c: 381:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 27 `i 513  ]
 [e :U 514 ]
 }
-"382
-[; ;Controlador.c: 382:         LCD_Command(0xc0|(9));
+"384
+[; ;Controlador.c: 384:         LCD_Command(0xc0 | (9));
 [e ( _LCD_Command (1 -> | -> 192 `i -> 9 `i `uc ]
-"383
-[; ;Controlador.c: 383:         LCD_Char(3);
-[e ( _LCD_Char (1 -> -> 3 `i `uc ]
 "385
-[; ;Controlador.c: 385:         var_T_Integral = var_T_Integral + 6;
-[e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
-"386
-[; ;Controlador.c: 386:         acumBom = 24;
-[e = _acumBom -> 24 `i ]
+[; ;Controlador.c: 385:         LCD_Char(3);
+[e ( _LCD_Char (1 -> -> 3 `i `uc ]
 "387
-[; ;Controlador.c: 387:     } else if (var_T_Integral < 30 && acumBom == 24) {
+[; ;Controlador.c: 387:         var_T_Integral = var_T_Integral + 6;
+[e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
+"388
+[; ;Controlador.c: 388:         acumBom = 24;
+[e = _acumBom -> 24 `i ]
+"389
+[; ;Controlador.c: 389:     } else if (var_T_Integral < 30 && acumBom == 24) {
 }
 [e $U 519  ]
 [e :U 512 ]
 [e $ ! && < -> _var_T_Integral `i -> 30 `i == _acumBom -> 24 `i 520  ]
 {
-"388
-[; ;Controlador.c: 388:         PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
 "390
-[; ;Controlador.c: 390:         LCD_Custom_Char(4,bombillaCar0);
-[e ( _LCD_Custom_Char (2 , -> -> 4 `i `uc &U _bombillaCar0 ]
-"391
-[; ;Controlador.c: 391:         for(char i=4;i<5;i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 4 `i `uc ]
-[e $ < -> _i `i -> 5 `i 521  ]
-[e $U 522  ]
-[e :U 521 ]
-"392
-[; ;Controlador.c: 392:             {
-{
-"393
-[; ;Controlador.c: 393:                 LCD_Command(0xc0|(i*3));
-[e ( _LCD_Command (1 -> | -> 192 `i * -> _i `i -> 3 `i `uc ]
-"394
-[; ;Controlador.c: 394:                 LCD_Char(i);
-[e ( _LCD_Char (1 _i ]
-"396
-[; ;Controlador.c: 396:             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 521  ]
-[e :U 522 ]
-}
-[v F3604 `uc ~T0 @X0 -> 27 `i s ]
-[i F3604
+[; ;Controlador.c: 390:         PORTAbits.RA4 = 1;
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[v F3602 `uc ~T0 @X0 -> 27 `i s ]
+[i F3602
 :U ..
-"397
-[; ;Controlador.c: 397:         char buffer_TX[] = "Se encendio la bombilla 5\r";
+"392
+[; ;Controlador.c: 392:         char buffer_TX[] = "Se encendio la bombilla 5\r";
 -> 83 `c
 -> 101 `c
 -> 32 `c
@@ -2661,63 +2672,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 27 `i a ]
-[e = _buffer_TX F3604 ]
-"398
-[; ;Controlador.c: 398:         for (int i = 0; i < 27; i++) {
+[e = _buffer_TX F3602 ]
+"393
+[; ;Controlador.c: 393:         for (int i = 0; i < 27; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 27 `i 524  ]
-[e $U 525  ]
-[e :U 524 ]
+[e $ < _i -> 27 `i 521  ]
+[e $U 522  ]
+[e :U 521 ]
 {
-"400
-[; ;Controlador.c: 400:             while (!TXSTAbits.TRMT) {
-[e $U 527  ]
-[e :U 528 ]
+"395
+[; ;Controlador.c: 395:             while (!TXSTAbits.TRMT) {
+[e $U 524  ]
+[e :U 525 ]
 {
-"401
-[; ;Controlador.c: 401:             }
+"396
+[; ;Controlador.c: 396:             }
 }
-[e :U 527 ]
-"400
-[; ;Controlador.c: 400:             while (!TXSTAbits.TRMT) {
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 528  ]
-[e :U 529 ]
-"403
-[; ;Controlador.c: 403:             TXREG = buffer_TX[i];
+[e :U 524 ]
+"395
+[; ;Controlador.c: 395:             while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 525  ]
+[e :U 526 ]
+"398
+[; ;Controlador.c: 398:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"404
-[; ;Controlador.c: 404:         }
+"399
+[; ;Controlador.c: 399:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 27 `i 524  ]
-[e :U 525 ]
+[e $ < _i -> 27 `i 521  ]
+[e :U 522 ]
 }
-"407
-[; ;Controlador.c: 407:         LCD_Command(0xc0|(12));
+"402
+[; ;Controlador.c: 402:         LCD_Command(0xc0 | (12));
 [e ( _LCD_Command (1 -> | -> 192 `i -> 12 `i `uc ]
-"408
-[; ;Controlador.c: 408:         LCD_Char(4);
+"403
+[; ;Controlador.c: 403:         LCD_Char(4);
 [e ( _LCD_Char (1 -> -> 4 `i `uc ]
-"410
-[; ;Controlador.c: 410:         var_T_Integral = var_T_Integral + 6;
+"405
+[; ;Controlador.c: 405:         var_T_Integral = var_T_Integral + 6;
 [e = _var_T_Integral -> + -> _var_T_Integral `i -> 6 `i `uc ]
-"411
-[; ;Controlador.c: 411:     } else if (var_T_Integral > 35) {
+"406
+[; ;Controlador.c: 406:     } else if (var_T_Integral > 35) {
 }
-[e $U 530  ]
+[e $U 527  ]
 [e :U 520 ]
-[e $ ! > -> _var_T_Integral `i -> 35 `i 531  ]
+[e $ ! > -> _var_T_Integral `i -> 35 `i 528  ]
 {
-"412
-[; ;Controlador.c: 412:         banAgregar = 1;
+"407
+[; ;Controlador.c: 407:         banAgregar = 1;
 [e = _banAgregar -> 1 `i ]
-[v F3607 `uc ~T0 @X0 -> 19 `i s ]
-[i F3607
+[v F3605 `uc ~T0 @X0 -> 19 `i s ]
+[i F3605
 :U ..
-"413
-[; ;Controlador.c: 413:         char buffer_TX[] = "Temperatura Alta \r";
+"409
+[; ;Controlador.c: 409:         char buffer_TX[] = "Temperatura Alta \r";
 -> 84 `c
 -> 101 `c
 -> 109 `c
@@ -2740,320 +2751,342 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 19 `i a ]
-[e = _buffer_TX F3607 ]
-"414
-[; ;Controlador.c: 414:         for (int i = 0; i < 19; i++) {
+[e = _buffer_TX F3605 ]
+"410
+[; ;Controlador.c: 410:         for (int i = 0; i < 19; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 19 `i 532  ]
-[e $U 533  ]
-[e :U 532 ]
+[e $ < _i -> 19 `i 529  ]
+[e $U 530  ]
+[e :U 529 ]
 {
-"416
-[; ;Controlador.c: 416:             while (!TXSTAbits.TRMT) {
-[e $U 535  ]
-[e :U 536 ]
+"412
+[; ;Controlador.c: 412:             while (!TXSTAbits.TRMT) {
+[e $U 532  ]
+[e :U 533 ]
 {
-"417
-[; ;Controlador.c: 417:             }
+"413
+[; ;Controlador.c: 413:             }
 }
-[e :U 535 ]
-"416
-[; ;Controlador.c: 416:             while (!TXSTAbits.TRMT) {
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 536  ]
-[e :U 537 ]
-"419
-[; ;Controlador.c: 419:             TXREG = buffer_TX[i];
+[e :U 532 ]
+"412
+[; ;Controlador.c: 412:             while (!TXSTAbits.TRMT) {
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 533  ]
+[e :U 534 ]
+"415
+[; ;Controlador.c: 415:             TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"420
-[; ;Controlador.c: 420:         }
+"416
+[; ;Controlador.c: 416:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 19 `i 532  ]
-[e :U 533 ]
+[e $ < _i -> 19 `i 529  ]
+[e :U 530 ]
 }
-"421
-[; ;Controlador.c: 421:         MSdelay(100);
-[e ( _MSdelay (1 -> -> 100 `i `ui ]
+"418
+[; ;Controlador.c: 418:         for (char i = 0; i <= 5; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 5 `i 535  ]
+[e $U 536  ]
+[e :U 535 ]
+{
+"419
+[; ;Controlador.c: 419:             LCD_Command(0xc0 | (i*3));
+[e ( _LCD_Command (1 -> | -> 192 `i * -> _i `i -> 3 `i `uc ]
+"420
+[; ;Controlador.c: 420:             LCD_Char(6);
+[e ( _LCD_Char (1 -> -> 6 `i `uc ]
 "422
-[; ;Controlador.c: 422:     } else
+[; ;Controlador.c: 422:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 5 `i 535  ]
+[e :U 536 ]
+}
+"425
+[; ;Controlador.c: 425:         MSdelay(100);
+[e ( _MSdelay (1 -> -> 100 `i `ui ]
+"426
+[; ;Controlador.c: 426:     } else
 }
 [e $U 538  ]
-[e :U 531 ]
-"423
-[; ;Controlador.c: 423:         banAgregar = 1;
+[e :U 528 ]
+"427
+[; ;Controlador.c: 427:         banAgregar = 1;
 [e = _banAgregar -> 1 `i ]
 [e :U 538 ]
-[e :U 530 ]
+[e :U 527 ]
 [e :U 519 ]
 [e :U 511 ]
 [e :U 503 ]
 [e :U 495 ]
-"424
-[; ;Controlador.c: 424:     MSdelay(1000);
+"428
+[; ;Controlador.c: 428:     MSdelay(1000);
 [e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"426
-[; ;Controlador.c: 426: }
+"430
+[; ;Controlador.c: 430: }
 [e :UE 487 ]
 }
-"430
-[; ;Controlador.c: 430: void RTC_Read_Clock(char read_clock_address) {
+"434
+[; ;Controlador.c: 434: void RTC_Read_Clock(char read_clock_address) {
 [v _RTC_Read_Clock `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _RTC_Read_Clock ]
 [v _read_clock_address `uc ~T0 @X0 1 r1 ]
 [f ]
-"431
-[; ;Controlador.c: 431:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
-"432
-[; ;Controlador.c: 432:     I2C_Write(read_clock_address);
-[e ( _I2C_Write (1 -> _read_clock_address `uc ]
-"433
-[; ;Controlador.c: 433:     I2C_Repeated_Start(0xD1);
-[e ( _I2C_Repeated_Start (1 -> -> 209 `i `uc ]
-"434
-[; ;Controlador.c: 434:     sec = I2C_Read(0);
-[e = _sec -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
 "435
-[; ;Controlador.c: 435:     min = I2C_Read(0);
-[e = _min -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+[; ;Controlador.c: 435:     I2C_Start(0xD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "436
-[; ;Controlador.c: 436:     hour = I2C_Read(1);
-[e = _hour -> ( _I2C_Read (1 -> -> 1 `i `uc `i ]
+[; ;Controlador.c: 436:     I2C_Write(read_clock_address);
+[e ( _I2C_Write (1 -> _read_clock_address `uc ]
+"437
+[; ;Controlador.c: 437:     I2C_Repeated_Start(0xD1);
+[e ( _I2C_Repeated_Start (1 -> -> 209 `i `uc ]
 "438
-[; ;Controlador.c: 438: }
+[; ;Controlador.c: 438:     sec = I2C_Read(0);
+[e = _sec -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+"439
+[; ;Controlador.c: 439:     min = I2C_Read(0);
+[e = _min -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+"440
+[; ;Controlador.c: 440:     hour = I2C_Read(1);
+[e = _hour -> ( _I2C_Read (1 -> -> 1 `i `uc `i ]
+"442
+[; ;Controlador.c: 442: }
 [e :UE 539 ]
 }
-"440
-[; ;Controlador.c: 440: void RTC_Read_Calendar(char read_calendar_address) {
+"444
+[; ;Controlador.c: 444: void RTC_Read_Calendar(char read_calendar_address) {
 [v _RTC_Read_Calendar `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _RTC_Read_Calendar ]
 [v _read_calendar_address `uc ~T0 @X0 1 r1 ]
 [f ]
-"441
-[; ;Controlador.c: 441:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
-"442
-[; ;Controlador.c: 442:     I2C_Write(read_calendar_address);
-[e ( _I2C_Write (1 -> _read_calendar_address `uc ]
-"443
-[; ;Controlador.c: 443:     I2C_Repeated_Start(0xD1);
-[e ( _I2C_Repeated_Start (1 -> -> 209 `i `uc ]
-"444
-[; ;Controlador.c: 444:     Day = I2C_Read(0);
-[e = _Day -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
 "445
-[; ;Controlador.c: 445:     Date = I2C_Read(0);
-[e = _Date -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+[; ;Controlador.c: 445:     I2C_Start(0xD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "446
-[; ;Controlador.c: 446:     Month = I2C_Read(0);
-[e = _Month -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+[; ;Controlador.c: 446:     I2C_Write(read_calendar_address);
+[e ( _I2C_Write (1 -> _read_calendar_address `uc ]
 "447
-[; ;Controlador.c: 447:     Year = I2C_Read(1);
-[e = _Year -> ( _I2C_Read (1 -> -> 1 `i `uc `i ]
+[; ;Controlador.c: 447:     I2C_Repeated_Start(0xD1);
+[e ( _I2C_Repeated_Start (1 -> -> 209 `i `uc ]
 "448
-[; ;Controlador.c: 448:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
+[; ;Controlador.c: 448:     Day = I2C_Read(0);
+[e = _Day -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
 "449
-[; ;Controlador.c: 449: }
+[; ;Controlador.c: 449:     Date = I2C_Read(0);
+[e = _Date -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+"450
+[; ;Controlador.c: 450:     Month = I2C_Read(0);
+[e = _Month -> ( _I2C_Read (1 -> -> 0 `i `uc `i ]
+"451
+[; ;Controlador.c: 451:     Year = I2C_Read(1);
+[e = _Year -> ( _I2C_Read (1 -> -> 1 `i `uc `i ]
+"452
+[; ;Controlador.c: 452:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"453
+[; ;Controlador.c: 453: }
 [e :UE 540 ]
 }
-"451
-[; ;Controlador.c: 451: void mostrarFechaHora() {
+"457
+[; ;Controlador.c: 457: void mostrarFechaHora() {
 [v _mostrarFechaHora `(v ~T0 @X0 1 ef ]
 {
 [e :U _mostrarFechaHora ]
 [f ]
-"452
-[; ;Controlador.c: 452:     LCD_Init();
+"458
+[; ;Controlador.c: 458:     LCD_Init();
 [e ( _LCD_Init ..  ]
-"453
-[; ;Controlador.c: 453:     RTC_Read_Clock(0);
+"459
+[; ;Controlador.c: 459:     RTC_Read_Clock(0);
 [e ( _RTC_Read_Clock (1 -> -> 0 `i `uc ]
-"454
-[; ;Controlador.c: 454:     I2C_Stop();
+"460
+[; ;Controlador.c: 460:     I2C_Stop();
 [e ( _I2C_Stop ..  ]
-"455
-[; ;Controlador.c: 455:     MSdelay(1000);
+"461
+[; ;Controlador.c: 461:     MSdelay(1000);
 [e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"456
-[; ;Controlador.c: 456:     if (hour & (1 << Clock_type)) {
+"462
+[; ;Controlador.c: 462:     if (hour & (1 << Clock_type)) {
 [e $ ! != & _hour << -> 1 `i -> _Clock_type `i -> 0 `i 542  ]
 {
-"458
-[; ;Controlador.c: 458:         if (hour & (1 << AM_PM)) {
+"464
+[; ;Controlador.c: 464:         if (hour & (1 << AM_PM)) {
 [e $ ! != & _hour << -> 1 `i -> _AM_PM `i -> 0 `i 543  ]
 {
-"459
-[; ;Controlador.c: 459:             LCD_String_xy(1, 14, "PM");
+"465
+[; ;Controlador.c: 465:             LCD_String_xy(1, 14, "PM");
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 14 `i `uc :s 9C ]
-"460
-[; ;Controlador.c: 460:         } else {
+"466
+[; ;Controlador.c: 466:         } else {
 }
 [e $U 544  ]
 [e :U 543 ]
 {
-"461
-[; ;Controlador.c: 461:             LCD_String_xy(1, 14, "AM");
+"467
+[; ;Controlador.c: 467:             LCD_String_xy(1, 14, "AM");
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 14 `i `uc :s 10C ]
-"462
-[; ;Controlador.c: 462:         }
+"468
+[; ;Controlador.c: 468:         }
 }
 [e :U 544 ]
-"464
-[; ;Controlador.c: 464:         hour = hour & (0x1f);
-[e = _hour & _hour -> 31 `i ]
-"465
-[; ;Controlador.c: 465:         sprintf(secs, "%x ", sec);
-[e ( _sprintf (1 , (. , &U _secs :s 11C _sec ]
-"466
-[; ;Controlador.c: 466:         sprintf(mins, "%x:", min);
-[e ( _sprintf (1 , (. , &U _mins :s 12C _min ]
-"467
-[; ;Controlador.c: 467:         sprintf(hours, "Tim:%x:", hour);
-[e ( _sprintf (1 , (. , &U _hours :s 13C _hour ]
-"468
-[; ;Controlador.c: 468:         LCD_String_xy(0, 0, hours);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _hours `*Cuc ]
-"469
-[; ;Controlador.c: 469:         LCD_String(mins);
-[e ( _LCD_String (1 -> &U _mins `*Cuc ]
 "470
-[; ;Controlador.c: 470:         LCD_String(secs);
-[e ( _LCD_String (1 -> &U _secs `*Cuc ]
+[; ;Controlador.c: 470:         hour = hour & (0x1f);
+[e = _hour & _hour -> 31 `i ]
 "471
-[; ;Controlador.c: 471:     } else {
+[; ;Controlador.c: 471:         sprintf(secs, "%x ", sec);
+[e ( _sprintf (1 , (. , &U _secs :s 11C _sec ]
+"472
+[; ;Controlador.c: 472:         sprintf(mins, "%x:", min);
+[e ( _sprintf (1 , (. , &U _mins :s 12C _min ]
+"473
+[; ;Controlador.c: 473:         sprintf(hours, "Tim:%x:", hour);
+[e ( _sprintf (1 , (. , &U _hours :s 13C _hour ]
+"474
+[; ;Controlador.c: 474:         LCD_String_xy(0, 0, hours);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _hours `*Cuc ]
+"475
+[; ;Controlador.c: 475:         LCD_String(mins);
+[e ( _LCD_String (1 -> &U _mins `*Cuc ]
+"476
+[; ;Controlador.c: 476:         LCD_String(secs);
+[e ( _LCD_String (1 -> &U _secs `*Cuc ]
+"477
+[; ;Controlador.c: 477:     } else {
 }
 [e $U 545  ]
 [e :U 542 ]
 {
-"473
-[; ;Controlador.c: 473:         hour = hour & (0x3f);
-[e = _hour & _hour -> 63 `i ]
-"474
-[; ;Controlador.c: 474:         sprintf(secs, "%x ", sec);
-[e ( _sprintf (1 , (. , &U _secs :s 14C _sec ]
-"475
-[; ;Controlador.c: 475:         sprintf(mins, "%x:", min);
-[e ( _sprintf (1 , (. , &U _mins :s 15C _min ]
-"476
-[; ;Controlador.c: 476:         sprintf(hours, "Tim:%x:", hour);
-[e ( _sprintf (1 , (. , &U _hours :s 16C _hour ]
-"477
-[; ;Controlador.c: 477:         LCD_String_xy(0, 0, hours);
-[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _hours `*Cuc ]
-"478
-[; ;Controlador.c: 478:         LCD_String(mins);
-[e ( _LCD_String (1 -> &U _mins `*Cuc ]
 "479
-[; ;Controlador.c: 479:         LCD_String(secs);
-[e ( _LCD_String (1 -> &U _secs `*Cuc ]
+[; ;Controlador.c: 479:         hour = hour & (0x3f);
+[e = _hour & _hour -> 63 `i ]
 "480
-[; ;Controlador.c: 480:     }
+[; ;Controlador.c: 480:         sprintf(secs, "%x ", sec);
+[e ( _sprintf (1 , (. , &U _secs :s 14C _sec ]
+"481
+[; ;Controlador.c: 481:         sprintf(mins, "%x:", min);
+[e ( _sprintf (1 , (. , &U _mins :s 15C _min ]
+"482
+[; ;Controlador.c: 482:         sprintf(hours, "Tim:%x:", hour);
+[e ( _sprintf (1 , (. , &U _hours :s 16C _hour ]
+"483
+[; ;Controlador.c: 483:         LCD_String_xy(0, 0, hours);
+[e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> &U _hours `*Cuc ]
+"484
+[; ;Controlador.c: 484:         LCD_String(mins);
+[e ( _LCD_String (1 -> &U _mins `*Cuc ]
+"485
+[; ;Controlador.c: 485:         LCD_String(secs);
+[e ( _LCD_String (1 -> &U _secs `*Cuc ]
+"486
+[; ;Controlador.c: 486:     }
 }
 [e :U 545 ]
-"482
-[; ;Controlador.c: 482:     RTC_Read_Calendar(3);
-[e ( _RTC_Read_Calendar (1 -> -> 3 `i `uc ]
-"483
-[; ;Controlador.c: 483:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"484
-[; ;Controlador.c: 484:     sprintf(date, "Cal %x-", Date);
-[e ( _sprintf (1 , (. , &U _date :s 17C _Date ]
-"485
-[; ;Controlador.c: 485:     sprintf(month, "%x-", Month);
-[e ( _sprintf (1 , (. , &U _month :s 18C _Month ]
-"486
-[; ;Controlador.c: 486:     sprintf(year, "%x ", Year);
-[e ( _sprintf (1 , (. , &U _year :s 19C _Year ]
-"487
-[; ;Controlador.c: 487:     LCD_String_xy(2, 0, date);
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _date `*Cuc ]
 "488
-[; ;Controlador.c: 488:     LCD_String(month);
-[e ( _LCD_String (1 -> &U _month `*Cuc ]
+[; ;Controlador.c: 488:     RTC_Read_Calendar(3);
+[e ( _RTC_Read_Calendar (1 -> -> 3 `i `uc ]
 "489
-[; ;Controlador.c: 489:     LCD_String(year);
-[e ( _LCD_String (1 -> &U _year `*Cuc ]
+[; ;Controlador.c: 489:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"490
+[; ;Controlador.c: 490:     sprintf(date, "Cal %x-", Date);
+[e ( _sprintf (1 , (. , &U _date :s 17C _Date ]
+"491
+[; ;Controlador.c: 491:     sprintf(month, "%x-", Month);
+[e ( _sprintf (1 , (. , &U _month :s 18C _Month ]
 "492
-[; ;Controlador.c: 492:     switch (days[Day]) {
+[; ;Controlador.c: 492:     sprintf(year, "%x ", Year);
+[e ( _sprintf (1 , (. , &U _year :s 19C _Year ]
+"493
+[; ;Controlador.c: 493:     LCD_String_xy(2, 0, date);
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _date `*Cuc ]
+"494
+[; ;Controlador.c: 494:     LCD_String(month);
+[e ( _LCD_String (1 -> &U _month `*Cuc ]
+"495
+[; ;Controlador.c: 495:     LCD_String(year);
+[e ( _LCD_String (1 -> &U _year `*Cuc ]
+"498
+[; ;Controlador.c: 498:     switch (days[Day]) {
 [e $U 547  ]
 {
-"493
-[; ;Controlador.c: 493:         case 'S':
-[e :U 548 ]
-"494
-[; ;Controlador.c: 494:             LCD_String("Sun");
-[e ( _LCD_String (1 :s 20C ]
-"495
-[; ;Controlador.c: 495:             break;
-[e $U 546  ]
-"496
-[; ;Controlador.c: 496:         case 'M':
-[e :U 549 ]
-"497
-[; ;Controlador.c: 497:             LCD_String("Mon");
-[e ( _LCD_String (1 :s 21C ]
-"498
-[; ;Controlador.c: 498:             break;
-[e $U 546  ]
 "499
-[; ;Controlador.c: 499:         case 'T':
-[e :U 550 ]
+[; ;Controlador.c: 499:         case 'S':
+[e :U 548 ]
 "500
-[; ;Controlador.c: 500:             LCD_String("Tue");
-[e ( _LCD_String (1 :s 22C ]
+[; ;Controlador.c: 500:             LCD_String("Sun");
+[e ( _LCD_String (1 :s 20C ]
 "501
 [; ;Controlador.c: 501:             break;
 [e $U 546  ]
 "502
-[; ;Controlador.c: 502:         case 'W':
-[e :U 551 ]
+[; ;Controlador.c: 502:         case 'M':
+[e :U 549 ]
 "503
-[; ;Controlador.c: 503:             LCD_String("Wed");
-[e ( _LCD_String (1 :s 23C ]
+[; ;Controlador.c: 503:             LCD_String("Mon");
+[e ( _LCD_String (1 :s 21C ]
 "504
 [; ;Controlador.c: 504:             break;
 [e $U 546  ]
 "505
-[; ;Controlador.c: 505:         case 't':
-[e :U 552 ]
+[; ;Controlador.c: 505:         case 'T':
+[e :U 550 ]
 "506
-[; ;Controlador.c: 506:             LCD_String("Thu");
-[e ( _LCD_String (1 :s 24C ]
+[; ;Controlador.c: 506:             LCD_String("Tue");
+[e ( _LCD_String (1 :s 22C ]
 "507
 [; ;Controlador.c: 507:             break;
 [e $U 546  ]
 "508
-[; ;Controlador.c: 508:         case 'F':
-[e :U 553 ]
+[; ;Controlador.c: 508:         case 'W':
+[e :U 551 ]
 "509
-[; ;Controlador.c: 509:             LCD_String("Fri");
-[e ( _LCD_String (1 :s 25C ]
+[; ;Controlador.c: 509:             LCD_String("Wed");
+[e ( _LCD_String (1 :s 23C ]
 "510
 [; ;Controlador.c: 510:             break;
 [e $U 546  ]
 "511
-[; ;Controlador.c: 511:         case 's':
-[e :U 554 ]
+[; ;Controlador.c: 511:         case 't':
+[e :U 552 ]
 "512
-[; ;Controlador.c: 512:             LCD_String("Sat");
-[e ( _LCD_String (1 :s 26C ]
+[; ;Controlador.c: 512:             LCD_String("Thu");
+[e ( _LCD_String (1 :s 24C ]
 "513
 [; ;Controlador.c: 513:             break;
 [e $U 546  ]
 "514
-[; ;Controlador.c: 514:         default:
-[e :U 555 ]
+[; ;Controlador.c: 514:         case 'F':
+[e :U 553 ]
 "515
-[; ;Controlador.c: 515:             break;
+[; ;Controlador.c: 515:             LCD_String("Fri");
+[e ( _LCD_String (1 :s 25C ]
+"516
+[; ;Controlador.c: 516:             break;
 [e $U 546  ]
 "517
-[; ;Controlador.c: 517:     }
+[; ;Controlador.c: 517:         case 's':
+[e :U 554 ]
+"518
+[; ;Controlador.c: 518:             LCD_String("Sat");
+[e ( _LCD_String (1 :s 26C ]
+"519
+[; ;Controlador.c: 519:             break;
+[e $U 546  ]
+"520
+[; ;Controlador.c: 520:         default:
+[e :U 555 ]
+"521
+[; ;Controlador.c: 521:             break;
+[e $U 546  ]
+"523
+[; ;Controlador.c: 523:     }
 }
 [e $U 546  ]
 [e :U 547 ]
@@ -3066,11 +3099,11 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 115 `ui `i 554
  555 ]
 [e :U 546 ]
-[v F3615 `uc ~T0 @X0 -> 26 `i s ]
-[i F3615
+[v F3614 `uc ~T0 @X0 -> 26 `i s ]
+[i F3614
 :U ..
-"518
-[; ;Controlador.c: 518:     char buffer_TX[] = "Registrando Hora y Fecha\r";
+"524
+[; ;Controlador.c: 524:     char buffer_TX[] = "Registrando Hora y Fecha\r";
 -> 82 `c
 -> 101 `c
 -> 103 `c
@@ -3100,9 +3133,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_TX `uc ~T0 @X0 -> 26 `i a ]
-[e = _buffer_TX F3615 ]
-"519
-[; ;Controlador.c: 519:     for (int i = 0; i < 25; i++) {
+[e = _buffer_TX F3614 ]
+"525
+[; ;Controlador.c: 525:     for (int i = 0; i < 25; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -3110,78 +3143,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 557  ]
 [e :U 556 ]
 {
-"521
-[; ;Controlador.c: 521:         while (!TXSTAbits.TRMT) {
+"527
+[; ;Controlador.c: 527:         while (!TXSTAbits.TRMT) {
 [e $U 559  ]
 [e :U 560 ]
 {
-"522
-[; ;Controlador.c: 522:         }
+"528
+[; ;Controlador.c: 528:         }
 }
 [e :U 559 ]
-"521
-[; ;Controlador.c: 521:         while (!TXSTAbits.TRMT) {
+"527
+[; ;Controlador.c: 527:         while (!TXSTAbits.TRMT) {
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 560  ]
 [e :U 561 ]
-"524
-[; ;Controlador.c: 524:         TXREG = buffer_TX[i];
+"530
+[; ;Controlador.c: 530:         TXREG = buffer_TX[i];
 [e = _TXREG -> *U + &U _buffer_TX * -> -> _i `ui `ux -> -> # *U &U _buffer_TX `ui `ux `uc ]
-"525
-[; ;Controlador.c: 525:     }
+"531
+[; ;Controlador.c: 531:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 25 `i 556  ]
 [e :U 557 ]
 }
-"527
-[; ;Controlador.c: 527: }
+"533
+[; ;Controlador.c: 533: }
 [e :UE 541 ]
 }
-"529
-[; ;Controlador.c: 529: void verificarHora() {
+"537
+[; ;Controlador.c: 537: void verificarHora() {
 [v _verificarHora `(v ~T0 @X0 1 ef ]
 {
 [e :U _verificarHora ]
 [f ]
-"530
-[; ;Controlador.c: 530:     RTC_Read_Clock(0);
-[e ( _RTC_Read_Clock (1 -> -> 0 `i `uc ]
-"531
-[; ;Controlador.c: 531:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"532
-[; ;Controlador.c: 532:     MSdelay(1000);
-[e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"533
-[; ;Controlador.c: 533:     if (hour & (1 << Clock_type)) {
-[e $ ! != & _hour << -> 1 `i -> _Clock_type `i -> 0 `i 563  ]
-{
-"534
-[; ;Controlador.c: 534:         if (hour & (1 << AM_PM)) {
-[e $ ! != & _hour << -> 1 `i -> _AM_PM `i -> 0 `i 564  ]
-{
-"535
-[; ;Controlador.c: 535:             LCD_String_xy(1, 14, "PM");
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 14 `i `uc :s 27C ]
-"536
-[; ;Controlador.c: 536:         } else {
-}
-[e $U 565  ]
-[e :U 564 ]
-{
-"537
-[; ;Controlador.c: 537:             LCD_String_xy(1, 14, "AM");
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 14 `i `uc :s 28C ]
 "538
-[; ;Controlador.c: 538:         }
-}
-[e :U 565 ]
+[; ;Controlador.c: 538:     RTC_Read_Clock(0);
+[e ( _RTC_Read_Clock (1 -> -> 0 `i `uc ]
 "539
-[; ;Controlador.c: 539:     }
-}
-[e :U 563 ]
-"541
-[; ;Controlador.c: 541: }
+[; ;Controlador.c: 539:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"540
+[; ;Controlador.c: 540:     MSdelay(1000);
+[e ( _MSdelay (1 -> -> 1000 `i `ui ]
+"543
+[; ;Controlador.c: 543: }
 [e :UE 562 ]
 }
 [p f _sprintf 12583040 ]
@@ -3195,12 +3200,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 6C 46 37 100 0 ]
 [a 3C 37 100 0 ]
 [a 5C 37 100 0 ]
-[a 8C 84 0 ]
+[a 7C 84 0 ]
 [a 9C 80 77 0 ]
-[a 27C 80 77 0 ]
 [a 10C 65 77 0 ]
-[a 28C 65 77 0 ]
-[a 7C 72 0 ]
+[a 8C 72 0 ]
 [a 2C 68 73 85 82 78 65 0 ]
 [a 13C 84 105 109 58 37 120 58 0 ]
 [a 16C 84 105 109 58 37 120 58 0 ]

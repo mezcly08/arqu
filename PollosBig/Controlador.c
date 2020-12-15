@@ -55,27 +55,29 @@ intended publication of this material.
 void DHT11_Start();
 void DHT11_CheckResponse();
 char DHT11_ReadData();
+void imprimirTemHum();
 
-//Procedimietos 
+
+//Procedimietos Utilizados por el PIC o el Main
 void onLEDS(char);
 void offBombillas();
-void imprimirTemHum();
-void encenderBombillas();
+void onBombillas();
 void offLEDS();
-void imprimirBomLed();
 
-// Procedimientos RTC
+// Procedimientos del RTC
 void mostrarFechaHora();
 void verificarHora();
 
-//Caracter especial LED
-unsigned char bombillaCar0[8] = {  0x0E,  0x11,  0x11,  0x11,  0x0E,  0x0E,  0x00,  0x00};
+//Caracter especial LED (Bombilla)
+unsigned char bombillaCar0[8] = {0x0E, 0x11, 0x11, 0x11, 0x0E, 0x0E, 0x00, 0x00};
+unsigned char good[8] = {0x00, 0x1B, 0x1B, 0x00, 0x11, 0x11, 0x0E, 0x00};
+unsigned char alert[8] = {0x00, 0x1B, 0x1B, 0x00, 0x0E, 0x11, 0x11, 0x00};
 
 //Variables utilizadas por el sistema.
-char var_RH_Decimal, var_RH_Integral, var_T_Decimal, var_T_Integral, valor2;
+char var_RH_Decimal, var_RH_Integral, var_T_Decimal, var_T_Integral;
 char vec_value[10];
 int banAgregar = 0; //Bandera
-int acumBom = 0; //Acumulador para encender bombillas
+int acumBom = 0; //Acumulador para comparar bombillas
 
 //Variables del RTC
 int sec, min, hour;
@@ -86,12 +88,6 @@ char Clock_type = 0x06;
 char AM_PM = 0x05;
 char days[7] = {'S', 'M', 'T', 'W', 't', 'F', 's'};
 //Fin variables RTC
-
-char j;
-
-        
-
-//Main
 
 void main() {
     TRISA = 0;
@@ -124,11 +120,11 @@ void main() {
         LCD_Init(); /* initialize LCD16x2 */
         I2C_Init(); /*initialize I2C protocol*/
         MSdelay(10);
-        
-              
+
+
         verificarHora();
 
-        if ( hour >= 0x18 || hour <=6 ) { //Compara si la hora es nocturna
+        if (hour >= 0x18 || hour <= 6) { //Compara si la hora es nocturna
             DHT11_Start(); /* send start pulse to DHT11 module */
             DHT11_CheckResponse(); /* wait for response from DHT11 module */
 
@@ -138,7 +134,7 @@ void main() {
             var_T_Integral = DHT11_ReadData(); /* read Temperature's integral value */
             var_T_Decimal = DHT11_ReadData(); /* read Relative Temperature's decimal value */
 
-            imprimirTemHum();
+            imprimirTemHum(); // Imprime la temperatura leida en el LCD
 
             char buffer_TX[] = "No se ha prendido ninguna bombilla\r";
             for (int i = 0; i < 35; i++) {
@@ -152,7 +148,7 @@ void main() {
 
             while (banAgregar == 0) {
 
-                encenderBombillas();
+                onBombillas();
                 imprimirTemHum();
 
                 MSdelay(1000);
@@ -234,6 +230,8 @@ void offLEDS() {
 // Método para encender LEDS
 
 void onLEDS(char T_Integral) {
+    LCD_Custom_Char(5, good);
+
     int valor = T_Integral;
     if (valor < 30) {
         LED_A = 1;
@@ -243,6 +241,10 @@ void onLEDS(char T_Integral) {
         LED_A = 0;
         LED_V = 1;
         LED_R = 0;
+
+        LCD_Command(0xc0 | (15)); /*Display characters from c0(2nd row) location */
+        LCD_Char(5); /*To display custom character send address as data to point stored character */
+
         char buffer_TX[] = "Temperatura Ideal\r";
         for (int i = 0; i < 19; i++) {
             //  espera a que el registro de transmisión este disponible o vacio.
@@ -277,6 +279,7 @@ void offBombillas() {
 }
 
 // Imrimir en el LCD los datos de Temperatura y Humedad
+
 void imprimirTemHum() {
     /* convert humidity value to ascii and send it to display*/
     sprintf(vec_value, "%d", var_RH_Integral);
@@ -293,18 +296,20 @@ void imprimirTemHum() {
     LCD_Char(0xdf);
     LCD_Char('C');
 
-    LCD_String_xy(0, 15, "H");
     LCD_String_xy(0, 6, "T");
+    LCD_String_xy(0, 15, "H");
 }
 
+//Procedimiento de enceder las bombillas y de mostrarlas tanto en la consola como en el LCD
 
-void encenderBombillas() {
-    LCD_Custom_Char(0,bombillaCar0);
-    LCD_Custom_Char(1,bombillaCar0);
-    LCD_Custom_Char(2,bombillaCar0);
-    LCD_Custom_Char(3,bombillaCar0);
-    LCD_Custom_Char(4,bombillaCar0);
-    
+void onBombillas() {
+    LCD_Custom_Char(0, bombillaCar0);
+    LCD_Custom_Char(1, bombillaCar0);
+    LCD_Custom_Char(2, bombillaCar0);
+    LCD_Custom_Char(3, bombillaCar0);
+    LCD_Custom_Char(4, bombillaCar0);
+    LCD_Custom_Char(6, alert);
+
     onLEDS(var_T_Integral); //Encender los leds de advertencia
     if (var_T_Integral < 30 && acumBom == 0) {
         PORTAbits.RA0 = 1;
@@ -315,25 +320,22 @@ void encenderBombillas() {
             }
             //  escribe el dato que se enviará a través de TX.
             TXREG = buffer_TX[i];
-        }      
-        
-                
+        }
+
+
         //Parte para Imprimir el Caracter
-                           
-        LCD_Command(0xc0|(0));     /*Display characters from c0(2nd row) location */
-        LCD_Char(0);                 /*To display custom character send address as data to point stored 
-                                       character */  
-        
-        
-//        LCD_String_xy(1, 0, "ON B.");
-//        LCD_String_xy(1, 6, "1");
-            
+
+        LCD_Command(0xc0 | (0)); /*Display characters from c0(2nd row) location */
+        LCD_Char(0); /*To display custom character send address as data to point stored 
+                                       character */
+
+
         var_T_Integral = var_T_Integral + 6;
-       acumBom = 6;
+        acumBom = 6;
 
     } else if (var_T_Integral < 30 && acumBom == 6) {
-        PORTAbits.RA1 = 1;        
-        
+        PORTAbits.RA1 = 1;
+
         char buffer_TX[] = "Se encendio la bombilla 2\r";
         for (int i = 0; i < 27; i++) {
             //  espera a que el registro de transmisión este disponible o vacio.
@@ -343,14 +345,14 @@ void encenderBombillas() {
             TXREG = buffer_TX[i];
         }
         //Parte para Imprimir el Caracter
-        LCD_Command(0xc0|(3));     /*Display characters from c0(2nd row) location */
-        LCD_Char(1);                 /*To display custom character send address as data to point stored character */     
-        
+        LCD_Command(0xc0 | (3)); /*Display characters from c0(2nd row) location */
+        LCD_Char(1); /*To display custom character send address as data to point stored character */
+
         var_T_Integral = var_T_Integral + 6;
         acumBom = 12;
     } else if (var_T_Integral < 30 && acumBom == 12) {
-        PORTAbits.RA2 = 1;        
-        
+        PORTAbits.RA2 = 1;
+
         char buffer_TX[] = "Se encendio la bombilla 3\r";
         for (int i = 0; i < 27; i++) {
             //  espera a que el registro de transmisión este disponible o vacio.
@@ -361,14 +363,14 @@ void encenderBombillas() {
         }
 
         //Parte para Imprimir el Caracter
-        LCD_Command(0xc0|(6));     /*Display characters from c0(2nd row) location */
-        LCD_Char(2);                 /*To display custom character send address as data to point stored character */     
-        
+        LCD_Command(0xc0 | (6)); /*Display characters from c0(2nd row) location */
+        LCD_Char(2); /*To display custom character send address as data to point stored character */
+
         var_T_Integral = var_T_Integral + 6;
         acumBom = 18;
     } else if (var_T_Integral < 30 && acumBom == 18) {
         PORTAbits.RA3 = 1;
-        
+
         char buffer_TX[] = "Se encendio la bombilla 4\r";
         for (int i = 0; i < 27; i++) {
             //  espera a que el registro de transmisión este disponible o vacio.
@@ -377,23 +379,16 @@ void encenderBombillas() {
             //  escribe el dato que se enviará a través de TX.
             TXREG = buffer_TX[i];
         }
-        
+
         //Parte para Imprimir el Caracter
-        LCD_Command(0xc0|(9));     /*Display characters from c0(2nd row) location */
-        LCD_Char(3);                 /*To display custom character send address as data to point stored character */     
-        
+        LCD_Command(0xc0 | (9)); /*Display characters from c0(2nd row) location */
+        LCD_Char(3); /*To display custom character send address as data to point stored character */
+
         var_T_Integral = var_T_Integral + 6;
         acumBom = 24;
     } else if (var_T_Integral < 30 && acumBom == 24) {
         PORTAbits.RA4 = 1;
 
-        LCD_Custom_Char(4,bombillaCar0);
-        for(char i=4;i<5;i++)
-            {    
-                LCD_Command(0xc0|(i*3));     /*Display characters from c0(2nd row) location */
-                LCD_Char(i);                 /*To display custom character send address as data to point stored 
-                                               character */
-            } 
         char buffer_TX[] = "Se encendio la bombilla 5\r";
         for (int i = 0; i < 27; i++) {
             //  espera a que el registro de transmisión este disponible o vacio.
@@ -402,14 +397,15 @@ void encenderBombillas() {
             //  escribe el dato que se enviará a través de TX.
             TXREG = buffer_TX[i];
         }
-        
+
         //Parte para Imprimir el Caracter
-        LCD_Command(0xc0|(12));     /*Display characters from c0(2nd row) location */
-        LCD_Char(4);                 /*To display custom character send address as data to point stored character */     
-        
+        LCD_Command(0xc0 | (12)); /*Display characters from c0(2nd row) location */
+        LCD_Char(4); /*To display custom character send address as data to point stored character */
+
         var_T_Integral = var_T_Integral + 6;
     } else if (var_T_Integral > 35) {
         banAgregar = 1;
+
         char buffer_TX[] = "Temperatura Alta \r";
         for (int i = 0; i < 19; i++) {
             //  espera a que el registro de transmisión este disponible o vacio.
@@ -418,6 +414,14 @@ void encenderBombillas() {
             //  escribe el dato que se enviará a través de TX.
             TXREG = buffer_TX[i];
         }
+        //Parte para Imprimir el Caracter
+        for (char i = 0; i <= 5; i++) {
+            LCD_Command(0xc0 | (i*3)); /*Display characters from c0(2nd row) location */
+            LCD_Char(6); /*To display custom character send address as data to point stored character */
+        
+        }
+
+
         MSdelay(100);
     } else
         banAgregar = 1;
@@ -447,6 +451,8 @@ void RTC_Read_Calendar(char read_calendar_address) {
     Year = I2C_Read(1); /*read data and send nack for indicating stop reading*/
     I2C_Stop();
 }
+
+//Procedimiento para leer y mostrar la hora en el LCD
 
 void mostrarFechaHora() {
     LCD_Init();
@@ -526,16 +532,12 @@ void mostrarFechaHora() {
 
 }
 
+//Procedimiento para lectura de hora.
+
 void verificarHora() {
     RTC_Read_Clock(0); /*gives second,minute and hour*/
     I2C_Stop();
     MSdelay(1000);
-    if (hour & (1 << Clock_type)) { /* check clock is 12hr or 24hr */
-        if (hour & (1 << AM_PM)) { /* check AM or PM */
-            LCD_String_xy(1, 14, "PM");
-        } else {
-            LCD_String_xy(1, 14, "AM");
-        }
-    }
+
 
 }

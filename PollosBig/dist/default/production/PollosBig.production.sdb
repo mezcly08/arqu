@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
-"59 C:\Users\Mari\Desktop\PollosBig/I2C_Master_File.h
+"59 C:\Users\Mari\Documents\GitHub\arqu\PollosBig/I2C_Master_File.h
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
 "76
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
@@ -79,33 +79,33 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"96 C:\Users\Mari\Desktop\PollosBig\Controlador.c
+"92 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\Controlador.c
 [v _main main `(v  1 e 1 0 ]
-"187
+"183
 [v _DHT11_ReadData DHT11_ReadData `(uc  1 e 1 0 ]
-"202
+"198
 [v _DHT11_Start DHT11_Start `(v  1 e 1 0 ]
-"212
+"208
 [v _DHT11_CheckResponse DHT11_CheckResponse `(v  1 e 1 0 ]
-"220
+"216
 [v _offLEDS offLEDS `(v  1 e 1 0 ]
-"236
+"232
 [v _onLEDS onLEDS `(v  1 e 1 0 ]
-"263
+"265
 [v _offBombillas offBombillas `(v  1 e 1 0 ]
-"280
+"283
 [v _imprimirTemHum imprimirTemHum `(v  1 e 1 0 ]
-"301
-[v _encenderBombillas encenderBombillas `(v  1 e 1 0 ]
-"430
+"305
+[v _onBombillas onBombillas `(v  1 e 1 0 ]
+"434
 [v _RTC_Read_Clock RTC_Read_Clock `(v  1 e 1 0 ]
-"440
+"444
 [v _RTC_Read_Calendar RTC_Read_Calendar `(v  1 e 1 0 ]
-"451
+"457
 [v _mostrarFechaHora mostrarFechaHora `(v  1 e 1 0 ]
-"529
+"537
 [v _verificarHora verificarHora `(v  1 e 1 0 ]
-"37 C:\Users\Mari\Desktop\PollosBig\LCD_16x2.c
+"37 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\LCD_16x2.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 "49
 [v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
@@ -412,110 +412,188 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"72 C:\Users\Mari\Desktop\PollosBig\Controlador.c
+"72 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\Controlador.c
 [v _bombillaCar0 bombillaCar0 `[8]uc  1 e 8 0 ]
-"75
+"73
+[v _good good `[8]uc  1 e 8 0 ]
+"74
+[v _alert alert `[8]uc  1 e 8 0 ]
+"77
 [v _var_RH_Decimal var_RH_Decimal `uc  1 e 1 0 ]
 [v _var_RH_Integral var_RH_Integral `uc  1 e 1 0 ]
 [v _var_T_Decimal var_T_Decimal `uc  1 e 1 0 ]
 [v _var_T_Integral var_T_Integral `uc  1 e 1 0 ]
-"76
-[v _vec_value vec_value `[10]uc  1 e 10 0 ]
-"77
-[v _banAgregar banAgregar `i  1 e 2 0 ]
 "78
+[v _vec_value vec_value `[10]uc  1 e 10 0 ]
+"79
+[v _banAgregar banAgregar `i  1 e 2 0 ]
+"80
 [v _acumBom acumBom `i  1 e 2 0 ]
-"81
+"83
 [v _sec sec `i  1 e 2 0 ]
 [v _min min `i  1 e 2 0 ]
 [v _hour hour `i  1 e 2 0 ]
-"82
+"84
 [v _Day Day `i  1 e 2 0 ]
 [v _Date Date `i  1 e 2 0 ]
 [v _Month Month `i  1 e 2 0 ]
 [v _Year Year `i  1 e 2 0 ]
-"83
+"85
 [v _secs secs `[10]uc  1 e 10 0 ]
 [v _mins mins `[10]uc  1 e 10 0 ]
 [v _hours hours `[10]uc  1 e 10 0 ]
-"84
+"86
 [v _date date `[10]uc  1 e 10 0 ]
 [v _month month `[10]uc  1 e 10 0 ]
 [v _year year `[10]uc  1 e 10 0 ]
-"87
+"89
 [v _days days `[7]uc  1 e 7 0 ]
-"96
+"92
 [v _main main `(v  1 e 1 0 ]
 {
-"172
+"168
 [v main@i_751 i `i  1 a 2 128 ]
-"144
+"140
 [v main@i i `i  1 a 2 126 ]
-"171
+"167
 [v main@buffer_TX_750 buffer_TX `[38]uc  1 a 38 52 ]
-"143
+"139
 [v main@buffer_TX buffer_TX `[36]uc  1 a 36 90 ]
-"141
-[v main@F3564 F3564 `[36]uc  1 s 36 F3564 ]
-"170
-[v main@F3567 F3567 `[38]uc  1 s 38 F3567 ]
-"183
+"137
+[v main@F3563 F3563 `[36]uc  1 s 36 F3563 ]
+"166
+[v main@F3566 F3566 `[38]uc  1 s 38 F3566 ]
+"179
 } 0
-"529
+"537
 [v _verificarHora verificarHora `(v  1 e 1 0 ]
 {
-"541
+"543
 } 0
-"220
+"305
+[v _onBombillas onBombillas `(v  1 e 1 0 ]
+{
+"418
+[v onBombillas@i_807 i `uc  1 a 1 166 ]
+"410
+[v onBombillas@i_806 i `i  1 a 2 164 ]
+"393
+[v onBombillas@i_803 i `i  1 a 2 162 ]
+"375
+[v onBombillas@i_800 i `i  1 a 2 160 ]
+"357
+[v onBombillas@i_797 i `i  1 a 2 158 ]
+"340
+[v onBombillas@i_794 i `i  1 a 2 156 ]
+"317
+[v onBombillas@i i `i  1 a 2 154 ]
+"409
+[v onBombillas@buffer_TX_805 buffer_TX `[19]uc  1 a 19 135 ]
+"392
+[v onBombillas@buffer_TX_802 buffer_TX `[27]uc  1 a 27 108 ]
+"374
+[v onBombillas@buffer_TX_799 buffer_TX `[27]uc  1 a 27 81 ]
+"356
+[v onBombillas@buffer_TX_796 buffer_TX `[27]uc  1 a 27 54 ]
+"339
+[v onBombillas@buffer_TX_793 buffer_TX `[27]uc  1 a 27 27 ]
+"316
+[v onBombillas@buffer_TX buffer_TX `[27]uc  1 a 27 0 ]
+"315
+[v onBombillas@F3590 F3590 `[27]uc  1 s 27 F3590 ]
+"337
+[v onBombillas@F3593 F3593 `[27]uc  1 s 27 F3593 ]
+"354
+[v onBombillas@F3596 F3596 `[27]uc  1 s 27 F3596 ]
+"372
+[v onBombillas@F3599 F3599 `[27]uc  1 s 27 F3599 ]
+"390
+[v onBombillas@F3602 F3602 `[27]uc  1 s 27 F3602 ]
+"407
+[v onBombillas@F3605 F3605 `[19]uc  1 s 19 F3605 ]
+"430
+} 0
+"232
+[v _onLEDS onLEDS `(v  1 e 1 0 ]
+{
+[v onLEDS@T_Integral T_Integral `uc  1 a 1 wreg ]
+"249
+[v onLEDS@i i `i  1 a 2 33 ]
+"248
+[v onLEDS@buffer_TX buffer_TX `[19]uc  1 a 19 11 ]
+"235
+[v onLEDS@valor valor `i  1 a 2 31 ]
+"232
+[v onLEDS@T_Integral T_Integral `uc  1 a 1 wreg ]
+"246
+[v onLEDS@F3581 F3581 `[19]uc  1 s 19 F3581 ]
+"233
+[v onLEDS@T_Integral T_Integral `uc  1 a 1 30 ]
+"263
+} 0
+"49 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\LCD_16x2.c
+[v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
+{
+[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
+"51
+[v LCD_Custom_Char@i i `uc  1 a 1 10 ]
+"49
+[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
+[v LCD_Custom_Char@msg msg `*.39uc  1 p 2 7 ]
+"52
+[v LCD_Custom_Char@loc loc `uc  1 a 1 9 ]
+"59
+} 0
+"216 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\Controlador.c
 [v _offLEDS offLEDS `(v  1 e 1 0 ]
 {
-"226
+"222
 [v offLEDS@i i `i  1 a 2 15 ]
-"225
+"221
 [v offLEDS@buffer_TX buffer_TX `[15]uc  1 a 15 0 ]
-"223
-[v offLEDS@F3576 F3576 `[15]uc  1 s 15 F3576 ]
-"233
+"219
+[v offLEDS@F3575 F3575 `[15]uc  1 s 15 F3575 ]
+"229
 } 0
-"263
+"265
 [v _offBombillas offBombillas `(v  1 e 1 0 ]
 {
-"270
+"272
 [v offBombillas@i i `i  1 a 2 21 ]
-"269
+"271
 [v offBombillas@buffer_TX buffer_TX `[21]uc  1 a 21 0 ]
-"268
-[v offBombillas@F3586 F3586 `[21]uc  1 s 21 F3586 ]
-"277
+"270
+[v offBombillas@F3585 F3585 `[21]uc  1 s 21 F3585 ]
+"279
 } 0
-"451
+"457
 [v _mostrarFechaHora mostrarFechaHora `(v  1 e 1 0 ]
 {
-"519
+"525
 [v mostrarFechaHora@i i `i  1 a 2 50 ]
-"518
+"524
 [v mostrarFechaHora@buffer_TX buffer_TX `[26]uc  1 a 26 24 ]
-"517
-[v mostrarFechaHora@F3615 F3615 `[26]uc  1 s 26 F3615 ]
-"527
+"523
+[v mostrarFechaHora@F3614 F3614 `[26]uc  1 s 26 F3614 ]
+"533
 } 0
-"430
+"434
 [v _RTC_Read_Clock RTC_Read_Clock `(v  1 e 1 0 ]
 {
 [v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 wreg ]
 [v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 wreg ]
 [v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 3 ]
-"438
+"442
 } 0
-"440
+"444
 [v _RTC_Read_Calendar RTC_Read_Calendar `(v  1 e 1 0 ]
 {
 [v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 wreg ]
 [v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 wreg ]
 [v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 3 ]
-"449
+"453
 } 0
-"140 C:\Users\Mari\Desktop\PollosBig/I2C_Master_File.h
+"140 C:\Users\Mari\Documents\GitHub\arqu\PollosBig/I2C_Master_File.h
 [v _I2C_Stop I2C_Stop `(uc  1 e 1 0 ]
 {
 "146
@@ -574,22 +652,22 @@
 {
 "163
 } 0
-"37 C:\Users\Mari\Desktop\PollosBig\LCD_16x2.c
+"37 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\LCD_16x2.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
 "47
 } 0
-"280 C:\Users\Mari\Desktop\PollosBig\Controlador.c
+"283 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\Controlador.c
 [v _imprimirTemHum imprimirTemHum `(v  1 e 1 0 ]
 {
-"298
+"301
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S1279 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S1277 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S1279  1 a 6 16 ]
+[v sprintf@f f `S1277  1 a 6 16 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 14 ]
 "9
@@ -602,9 +680,9 @@
 {
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 93 ]
-[s S1305 _IO_FILE 0 ]
+[s S1303 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S1305  1 p 2 0 ]
+[v vfprintf@fp fp `*.39S1303  1 p 2 0 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
 "1404
@@ -618,9 +696,9 @@
 [v vfpfcnvrt@ll ll `o  1 a 8 76 ]
 "694
 [v vfpfcnvrt@c c `uc  1 a 1 92 ]
-[s S1305 _IO_FILE 0 ]
+[s S1303 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S1305  1 p 2 66 ]
+[v vfpfcnvrt@fp fp `*.39S1303  1 p 2 66 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 68 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 70 ]
 "1387
@@ -635,9 +713,9 @@
 [v xtoa@i i `i  1 a 2 62 ]
 [v xtoa@w w `i  1 a 2 52 ]
 [v xtoa@p p `i  1 a 2 50 ]
-[s S1305 _IO_FILE 0 ]
+[s S1303 _IO_FILE 0 ]
 "645
-[v xtoa@fp fp `*.39S1305  1 p 2 27 ]
+[v xtoa@fp fp `*.39S1303  1 p 2 27 ]
 [v xtoa@d d `uo  1 p 8 29 ]
 [v xtoa@x x `uc  1 p 1 37 ]
 "687
@@ -676,9 +754,9 @@
 [v dtoa@s s `i  1 a 2 51 ]
 [v dtoa@w w `i  1 a 2 49 ]
 [v dtoa@p p `i  1 a 2 47 ]
-[s S1305 _IO_FILE 0 ]
+[s S1303 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S1305  1 p 2 27 ]
+[v dtoa@fp fp `*.39S1303  1 p 2 27 ]
 [v dtoa@d d `o  1 p 8 29 ]
 "328
 } 0
@@ -688,9 +766,9 @@
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S1305 _IO_FILE 0 ]
+[s S1303 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S1305  1 p 2 16 ]
+[v pad@fp fp `*.39S1303  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -713,16 +791,16 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S1279 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S1279  1 p 2 11 ]
+[s S1277 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1277  1 p 2 11 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S1279 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S1279  1 p 2 2 ]
+[s S1277 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1277  1 p 2 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\putch.c
@@ -760,7 +838,7 @@
 [v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"99 C:\Users\Mari\Desktop\PollosBig\LCD_16x2.c
+"99 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\LCD_16x2.c
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
 {
 [v LCD_String_xy@row row `uc  1 a 1 wreg ]
@@ -779,79 +857,14 @@
 [v LCD_String@msg msg `*.35Cuc  1 p 2 7 ]
 "97
 } 0
-"301 C:\Users\Mari\Desktop\PollosBig\Controlador.c
-[v _encenderBombillas encenderBombillas `(v  1 e 1 0 ]
+"78
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
 {
-"414
-[v encenderBombillas@i_807 i `i  1 a 2 164 ]
-"398
-[v encenderBombillas@i_804 i `i  1 a 2 162 ]
-"391
-[v encenderBombillas@i_801 i `uc  1 a 1 166 ]
-"373
-[v encenderBombillas@i_800 i `i  1 a 2 160 ]
-"355
-[v encenderBombillas@i_797 i `i  1 a 2 158 ]
-"338
-[v encenderBombillas@i_794 i `i  1 a 2 156 ]
-"312
-[v encenderBombillas@i i `i  1 a 2 154 ]
-"413
-[v encenderBombillas@buffer_TX_806 buffer_TX `[19]uc  1 a 19 135 ]
-"397
-[v encenderBombillas@buffer_TX_803 buffer_TX `[27]uc  1 a 27 108 ]
-"372
-[v encenderBombillas@buffer_TX_799 buffer_TX `[27]uc  1 a 27 81 ]
-"354
-[v encenderBombillas@buffer_TX_796 buffer_TX `[27]uc  1 a 27 54 ]
-"337
-[v encenderBombillas@buffer_TX_793 buffer_TX `[27]uc  1 a 27 27 ]
-"311
-[v encenderBombillas@buffer_TX buffer_TX `[27]uc  1 a 27 0 ]
-"310
-[v encenderBombillas@F3591 F3591 `[27]uc  1 s 27 F3591 ]
-"335
-[v encenderBombillas@F3594 F3594 `[27]uc  1 s 27 F3594 ]
-"352
-[v encenderBombillas@F3597 F3597 `[27]uc  1 s 27 F3597 ]
-"370
-[v encenderBombillas@F3600 F3600 `[27]uc  1 s 27 F3600 ]
-"396
-[v encenderBombillas@F3604 F3604 `[27]uc  1 s 27 F3604 ]
-"412
-[v encenderBombillas@F3607 F3607 `[19]uc  1 s 19 F3607 ]
-"426
-} 0
-"236
-[v _onLEDS onLEDS `(v  1 e 1 0 ]
-{
-[v onLEDS@T_Integral T_Integral `uc  1 a 1 wreg ]
-"247
-[v onLEDS@i i `i  1 a 2 22 ]
-"246
-[v onLEDS@buffer_TX buffer_TX `[19]uc  1 a 19 0 ]
-"237
-[v onLEDS@valor valor `i  1 a 2 20 ]
-"236
-[v onLEDS@T_Integral T_Integral `uc  1 a 1 wreg ]
-"245
-[v onLEDS@F3582 F3582 `[19]uc  1 s 19 F3582 ]
-"237
-[v onLEDS@T_Integral T_Integral `uc  1 a 1 19 ]
-"261
-} 0
-"49 C:\Users\Mari\Desktop\PollosBig\LCD_16x2.c
-[v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
-{
-[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
-"51
-[v LCD_Custom_Char@i i `uc  1 a 1 10 ]
-"49
-[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
-[v LCD_Custom_Char@msg msg `*.39uc  1 p 2 7 ]
-"52
-[v LCD_Custom_Char@loc loc `uc  1 a 1 9 ]
-"59
+[v LCD_Char@dat dat `uc  1 a 1 wreg ]
+[v LCD_Char@dat dat `uc  1 a 1 wreg ]
+"80
+[v LCD_Char@dat dat `uc  1 a 1 6 ]
+"86
 } 0
 "66
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
@@ -861,15 +874,6 @@
 "68
 [v LCD_Command@cmd cmd `uc  1 a 1 6 ]
 "75
-} 0
-"78
-[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-{
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-"80
-[v LCD_Char@dat dat `uc  1 a 1 6 ]
-"86
 } 0
 "118
 [v _MSdelay MSdelay `(v  1 e 1 0 ]
@@ -881,26 +885,26 @@
 [v MSdelay@val val `ui  1 p 2 0 ]
 "123
 } 0
-"76 C:\Users\Mari\Desktop\PollosBig/I2C_Master_File.h
+"76 C:\Users\Mari\Documents\GitHub\arqu\PollosBig/I2C_Master_File.h
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
 "87
 } 0
-"202 C:\Users\Mari\Desktop\PollosBig\Controlador.c
+"198 C:\Users\Mari\Documents\GitHub\arqu\PollosBig\Controlador.c
 [v _DHT11_Start DHT11_Start `(v  1 e 1 0 ]
 {
-"210
+"206
 } 0
-"187
+"183
 [v _DHT11_ReadData DHT11_ReadData `(uc  1 e 1 0 ]
 {
-"188
+"184
 [v DHT11_ReadData@data data `uc  1 a 1 1 ]
 [v DHT11_ReadData@i i `uc  1 a 1 0 ]
-"200
+"196
 } 0
-"212
+"208
 [v _DHT11_CheckResponse DHT11_CheckResponse `(v  1 e 1 0 ]
 {
-"216
+"212
 } 0

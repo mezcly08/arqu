@@ -5968,24 +5968,26 @@ void I2C_Nack()
 void DHT11_Start();
 void DHT11_CheckResponse();
 char DHT11_ReadData();
+void imprimirTemHum();
+
 
 
 void onLEDS(char);
 void offBombillas();
-void imprimirTemHum();
-void encenderBombillas();
+void onBombillas();
 void offLEDS();
-void imprimirBomLed();
 
 
 void mostrarFechaHora();
 void verificarHora();
 
 
-unsigned char bombillaCar0[8] = { 0x0E, 0x11, 0x11, 0x11, 0x0E, 0x0E, 0x00, 0x00};
+unsigned char bombillaCar0[8] = {0x0E, 0x11, 0x11, 0x11, 0x0E, 0x0E, 0x00, 0x00};
+unsigned char good[8] = {0x00, 0x1B, 0x1B, 0x00, 0x11, 0x11, 0x0E, 0x00};
+unsigned char alert[8] = {0x00, 0x1B, 0x1B, 0x00, 0x0E, 0x11, 0x11, 0x00};
 
 
-char var_RH_Decimal, var_RH_Integral, var_T_Decimal, var_T_Integral, valor2;
+char var_RH_Decimal, var_RH_Integral, var_T_Decimal, var_T_Integral;
 char vec_value[10];
 int banAgregar = 0;
 int acumBom = 0;
@@ -5998,12 +6000,6 @@ char date[10], month[10], year[10];
 char Clock_type = 0x06;
 char AM_PM = 0x05;
 char days[7] = {'S', 'M', 'T', 'W', 't', 'F', 's'};
-
-
-char j;
-
-
-
 
 
 void main() {
@@ -6041,7 +6037,7 @@ void main() {
 
         verificarHora();
 
-        if ( hour >= 0x18 || hour <=6 ) {
+        if (hour >= 0x18 || hour <= 6) {
             DHT11_Start();
             DHT11_CheckResponse();
 
@@ -6065,7 +6061,7 @@ void main() {
 
             while (banAgregar == 0) {
 
-                encenderBombillas();
+                onBombillas();
                 imprimirTemHum();
 
                 MSdelay(1000);
@@ -6147,6 +6143,8 @@ void offLEDS() {
 
 
 void onLEDS(char T_Integral) {
+    LCD_Custom_Char(5, good);
+
     int valor = T_Integral;
     if (valor < 30) {
         PORTCbits.RC5 = 1;
@@ -6156,6 +6154,10 @@ void onLEDS(char T_Integral) {
         PORTCbits.RC5 = 0;
         PORTCbits.RC4 = 1;
         PORTAbits.RA5 = 0;
+
+        LCD_Command(0xc0 | (15));
+        LCD_Char(5);
+
         char buffer_TX[] = "Temperatura Ideal\r";
         for (int i = 0; i < 19; i++) {
 
@@ -6190,6 +6192,7 @@ void offBombillas() {
 }
 
 
+
 void imprimirTemHum() {
 
     sprintf(vec_value, "%d", var_RH_Integral);
@@ -6206,17 +6209,19 @@ void imprimirTemHum() {
     LCD_Char(0xdf);
     LCD_Char('C');
 
-    LCD_String_xy(0, 15, "H");
     LCD_String_xy(0, 6, "T");
+    LCD_String_xy(0, 15, "H");
 }
 
 
-void encenderBombillas() {
-    LCD_Custom_Char(0,bombillaCar0);
-    LCD_Custom_Char(1,bombillaCar0);
-    LCD_Custom_Char(2,bombillaCar0);
-    LCD_Custom_Char(3,bombillaCar0);
-    LCD_Custom_Char(4,bombillaCar0);
+
+void onBombillas() {
+    LCD_Custom_Char(0, bombillaCar0);
+    LCD_Custom_Char(1, bombillaCar0);
+    LCD_Custom_Char(2, bombillaCar0);
+    LCD_Custom_Char(3, bombillaCar0);
+    LCD_Custom_Char(4, bombillaCar0);
+    LCD_Custom_Char(6, alert);
 
     onLEDS(var_T_Integral);
     if (var_T_Integral < 30 && acumBom == 0) {
@@ -6233,16 +6238,13 @@ void encenderBombillas() {
 
 
 
-        LCD_Command(0xc0|(0));
+        LCD_Command(0xc0 | (0));
         LCD_Char(0);
 
 
 
-
-
-
         var_T_Integral = var_T_Integral + 6;
-       acumBom = 6;
+        acumBom = 6;
 
     } else if (var_T_Integral < 30 && acumBom == 6) {
         PORTAbits.RA1 = 1;
@@ -6256,7 +6258,7 @@ void encenderBombillas() {
             TXREG = buffer_TX[i];
         }
 
-        LCD_Command(0xc0|(3));
+        LCD_Command(0xc0 | (3));
         LCD_Char(1);
 
         var_T_Integral = var_T_Integral + 6;
@@ -6274,7 +6276,7 @@ void encenderBombillas() {
         }
 
 
-        LCD_Command(0xc0|(6));
+        LCD_Command(0xc0 | (6));
         LCD_Char(2);
 
         var_T_Integral = var_T_Integral + 6;
@@ -6292,7 +6294,7 @@ void encenderBombillas() {
         }
 
 
-        LCD_Command(0xc0|(9));
+        LCD_Command(0xc0 | (9));
         LCD_Char(3);
 
         var_T_Integral = var_T_Integral + 6;
@@ -6300,13 +6302,6 @@ void encenderBombillas() {
     } else if (var_T_Integral < 30 && acumBom == 24) {
         PORTAbits.RA4 = 1;
 
-        LCD_Custom_Char(4,bombillaCar0);
-        for(char i=4;i<5;i++)
-            {
-                LCD_Command(0xc0|(i*3));
-                LCD_Char(i);
-
-            }
         char buffer_TX[] = "Se encendio la bombilla 5\r";
         for (int i = 0; i < 27; i++) {
 
@@ -6317,12 +6312,13 @@ void encenderBombillas() {
         }
 
 
-        LCD_Command(0xc0|(12));
+        LCD_Command(0xc0 | (12));
         LCD_Char(4);
 
         var_T_Integral = var_T_Integral + 6;
     } else if (var_T_Integral > 35) {
         banAgregar = 1;
+
         char buffer_TX[] = "Temperatura Alta \r";
         for (int i = 0; i < 19; i++) {
 
@@ -6331,6 +6327,14 @@ void encenderBombillas() {
 
             TXREG = buffer_TX[i];
         }
+
+        for (char i = 0; i <= 5; i++) {
+            LCD_Command(0xc0 | (i*3));
+            LCD_Char(6);
+
+        }
+
+
         MSdelay(100);
     } else
         banAgregar = 1;
@@ -6360,6 +6364,8 @@ void RTC_Read_Calendar(char read_calendar_address) {
     Year = I2C_Read(1);
     I2C_Stop();
 }
+
+
 
 void mostrarFechaHora() {
     LCD_Init();
@@ -6439,16 +6445,12 @@ void mostrarFechaHora() {
 
 }
 
+
+
 void verificarHora() {
     RTC_Read_Clock(0);
     I2C_Stop();
     MSdelay(1000);
-    if (hour & (1 << Clock_type)) {
-        if (hour & (1 << AM_PM)) {
-            LCD_String_xy(1, 14, "PM");
-        } else {
-            LCD_String_xy(1, 14, "AM");
-        }
-    }
+
 
 }
